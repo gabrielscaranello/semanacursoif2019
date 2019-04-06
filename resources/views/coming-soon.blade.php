@@ -25,6 +25,8 @@
     <link href="{!!asset('assets/site/css/fonts/opensans.css')!!}" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -62,7 +64,7 @@
                         </div>
                         <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700"  data-aos-duration="400">
                             <a target="_blank" href="https://www.facebook.com/ifpr.assis/" class="csi csi-circle csi-sm csi-facebook-active"><i class="ion-social-facebook-outline" aria-hidden="true"></i></a>
-                            {{-- <a href="#" class="csi csi-circle csi-sm csi-github-active"><i class="ion-social-github-outline" aria-hidden="true"></i></a> --}}
+                            <a href="assis.ifpr.edu.br" class="csi csi-circle csi-sm csi-github-active"><i class="fas fa-globe-americas"></i></a>
                         </div>
                     </div>
                 </div>
