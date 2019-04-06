@@ -41,13 +41,21 @@
                 <!-- Main Menus Wrapper -->
                 <div class="nav-menus-wrapper">
                     <ul class="nav-menu align-to-right" id="nav">
-                        <li class="active"><a href="#home">Home</a></li>
-                        <li><a href="#course">Courses</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#teacher">Teachers</a></li>
-                        <li><a href="#event">Events</a></li>
-                        <li><a href="#blog">Blog</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="active"><a href="#inicio">Início</a></li>
+                        <li><a href="#evento">O Evento</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#palestras">Palestras</a></li>
+                        <li><a href="#mini-cursos">Mini Cursos</a></li>
+                    </ul>
+                    <ul v-if="userdata" class="navbar-nav align-to-right btn nav-logon">
+                        <li class="dropdown open">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle active" aria-expanded="true">
+                                @{{userdata.name}} </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
+                                <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </nav>
