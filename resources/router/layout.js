@@ -44,7 +44,7 @@ const layout = [{
         meta: {
             title: "Palestras",
         }
-    },{
+    }, {
         path: '/usuarios',
         component: resolve => require(['pages/usuarios-list'], resolve),
         meta: {
@@ -64,7 +64,7 @@ const layout = [{
         meta: {
             title: "Usuário",
         }
-    },{
+    }, {
         path: '/fotos-galeria',
         component: resolve => require(['pages/gallery-list'], resolve),
         meta: {
@@ -83,6 +83,13 @@ const layout = [{
         component: resolve => require(['pages/gallery-form'], resolve),
         meta: {
             title: "Palestras",
+        }
+    },
+    {
+        path: '/links-importantes',
+        component: resolve => require(['pages/links-importantes'], resolve),
+        meta: {
+            title: "Links Importantes",
         }
     },
 ]

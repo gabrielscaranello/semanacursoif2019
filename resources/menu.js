@@ -40,7 +40,8 @@ const menu_items = [{
             link: '/foto-galeria',
             icon: 'fa fa-plus'
         }]
-    },{
+    },
+    {
         name: 'Usuários',
         icon: 'fa fa-users',
         child: [{
@@ -52,6 +53,11 @@ const menu_items = [{
             link: '/usuario',
             icon: 'fa fa-plus'
         }]
+    },
+    {
+        name: 'Links Úteis',
+        icon: 'fa fa-photo',
+        link: 'links-importantes',
     },
 ];
 export default menu_items;
