@@ -1,7 +1,7 @@
 new Vue({
     el: '#app',
     data: {
-        countDownDate: null,
+        countDownDate: new Date("Apr 13, 2019 00:00:00").getTime(),
         count: {
             days: null,
             hours: null,
@@ -9,26 +9,24 @@ new Vue({
             seconds: null
         },
     },
-    mounted: function() {
-        this.initCount()
+    beforeMount: function() {
+        this.currentCount()
     },
     methods: {
-        initCount: function() {
-            this.countDownDate = new Date("May 13, 2019 00:00:00").getTime();
-            this.currentCount();
-            console.log(this.countDownDate)
-        },
         currentCount: function() {
             var vue = this;
-             setInterval(function() {
+            setInterval(function() {
 
                 var now = new Date().getTime();
-
                 var distance = vue.countDownDate - now;
                 vue.count.days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 vue.count.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 vue.count.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 vue.count.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                if (vue.count.days < 10) vue.count.days = '0' + vue.count.days;
+                if (vue.count.hours < 10) vue.count.hours = '0' + vue.count.hours;
+                if (vue.count.minutes < 10) vue.count.minutes = '0' + vue.count.minutes;
+                if (vue.count.seconds < 10) vue.count.seconds = '0' + vue.count.seconds;
 
 
             }, 1000);
