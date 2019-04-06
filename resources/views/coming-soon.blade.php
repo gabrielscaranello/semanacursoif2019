@@ -9,10 +9,10 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Classy - Multipurpose Template | Coming Soon Background Default</title>
+    <title>Em Breve - IFPR Eventos</title>
 
     <!-- Favicon  -->
-    <link rel="shortcut icon" href="{!!asset('assets/site/img/core-img/favicon.ico')!!}">
+    <link rel="shortcut icon" href="{!!asset('assets/site/img/core-img/favicon.png')!!}">
 
     <!-- Core Style CSS -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/core-style.css')!!}">
