@@ -9,6 +9,8 @@
 
 @section('content')
 
+<div id="inicio"></div>
+
 <!-- ***** Feature Area Start ***** -->
 <section class="special_feature_area education-version section_padding_100_70" id="evento">
     <div class="container">
