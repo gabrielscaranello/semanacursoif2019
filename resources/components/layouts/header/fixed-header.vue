@@ -213,6 +213,9 @@ export default {
         logout() {
             window.localStorage.removeItem('token')
             window.localStorage.removeItem('userId')
+            window.localStorage.removeItem('role')
+            window.localStorage.removeItem('avatar')
+            window.localStorage.removeItem('username')
             delete axios.defaults.headers.common['Authorization'];
             setTimeout(() => {
               this.$router.push('/login');

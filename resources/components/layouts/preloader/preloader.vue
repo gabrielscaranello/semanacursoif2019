@@ -13,7 +13,8 @@ export default {
                     let url = '/auth/verificaToken';
                     let data = {
                         'token': localStorage.token,
-                        'id': localStorage.userId
+                        'id': localStorage.userId,
+                        'role': localStorage.role
                     };
                     let vue = this;
                     axios.post(url, data).then((response) => {
@@ -22,6 +23,7 @@ export default {
                         } else {
                             vue.$store.state.user.picture = localStorage.avatar;
                             vue.$store.state.user.name = localStorage.username;
+                            vue.$store.state.user.role = localStorage.role;
                         }
 
                     });
@@ -34,6 +36,9 @@ export default {
         logout() {
             window.localStorage.removeItem('token')
             window.localStorage.removeItem('userId')
+            window.localStorage.removeItem('role')
+            window.localStorage.removeItem('avatar')
+            window.localStorage.removeItem('username')
             delete axios.defaults.headers.common['Authorization']
             this.$router.push({
                 name: "login"

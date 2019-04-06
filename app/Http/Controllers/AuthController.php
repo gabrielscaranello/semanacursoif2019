@@ -24,7 +24,8 @@ class AuthController extends Controller
            $user = [
              'id' => auth()->user()->id,
              'name' => auth()->user()->name,
-             'avatar' => auth()->user()->avatar
+             'avatar' => auth()->user()->avatar,
+             'role' => auth()->user()->role
            ];
             User::where('id', $user['id'])->update(['token' => $token]);
         } catch (JWTException $e) {
@@ -62,7 +63,7 @@ class AuthController extends Controller
     public function verificaToken(Request $request)
     {
         $data = $request->all();
-        $user = User::where(['token' => $data['token'], 'id' => $data['id'], 'role' => 'admin'])->first();
+        $user = User::where(['token' => $data['token'], 'id' => $data['id'], 'role' => $data['role']])->first();
         if ($user) {
             return 'sim';
         }

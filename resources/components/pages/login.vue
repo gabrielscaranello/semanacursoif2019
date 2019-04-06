@@ -139,8 +139,10 @@ export default {
                         localStorage.userId = data.data.user.id
                         localStorage.avatar = data.data.user.avatar
                         localStorage.username = data.data.user.name
+                        localStorage.role = data.data.user.role
                         this.$store.state.user.picture = data.data.user.avatar
                         this.$store.state.user.name = data.data.user.name
+                        this.$store.state.user.role = data.data.user.role
                         // this.$store.dispatch('login', data);
                         this.show_error = false;
                     })
