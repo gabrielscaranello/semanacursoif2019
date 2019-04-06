@@ -8,8 +8,9 @@
         <div class="classy-load"></div>
     </div>
 
-    <div id="site">
-        @include('layouts.header')
+    @include('layouts.header')
+    <div id="app">
+        @include('layouts.login')
         @yield('content')
         @include('layouts.footer')
     </div>

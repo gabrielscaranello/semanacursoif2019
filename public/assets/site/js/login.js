@@ -1,13 +1,21 @@
 new Vue({
-    el: '#site',
+    el: '#app',
     data: {
         formLogin: {},
-        userdata: {}
+        userdata: {},
+        leftMenu: 'closed'
     },
     mounted: function() {
         this.loadLoginInfo();
     },
     methods: {
+        alterLeft: function() {
+            if (this.leftMenu == 'open') {
+                this.leftMenu = 'closed';
+            } else {
+                this.leftMenu = 'open';
+            }
+        },
         login: function() {
             swal({
                 icon: 'info',

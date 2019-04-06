@@ -28,6 +28,11 @@
     color: white !important;
     transition: .5s ease-in-out;
     cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 98%;
 }
 
 .nav-logon .dropdown-toggle {
@@ -60,9 +65,10 @@
 }
 
 .dropdown-menu li {
-    background-color: transparent;
+    background-color: #f6f6f6;
     border-radius: 3rem;
-    min-width: 12rem;
+    min-width: 13rem;
+    max-width: 285px;
     margin-top: .5rem;
     padding-left: 2rem;
     padding-right: 2rem;
@@ -87,12 +93,85 @@
     transition: .5s;
 }
 
-
 .navbar .navbar-nav .nav-item.active a {
     color: #27ae60;
     transition: .5s;
 }
 
 .footer_area {
-  padding: 20px 0;
+    padding: 20px 0;
+}
+
+
+.left-menu {
+    transition: .5s;
+    z-index: 999;
+    width: 300px;
+    max-width: 285px;
+    height: auto;
+    min-height: 6rem;
+    position: fixed;
+    top: 6rem;
+    background: transparent;
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.left-menu .left-button {
+    right: -2rem !important;
+    position: absolute !important;
+    background: transparent;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    z-index: 0;
+    cursor: pointer;
+    transition: .5s;
+    top: 50%;
+    overflow: hidden;
+    transform: translateY(-50%) !important;
+}
+
+.left-menu .left-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+    background: #28a745;
+}
+
+.left-menu .left-button i {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    font-size: 2rem;
+    transition: .5s;
+    z-index: 9;
+}
+
+/* lateral aberta */
+.left-menu.open {
+    left: 0;
+    /* box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.1); */
+}
+
+.left-menu.open .left-button i {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+/* lateral fechada */
+.left-menu.closed {
+    left: -285px;
+    /* box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.1); */
+}
+
+.left-menu.closed .left-button:hover {
+    transform: translateY(-50%) scale(1.3) !important;
+}
+
+.left-menu.closed .left-button i {
+    transform: translate(-50%, -50%) rotate(0);
 }
