@@ -23,6 +23,7 @@
 
     <!-- Switch Fonts -->
     <link href="{!!asset('assets/site/css/fonts/opensans.css')!!}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 </head>
 
@@ -40,26 +41,26 @@
                         <div class="coming_soon_timer">
                             <ul>
                                 <!-- Please use event time this format: YYYY/MM/DD hh:mm:ss -->
-                                <li class="bg-primary text-white wow bounceInDown" data-wow-delay="0.3s">
+                                <li class="bg-primary text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="450"  data-aos-duration="400">
                                     <span class="days">
                                         @{{count.days}}</span>d
                                 </li>
-                                <li class="bg-info text-white wow bounceInDown" data-wow-delay="0.7s"><span class="hours">
+                                <li class="bg-info text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="900"  data-aos-duration="400"><span class="hours">
                                         @{{count.hours}}</span>h
                                 </li>
-                                <li class="bg-success text-white wow bounceInDown" data-wow-delay="1.2s"><span class="minutes">
+                                <li class="bg-success text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1350"  data-aos-duration="400"><span class="minutes">
                                         @{{count.minutes}}</span>m
                                 </li>
-                                <li class="bg-dark text-white wow bounceInDown" data-wow-delay="1.7s"><span class="seconds">
+                                <li class="bg-dark text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1800"  data-aos-duration="400"><span class="seconds">
                                         @{{count.seconds}}</span>s
                                 </li>
                             </ul>
                         </div>
-                        <div class="subscribe_bar m-xs-top-15 wow fadeIn" data-wow-delay="2s">
-                            <p>Nosso website está em construção.</p>
-                            <p class="p-0">Estaremos aqui em breve com nosso novo site incrível.</p>
+                        <div class="subscribe_bar m-xs-top-15">
+                            <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2000"  data-aos-duration="400">Nosso website está em construção.</p>
+                            <p class="p-0" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2350"  data-aos-duration="400">Estaremos aqui em breve com nosso novo site incrível.</p>
                         </div>
-                        <div class="social_share_area m-top-30 m-xs-top-15 wow fadeIn" data-wow-delay="3s">
+                        <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700"  data-aos-duration="400">
                             <a target="_blank" href="https://www.facebook.com/ifpr.assis/" class="csi csi-circle csi-sm csi-facebook-active"><i class="ion-social-facebook-outline" aria-hidden="true"></i></a>
                             {{-- <a href="#" class="csi csi-circle csi-sm csi-github-active"><i class="ion-social-github-outline" aria-hidden="true"></i></a> --}}
                         </div>
@@ -88,7 +89,10 @@
 
 
 
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </body>
 
