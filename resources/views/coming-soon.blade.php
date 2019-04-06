@@ -64,7 +64,7 @@
                         </div>
                         <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700"  data-aos-duration="400">
                             <a target="_blank" href="https://www.facebook.com/ifpr.assis/" class="csi csi-circle csi-sm csi-facebook-active"><i class="ion-social-facebook-outline" aria-hidden="true"></i></a>
-                            <a href="assis.ifpr.edu.br" class="csi csi-circle csi-sm csi-github-active"><i class="fas fa-globe-americas"></i></a>
+                            <a target="_blank "href="http://assis.ifpr.edu.br/" class="csi csi-circle csi-sm csi-github-active"><i class="fas fa-globe-americas"></i></a>
                         </div>
                     </div>
                 </div>
