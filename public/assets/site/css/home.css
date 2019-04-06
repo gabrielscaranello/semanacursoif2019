@@ -1,0 +1,94 @@
+.image-minicurso, .image-palestra {
+    width: 100%;
+    height: 20rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: .5rem;
+}
+
+.image-palestra {
+    height: 25rem;
+}
+
+.mini-curso-descript, .palestra-descript {
+    height: 5rem;
+    overflow: hidden;
+}
+
+.nav-logon {
+    min-width: 10rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 5rem;
+    background: #27ae60;
+    border: 2px solid #27ae60 !important;
+    transition: .5s ease-in-out;
+    font-weight: 600 !important;
+    color: white !important;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-logon .dropdown-toggle {
+    font-weight: 600 !important;
+    color: white !important;
+    transition: .5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-logon:hover {
+    border: 2px solid #27ae60 !important;
+    background: white;
+    color: #27ae60 !important;
+}
+
+.nav-logon:hover .dropdown-toggle {
+    color: #27ae60 !important;
+}
+
+.dropdown-menu {
+    background: transparent;
+    border: 1px solid transparent;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 5rem;
+    right: -3.25rem !important;
+    left: auto !important;
+    /* box-shadow: 0 5px 50px 0 rgba(0, 0, 0, 0.15); */
+}
+
+.dropdown-menu li {
+    background-color: transparent;
+    border-radius: 3rem;
+    min-width: 12rem;
+    margin-top: .5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    transition: .5s ease-in-out;
+    border: 2px solid #27ae60;
+}
+
+.dropdown-menu li:hover {
+    background-color: #27ae60 !important;
+}
+
+.dropdown-menu li:hover a {
+    color: white !important;
+}
+
+.navbar {
+    height: 5rem;
+    text-transform: uppercase;
+}
+
+.navbar .navbar-nav .nav-item {
+    transition: .5s;
+}
+
+
+.navbar .navbar-nav .nav-item.active a {
+    color: #27ae60;
+    transition: .5s;
+}
