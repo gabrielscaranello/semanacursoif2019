@@ -20,7 +20,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/core-style.css')!!}">
-    <link rel="stylesheet" href="{!!asset('assets/site/style.css')!!}">
+    <link rel="stylesheet" href="{!!asset('assets/site/css/style.css')!!}">
 
     <!-- Responsive css -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/responsive/responsive.css')!!}">

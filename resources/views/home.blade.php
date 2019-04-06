@@ -8,6 +8,7 @@
 @endsection
 
 @section('content')
+
 <!-- ***** Feature Area Start ***** -->
 <section class="special_feature_area education-version section_padding_100_70" id="evento">
     <div class="container">
@@ -15,7 +16,7 @@
             <div class="col-12">
                 <div class="edu_section_heading">
                     <i class="fa fa-book" aria-hidden="true"></i>
-                    <h3>o evento</h3>
+                    <h3>O Evento</h3>
                 </div>
             </div>
         </div>
@@ -36,6 +37,50 @@
                 </div>
             </div>
 
+            <div class="col-12 col-sm-6 col-lg-3">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".4s">
+                    <div class="edu_feature_img">
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                    <div class="edu_feature_text">
+                        <h5>Best Course Teachers</h5>
+                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".6s">
+                    <div class="edu_feature_img">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                    <div class="edu_feature_text">
+                        <h5>Online Classes</h5>
+                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".8s">
+                    <div class="edu_feature_img">
+                        <i class="fa fa-th" aria-hidden="true"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                    <div class="edu_feature_text">
+                        <h5>Organised Classroom</h5>
+                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
         </div>
     </div>
 </section>

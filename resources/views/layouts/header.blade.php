@@ -1,79 +1,4 @@
-{{-- <!-- ***** Header Area Start ***** -->
-<header class="header_area">
-    <div class="main_header_area animated">
-        <div class="container">
-            <nav id="navigation1" class="navigation">
-                <!-- Logo Area -->
-                <div class="nav-header">
-                    <a class="nav-brand" href="#">IFPR</a>
-                    <div class="nav-toggle"></div>
-                </div>
-                <!-- Main Menus Wrapper -->
-                <div class="nav-menus-wrapper">
-
-                    <ul v-if="userdata" class="navbar-nav align-to-right mt-3 btn nav-logon">
-                        <li class="dropdown open">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle active" aria-expanded="true">
-                                @{{userdata.name}} </a>
-<ul class="dropdown-menu">
-    <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
-    <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
-</ul>
-</li>
-</ul>
-<a v-if="!userdata" class="align-to-right btn mt-3 nav-logon" data-toggle="modal" data-target="#loginModal">Entrar</a>
-
-<ul class="nav-menu align-to-right" id="nav">
-    <li class="active"><a href="#home">Home</a></li>
-    <li><a href="#evento">O evento</a></li>
-    <li><a href="#galeria">Galeria</a></li>
-    <li><a href="#palestras">palestras</a></li>
-    <li><a href="#mini-cursos">Mini Cursos</a></li>
-</ul>
-</div>
-</nav>
-</div>
-</div>
-
-</header>
-<!-- ***** Header Area End ***** --> --}}
-
-
-{{-- <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-        <ul class="navbar-nav ml-auto">
-
-
-            <ul class="nav-menu align-to-right" id="nav">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#evento">O evento</a></li>
-            <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
-            <li class="nav-item"><a class="nav-link" href="#palestras">palestras</a></li>
-            <li class="nav-item"><a class="nav-link" href="#mini-cursos">Mini Cursos</a></li>
-        </ul>
-        <ul v-if="userdata" class="navbar-nav align-to-right mt-2 btn nav-logon">
-            <li class="dropdown open">
-                <a href="#" data-toggle="dropdown" class="dropdown-toggle active" aria-expanded="true">
-                    @{{userdata.name}} </a>
-<ul class="dropdown-menu">
-    <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
-    <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
-</ul>
-</li>
-</ul>
-<a v-if="!userdata" class="align-to-right btn mt-2 nav-logon" data-toggle="modal" data-target="#loginModal">Entrar</a>
-
-</div>
-</nav> --}}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+{{-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#">IFPR</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -91,12 +16,42 @@
             <li class="dropdown open">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle active" aria-expanded="true">
                     @{{userdata.name}} </a>
-                <ul class="dropdown-menu">
-                    <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
-                    <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
-                </ul>
-            </li>
-        </ul>
-        <a v-if="!userdata" class="align-to-right btn nav-logon" data-toggle="modal" data-target="#loginModal">Entrar</a>
+<ul class="dropdown-menu">
+    <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
+    <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
+</ul>
+</li>
+</ul>
+<a v-if="!userdata" class="align-to-right btn nav-logon" data-toggle="modal" data-target="#loginModal">Entrar</a>
+</div>
+</nav> --}}
+
+
+
+<!-- ***** Header Area Start ***** -->
+<header class="header_area">
+    <div class="main_header_area animated">
+        <div class="container">
+            <nav id="navigation1" class="navigation">
+                <!-- Logo Area -->
+                <div class="nav-header">
+                    <a class="nav-brand" href="#">CLASSY.</a>
+                    <div class="nav-toggle"></div>
+                </div>
+                <!-- Main Menus Wrapper -->
+                <div class="nav-menus-wrapper">
+                    <ul class="nav-menu align-to-right" id="nav">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#course">Courses</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#teacher">Teachers</a></li>
+                        <li><a href="#event">Events</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </div>
-</nav>
+</header>
+<!-- ***** Header Area End ***** -->
