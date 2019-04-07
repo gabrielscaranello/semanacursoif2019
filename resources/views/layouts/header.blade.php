@@ -5,7 +5,9 @@
             <nav id="navigation1" class="navigation">
                 <!-- Logo Area -->
                 <div class="nav-header">
-                    <a class="nav-brand" href="#">CLASSY.</a>
+                    <a class="nav-brand" href="/">
+                      <img src="{!!asset('assets/site/img/logo/logo-ifpr.jpeg')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
+                    </a>
                     <div class="nav-toggle"></div>
                 </div>
                 <!-- Main Menus Wrapper -->

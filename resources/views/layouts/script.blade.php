@@ -23,8 +23,8 @@
 <script src="{!!asset('assets/site/js/include-all-plugins.js')!!}"></script>
 <!-- Active js -->
 <script src="{!!asset('assets/site/js/active.js')!!}"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue-gallery-slideshow"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{!!asset('assets/site/js/login.js')!!}"></script>

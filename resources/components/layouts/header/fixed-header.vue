@@ -2,7 +2,7 @@
 <header class="header fixed-top">
     <nav>
         <router-link to="/" class="logo">
-            <img src="~img/logo_7cliques_black.png" alt="logo" />
+            <img src="~img/logo-ifpr.jpeg" alt="logo" />
         </router-link>
         <!-- Sidebar toggle button-->
         <div class="float-left">

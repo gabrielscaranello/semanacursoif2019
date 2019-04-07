@@ -66,7 +66,7 @@ class GalleryController extends Controller
     {
         $data =  $request->all();
         if (isset($data['image'])) {
-            $size = 992;
+            $size = 1024;
             $height = null;
             $data['image'] = $this->resizeImage($this->base64_to_jpeg($data['image'], 'G'), $size, $height);
             if ($data['image']) {

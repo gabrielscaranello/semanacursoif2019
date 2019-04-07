@@ -3,12 +3,24 @@ new Vue({
     data: {
         formLogin: {},
         userdata: {},
+        images: [],
+        index: null,
         leftMenu: 'closed'
     },
     mounted: function() {
         this.loadLoginInfo();
+        this.getGalleryImages();
     },
     methods: {
+        getGalleryImages: function() {
+          let url = '/api/gallery/list'
+          let vue = this;
+          axios.get(url).then(function(response) {
+            for (var i = 0; i < response.data.data.length; i++) {
+            vue.images.push(response.data.data[i].image);
+            }
+          })
+        },
         alterLeft: function() {
             if (this.leftMenu == 'open') {
                 this.leftMenu = 'closed';
@@ -87,5 +99,8 @@ new Vue({
                 $('#registerModal').modal('show');
             }, 250);
         }
-    }
+    },
+    components: {
+        VueGallerySlideshow
+    },
 });

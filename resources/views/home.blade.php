@@ -9,11 +9,34 @@
 
 @section('content')
 
-<div id="inicio"></div>
+<section id="inicio">
+    <div id="carouselTop" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselTop" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselTop" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/edu-3.jpg')!!}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/edu-2.jpg')!!}" alt="Second slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselTop" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselTop" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
 
 <!-- ***** Feature Area Start ***** -->
 <section class="special_feature_area education-version section_padding_100_70" id="evento">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay=".1s">
         <div class="row">
             <div class="col-12">
                 <div class="edu_section_heading">
@@ -32,8 +55,8 @@
                     </div>
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
-                        <h5>Awesome Courses</h5>
-                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                        <h5>Minicursos</h5>
+                        <p>Diversos mini cursos voltados para a área de tecnologia.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -47,8 +70,8 @@
                     </div>
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
-                        <h5>Best Course Teachers</h5>
-                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                        <h5>Palestra</h5>
+                        <p>Palestras com profissionais e empresários.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -62,8 +85,8 @@
                     </div>
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
-                        <h5>Online Classes</h5>
-                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                        <h5>Compartilhamento</h5>
+                        <p>Bate papo, troca de informações e expriência entre os participantes.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -77,8 +100,8 @@
                     </div>
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
-                        <h5>Organised Classroom</h5>
-                        <p>Classy is completely creative, clean &amp; 100% responsive website.</p>
+                        <h5>Organização</h5>
+                        <p>Evento previamente planejado com cuidado excelência.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -90,51 +113,28 @@
 
 
 
+
 <!-- ***** Gallery area start ***** -->
 <section class="gallery_area education-version section_padding_100_0 clearfix" id="galeria">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay=".4s">
         <div class="row">
             <div class="col-12">
                 <div class="edu_section_heading">
                     <i class="fa fa-picture-o" aria-hidden="true"></i>
-                    <h3>Photo Gallery</h3>
+                    <h3>Galeria de Fotos</h3>
                 </div>
             </div>
         </div>
     </div>
+    <img class="image gallery-image wow fadeInUp" data-wow-delay=".6s" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
+    <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
 
-    <div class="gallery_full_width_images_area clearfix">
-
-        @foreach ($gallery as $value)
-        <!-- Single gallery Item Start -->
-        <div class="single_gallery_item">
-            <img src="{{$value->image}}" alt="">
-            <!-- Hover Effect -->
-            <div class="hover_overlay">
-                <div class="classy-table">
-                    <div class="classy-table-cell">
-                        <div class="gallery_info">
-                            <h6>{{$value->title}}</h6>
-                            <p>{{$value->subtitle}}</p>
-                        </div>
-                        <div class="more_details text-center">
-                            <a class="gallery_img" href="{{$value->image}}"><i class="pe-7s-search"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-
-
-
-    </div>
 </section>
 <!-- ***** Gallery area end ***** -->
 
 <!-- ***** Our Advisor Area Start ***** -->
 <section class="our_advisor_area education-version clearfix section_padding_100_70" id="palestras">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay=".2s">
         <div class="row">
             <div class="col-12">
                 <div class="edu_section_heading">
@@ -148,7 +148,7 @@
 
             @foreach ($palestras as $value)
             <div class="col-12 col-sm-6 col-lg-4">
-                <div class="single_advisor item wow fadeInUp" data-wow-delay="0.2s">
+                <div class="single_advisor item wow fadeInUp" data-wow-delay="0.4s">
                     <!-- Single advisor profile thumb -->
                     <div class="advisor_thumb image-palestra" style="background-image: url({!!($value->photo)!!})">
                         {{-- <img src="{!!asset($value->photo)!!}" alt="{{$value->name}}" title="{{$value->name}}">
@@ -176,7 +176,7 @@
 
 <!-- ***** Blog Area Start ***** -->
 <section class="blog_area education-version section_padding_100_70" id="mini-cursos">
-    <div class="container">
+    <div class="container wow fadeInUp" data-wow-delay=".2s">
         <div class="row">
             <div class="col-12">
                 <div class="edu_section_heading">
@@ -188,7 +188,7 @@
         <div class="row">
 
             @foreach ($miniCursos as $value)
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".4s">
                 <div class="single_latest_news_area m-bottom-15">
                     <div class="single_latest_news_img_area">
                         <div class="image-minicurso" style="background-image: url({!!($value->image)!!})"></div>

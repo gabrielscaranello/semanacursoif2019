@@ -14,14 +14,14 @@
 
 --}}
 
-<div class="left-menu" :class="leftMenu">
+<div class="left-menu wow fadeInLeft" :class="leftMenu">
     <div>
         <ul v-if="userdata" class="navbar-nav align-to-right btn nav-logon">
             <li class="dropdown open">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle active" aria-expanded="true">
                     @{{userdata.name}} </a>
                 <ul class="dropdown-menu">
-                    <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li>
+                    {{-- <li class="nav-item"><a href="/perfil" class="nav-link"><i class="fa fa-user mr-2"></i> Minha Conta</a></li> --}}
                     <li class="nav-item"><a href="#" @click.prevent.stop="logout(true)" class="nav-link"><i class="fa fa-sign-out-alt  mr-2"></i> Sair</a></li>
                 </ul>
             </li>
