@@ -17,14 +17,11 @@ class CreateCronogramsTable extends Migration
             $table->increments('id');
             $table->string('type');
             $table->string('title');
-            $table->string('palestrante')->nullable();
-            $table->string('tema_paletra')->nullable();
             $table->string('instituicao')->nullable();
             $table->string('auxiliares')->nullable();
             $table->string('local')->nullable();
-            $table->string('ministrante_minicurso')->nullable();
+            $table->string('ministrante')->nullable();
             $table->string('monitor')->nullable();
-            $table->string('professor')->nullable();
             $table->time('horario_inicio');
             $table->time('horario_fim');
             $table->date('dia_mes');

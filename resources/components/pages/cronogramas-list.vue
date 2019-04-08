@@ -1,7 +1,7 @@
 <template>
 <div class="row">
   <div class="col-lg-12 mb-3">
-    <b-card header="Mini Cursos Cadastrados" header-tag="h4" class="bg-success-card">
+    <b-card header="Cronograma" header-tag="h4" class="bg-success-card">
       <v-client-table :columns="columnsnew" :data="datanew" :options="optionsnew">
         <div slot="edit" slot-scope="props">
           <a :href="'admin#/cronograma/'+props.row.id" class=""><i class="text-info fa fa-edit"></i></a>
@@ -30,7 +30,7 @@ export default {
   },
   data() {
     return {
-      columnsnew: ['id', 'name', 'edit'],
+      columnsnew: ['id', 'title','ministrante', 'edit'],
       datanew: [],
       optionsnew: {
         sortIcon: {
@@ -45,10 +45,11 @@ export default {
         },
         headings: {
           id: 'Id',
-          name: 'Nome',
+          title: 'Titulo',
+          ministrante: 'Ministrante',
           edit: 'Ações',
         },
-        filterable: ['id', 'name', 'content']
+        filterable: ['id', 'title', 'ministrante']
       }
     }
   },

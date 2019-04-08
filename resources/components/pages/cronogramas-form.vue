@@ -8,61 +8,103 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Nome do Mini Curso: </label>
-                                    <input type="text" v-model="formData.name" id="title" class="form-control">
+                                    <label for="title" class="label-control">Tipo: </label>
+                                    <select v-model="formData.type" id="title" class="form-control">
+                                        <option value="palestra">Palestra</option>
+                                        <option value="mini-curso">Minicurso</option>
+                                        <option value="oficina">Oficina</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Categoria: </label>
-                                    <input type="text" v-model="formData.category" id="title" class="form-control">
+                                    <label for="title" class="label-control">Titulo: </label>
+                                    <input type="text" v-model="formData.title" id="title" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" v-if="formData.type == 'palestra'">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Instituição: </label>
+                                    <input type="text" v-model="formData.instituicao" id="instituicao" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Logo: </label>
-                                </div>
-                                <div class="col-12 banner" :style="{background: 'url('+formData.image+')'}">
-                                    <label id="banner_input_label" for="banner_input">Clique para alterar a imagem da postagem</label>
-                                    <input id="banner_input" type="file" @change="uploadImage">
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group col-12">
-                                    <label for="title" class="label-control">Descrição: </label>
-                                    <input type="text" v-model="formData.descript" id="title" class="form-control">
+                                    <label for="title" class="label-control">Auxiliares: </label>
+                                    <input type="text" v-model="formData.auxiliares" id="auxiliares" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Responsáveis: </label>
-                                    <input type="text" v-model="formData.autors" id="title" class="form-control">
+                                    <label for="title" class="label-control">Local: </label>
+                                    <input type="text" v-model="formData.local" id="local" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Data: </label>
-                                    <input type="text" v-model="formData.day" id="title" class="form-control">
+                                    <label for="title" class="label-control">Ministrante: </label>
+                                    <input type="text" v-model="formData.ministrante" id="ministrante" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12" v-if="formData.type == 'mini-curso'">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Monitor: </label>
+                                    <input type="text" v-model="formData.monitor" id="monitor" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Hora: </label>
-                                    <input type="text" v-model="formData.hour" id="title" class="form-control">
+                                    <label for="title" class="label-control">Horario Inicio: </label>
+                                    <input type="time" v-model="formData.horario_inicio" id="horario_inicio" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
-                                    <label for="title" class="label-control">Duração: </label>
-                                    <input type="text" v-model="formData.hours" id="title" class="form-control">
+                                    <label for="title" class="label-control">Horario Fim: </label>
+                                    <input type="time" v-model="formData.horario_fim" id="horario_fim" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Dia: </label>
+                                    <input type="date" v-model="formData.dia_mes" id="dia_mes" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Dia Semana: </label>
+                                    <select v-model="formData.dia_semana" id="monitor" class="form-control">
+                                        <option value="Segunda-Feira">Segunda-Feira</option>
+                                        <option value="Terça-Feira">Terça-Feira</option>
+                                        <option value="Quarta-Feira">Quarta-Feira</option>
+                                        <option value="Quinta-Feira">Quinta-Feira</option>
+                                        <option value="Sexta-Feira">Sexta-Feira</option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Cor: </label>
+                                    <select v-model="formData.cor" id="monitor" class="form-control">
+                                        <option value="">Branco</option>
+                                        <!-- <option value="">Verde</option>
+                                      <option value="">Vermelho</option>
+                                      <option value="">Amarelo</option>
+                                      <option value="">Marrom</option> -->
+                                    </select>
                                 </div>
                             </div>
 
@@ -95,7 +137,7 @@
 </template>
 <script>
 export default {
-    name: "mini-curso-edit",
+    name: "cronograma-edit",
     mounted: function() {
         this.getdata();
     },
@@ -105,15 +147,13 @@ export default {
                 placeholder: '',
                 readOnly: true,
             },
-            formData: {
-                image: '/uploads/image/noImage-large.png'
-            },
+            formData: {},
         };
     },
     methods: {
         getdata() {
             if (this.$route.params.id) {
-                let url = `/mini-curso/getItem`;
+                let url = `/cronograma/getItem`;
 
                 let vue = this;
                 axios.post(url, vue.$route.params).then(function(response) {
@@ -132,8 +172,8 @@ export default {
 
             console.log(this.formData);
 
-            let url = '/mini-curso/store';
-            if (this.formData.id) url = '/mini-curso/update';
+            let url = '/cronograma/store';
+            if (this.formData.id) url = '/cronograma/update';
 
             let vue = this;
             axios.post(url, vue.formData).then(function(response) {
@@ -144,7 +184,7 @@ export default {
                         buttons: false,
                         timer: 2000,
                     });
-                    vue.$router.push('/mini-cursos');
+                    vue.$router.push('/cronogramas');
                 } else {
                     swal("Desculpe! Ocorreu um erro ao realizar o registro. Por favor, tente novamente mais tarde.", {
                         icon: "error",
@@ -156,7 +196,7 @@ export default {
             });
         },
         goBack() {
-            this.$router.push('/mini-cursos');
+            this.$router.push('/cronogramas');
         },
 
         uploadImage: function(e) {
@@ -170,7 +210,7 @@ export default {
             var vue = this;
 
             reader.onload = (e) => {
-                let url = '/mini-curso/uploadBanner';
+                let url = '/cronograma/uploadBanner';
                 let data = {
                     'image': e.target.result,
                 };
