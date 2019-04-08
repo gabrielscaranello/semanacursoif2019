@@ -5,6 +5,26 @@ const layout = [{
             title: "Dashboard",
         }
     }, {
+        path: '/cronogramas',
+        component: resolve => require(['pages/cronogramas-list'], resolve),
+        meta: {
+            title: "Mini Cursos",
+        }
+    },
+    {
+        path: '/cronograma',
+        component: resolve => require(['pages/cronogramas-form'], resolve),
+        meta: {
+            title: "Mini Cursos",
+        }
+    },
+    {
+        path: '/cronograma/:id',
+        component: resolve => require(['pages/cronogramas-form'], resolve),
+        meta: {
+            title: "Mini Cursos",
+        }
+    }, {
         path: '/mini-cursos',
         component: resolve => require(['pages/mini-cursos-list'], resolve),
         meta: {

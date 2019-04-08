@@ -43,26 +43,26 @@
                         <div class="coming_soon_timer">
                             <ul>
                                 <!-- Please use event time this format: YYYY/MM/DD hh:mm:ss -->
-                                <li class="bg-primary text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="450"  data-aos-duration="400">
+                                <li class="bg-primary text-white" data-aos="fade-down"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="450"  data-aos-duration="400">
                                     <span class="days">
                                         @{{count.days}}</span>d
                                 </li>
-                                <li class="bg-info text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="900"  data-aos-duration="400"><span class="hours">
+                                <li class="bg-info text-white" data-aos="fade-down"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="900"  data-aos-duration="400"><span class="hours">
                                         @{{count.hours}}</span>h
                                 </li>
-                                <li class="bg-success text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1350"  data-aos-duration="400"><span class="minutes">
+                                <li class="bg-success text-white" data-aos="fade-down"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1350"  data-aos-duration="400"><span class="minutes">
                                         @{{count.minutes}}</span>m
                                 </li>
-                                <li class="bg-dark text-white" data-aos="fade-down" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1800"  data-aos-duration="400"><span class="seconds">
+                                <li class="bg-dark text-white" data-aos="fade-down"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="1800"  data-aos-duration="400"><span class="seconds">
                                         @{{count.seconds}}</span>s
                                 </li>
                             </ul>
                         </div>
                         <div class="subscribe_bar m-xs-top-15">
-                            <p data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2000"  data-aos-duration="400">Nosso website está em construção.</p>
-                            <p class="p-0" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2350"  data-aos-duration="400">Estaremos aqui em breve com nosso novo site incrível.</p>
+                            <p data-aos="fade-up"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2000"  data-aos-duration="400">Nosso website está em construção.</p>
+                            <p class="p-0" data-aos="fade-up"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2350"  data-aos-duration="400">Estaremos aqui em breve com nosso novo site incrível.</p>
                         </div>
-                        <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700"  data-aos-duration="400">
+                        <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up"  data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700"  data-aos-duration="400">
                             <a target="_blank" href="https://www.facebook.com/ifpr.assis/" class="csi csi-circle csi-sm csi-facebook-active"><i class="ion-social-facebook-outline" aria-hidden="true"></i></a>
                             <a target="_blank "href="http://assis.ifpr.edu.br/" class="csi csi-circle csi-sm csi-github-active"><i class="fas fa-globe-americas"></i></a>
                         </div>

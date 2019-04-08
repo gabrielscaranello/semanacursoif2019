@@ -14,6 +14,18 @@ const menu_items = [{
             link: '/mini-curso',
             icon: 'fa fa-plus'
         }]
+    }, {
+        name: 'Cronograma',
+        icon: 'fa fa-info',
+        child: [{
+            name: 'Gerenciar',
+            link: '/cronogramas',
+            icon: 'fa fa-cogs'
+        }, {
+            name: 'Cadastrar',
+            link: '/cronograma',
+            icon: 'fa fa-plus'
+        }]
     },
     {
         name: 'Palestras',

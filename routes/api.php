@@ -36,6 +36,18 @@ Route::group(['prefix' => 'mini-curso'], function () {
 
 
 
+//gerenciamento de cronograma
+Route::group(['prefix' => 'cronograma'], function () {
+    Route::get('/list', 'Api\CronogramaController@list');
+    Route::post('/getItem', 'Api\CronogramaController@getItem');
+    Route::post('/uploadBanner', 'Api\CronogramaController@uploadBanner');
+    Route::post('/store', 'Api\CronogramaController@store');
+    Route::post('/update', 'Api\CronogramaController@update');
+    Route::post('/delete', 'Api\CronogramaController@delete');
+});
+
+
+
 //gerenciamento de palestra
 Route::group(['prefix' => 'palestra'], function () {
     Route::get('/list', 'Api\PalestraController@list');
