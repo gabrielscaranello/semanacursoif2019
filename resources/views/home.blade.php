@@ -34,6 +34,9 @@
     </div>
 </section>
 
+<h1>CRONOGRAMA</h1>
+@include('layouts.cronograma')
+
 <!-- ***** Feature Area Start ***** -->
 <section class="special_feature_area education-version section_padding_100_70" id="evento">
     <div class="container wow fadeInUp" data-wow-delay=".1s">
