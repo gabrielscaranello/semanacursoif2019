@@ -22,6 +22,8 @@
     <link href="{!!asset('assets/site/css/responsive/responsive.css')!!}" rel="stylesheet">
 
     <link href="{!!asset('assets/site/css/cronogram.css')!!}" rel="stylesheet">
+    <link rel="stylesheet" href="{!!asset('assets/site/css/buttontop.css')!!}">
+
 
     <!-- Switch Fonts -->
     <link href="{!!asset('assets/site/css/fonts/opensans.css')!!}" rel="stylesheet">
@@ -68,9 +70,9 @@
                             </div>
 
                             <div class="subscribe_bar m-xs-top-15">
-                                <p data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2600" data-aos-duration="400">Mas ver o cronocrama do evento clicando no botão abaixo.</p>
+                                <p data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2600" data-aos-duration="400">Mas você pode ver o cronocrama parcial do evento clicando no botão abaixo.</p>
                                 <button data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2800" data-aos-duration="400" type="button" class="btn btn-primary" @click="showCronogram"
-                                name="button">Cronograma</button>
+                                name="button"><i class="fa fa-clock" aria-hidden="true"></i> Cronograma</button>
                             </div>
 
 
@@ -87,17 +89,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="edu_section_heading" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="400" data-aos-duration="400">
+                        <div class="edu_section_heading" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-delay="400" data-aos-duration="400">
                             <i class="fa fa-clock" aria-hidden="true"></i>
                             <h3>Cronograma</h3>
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-up"  data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="800" data-aos-duration="500">
+                <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="800" data-aos-duration="500">
                     @include('layouts.cronograma')
                 </div>
+                <div class="text-center social_share_area" data-aos="fade-right" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="200" data-aos-duration="400">
+                    <button class="btn btn-primary" style="background: #2c3e50" @click="hideCronogram"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button>
+                </div>
 
-                <button class="btn btn-primary" @click="hideCronogram">Voltar</button>
             </div>
         </section>
     </div>
