@@ -1,4 +1,4 @@
-<div class="container-fluid wow fadeInUp" data-wow-delay=".6s">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12 px-1">
             @foreach ($cronograms as $element)

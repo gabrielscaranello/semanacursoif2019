@@ -69,11 +69,12 @@
 
                             <div class="subscribe_bar m-xs-top-15">
                                 <p data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2600" data-aos-duration="400">Mas ver o cronocrama do evento clicando no botão abaixo.</p>
-                                <button data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2800" data-aos-duration="400" type="button" class="btn btn-primary" @click="showCronogram" name="button">Cronograma</button>
+                                <button data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2800" data-aos-duration="400" type="button" class="btn btn-primary" @click="showCronogram"
+                                name="button">Cronograma</button>
                             </div>
 
 
-                            <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2700" data-aos-duration="400">
+                            <div class="social_share_area m-top-30 m-xs-top-15 " data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="3000" data-aos-duration="400">
                                 <a target="_blank" href="https://www.facebook.com/ifpr.assis/" class="csi csi-circle csi-sm csi-facebook-active"><i class="ion-social-facebook-outline" aria-hidden="true"></i></a>
                                 <a target="_blank " href="http://assis.ifpr.edu.br/" class="csi csi-circle csi-sm csi-github-active"><i class="fas fa-globe-americas"></i></a>
                             </div>
@@ -83,16 +84,18 @@
             </div>
         </div>
         <section v-if="cronogram == true" class="special_feature_area education-version section_padding_100_70" id="cronograma">
-            <div class="container wow fadeInUp" data-wow-delay=".4s">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="edu_section_heading">
+                        <div class="edu_section_heading" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="400" data-aos-duration="400">
                             <i class="fa fa-clock" aria-hidden="true"></i>
                             <h3>Cronograma</h3>
                         </div>
                     </div>
                 </div>
-                @include('layouts.cronograma')
+                <div data-aos="fade-up"  data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="800" data-aos-duration="500">
+                    @include('layouts.cronograma')
+                </div>
 
                 <button class="btn btn-primary" @click="hideCronogram">Voltar</button>
             </div>
