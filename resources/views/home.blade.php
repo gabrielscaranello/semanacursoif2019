@@ -2,6 +2,7 @@
 
 @section('onlypagestyle')
 <link href="{!!asset('assets/site/css/home.css')!!}" rel="stylesheet">
+<link href="{!!asset('assets/site/css/cronogram.css')!!}" rel="stylesheet">
 @endsection
 @section('onlypagescript')
 

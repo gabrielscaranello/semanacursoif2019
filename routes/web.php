@@ -9,6 +9,4 @@ Route::get('admin', array('as' => 'admin', function () {
 }));
 
 Route::get('/tadsdadepre-remediocontrolado', 'Site\HomeController@index');
-Route::get('/', function(){
-  return view('coming-soon');
-});
+Route::get('/', 'Site\HomeController@comingSon');

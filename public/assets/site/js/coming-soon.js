@@ -8,6 +8,7 @@ new Vue({
             minutes: null,
             seconds: null
         },
+        cronogram: false,
     },
     beforeMount: function() {
         this.currentCount()
@@ -30,6 +31,17 @@ new Vue({
 
 
             }, 1000);
-        }
+        },
+        showCronogram: function() {
+            this.cronogram = true;
+        },
+        hideCronogram: function() {
+            let vue = this;
+            $(window).scrollTop(0);
+            setTimeout(function() {
+                vue.cronogram = false;
+            }, 0);
+        },
+
     },
 });
