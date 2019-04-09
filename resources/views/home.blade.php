@@ -13,14 +13,10 @@
     <div id="carouselTop" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselTop" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselTop" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/edu-3.jpg')!!}" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/edu-2.jpg')!!}" alt="Second slide">
+                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/semana-de-cursos-ifpr-2019.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselTop" role="button" data-slide="prev">

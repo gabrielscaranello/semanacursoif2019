@@ -99,7 +99,12 @@
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Cor: </label>
                                     <select v-model="formData.cor" id="monitor" class="form-control">
-                                        <option value="">Branco</option>
+                                        <option value="#fead1b">Amarelo</option>
+                                        <option value="#126dd7">Azul</option>
+                                        <option value="#490161">Roxo</option>
+                                        <option value="#28a745">Verde</option>
+                                        <option value="#a70000">Vermelho</option>
+
                                         <!-- <option value="">Verde</option>
                                       <option value="">Vermelho</option>
                                       <option value="">Amarelo</option>
