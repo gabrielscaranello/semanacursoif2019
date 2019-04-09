@@ -56,7 +56,17 @@
                             <div class="col-md-12" v-if="formData.type == 'mini-curso'">
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Monitor: </label>
-                                    <input type="text" v-model="formData.monitor" id="monitor" class="form-control">
+                                    <select v-model="formData.monitor" id="monitor" class="form-control">
+                                      <option value="Equipe de Minicurso">Equipe de Minicurso</option>
+                                      <option value="Equipe de Forum">Equipe de Forum</option>
+                                      <option value="Equipe de Palestras">Equipe de Palestras</option>
+                                      <option value="Equipe de Recepção">Equipe de Recepção</option>
+                                      <option value="Equipe de Credenciamento">Equipe de Credenciamento</option>
+                                      <option value="Equipe de Saude e Segurança">Equipe de Saúde e Segurança</option>
+                                      <option value="Equipe de Divulgação">Equipe de Divulgação</option>
+                                      <option value="Equipe de Certificação">Equipe de Certificação</option>
+                                      <option value="Equipe de Coffe Break">Equipe de Coffe Break</option>
+                                    </select>
                                 </div>
                             </div>
 
