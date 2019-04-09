@@ -52,8 +52,17 @@
                             <div class="col-md-12">
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Local: </label>
-                                    <input type="text" v-model="formData.local" id="local" class="form-control">
-                                </div>
+                                    <select v-model="formData.local" id="local" class="form-control">
+                                      <option value="Laboratório 1">Laboratório 1</option>
+                                      <option value="Laboratório 2">Laboratório 2</option>
+                                      <option value="Laboratório 3">Laboratório 3</option>
+                                      <option value="Laboratório 4">Laboratório 4</option>
+                                      <option value="Sala 5">Sala 5</option>
+                                      <option value="Sala 6">Sala 6</option>
+                                      <option value="Auditório">Auditório</option>
+
+                                    </select>
+                                    </div>
                             </div>
 
                             <div class="col-md-12">
