@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="overflow-x: hidden !important">
     <!-- Preloader Start -->
     <div id="preloader">
         <div class="classy-load"></div>
@@ -85,8 +85,8 @@
                 </div>
             </div>
         </div>
-        <section v-if="cronogram == true" class="special_feature_area education-version section_padding_100_70" id="cronograma">
-            <div class="container">
+        <div v-if="cronogram == true" class="special_feature_area education-version section_padding_100_70" id="cronograma" style="max-width: 100%">
+            <div class="container w-100 h-100">
                 <div class="row">
                     <div class="col-12">
                         <div class="edu_section_heading" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-delay="400" data-aos-duration="400">
@@ -103,7 +103,7 @@
                 </div>
 
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- >>>>>>>>>>>>>>>> All jQuery Plugins <<<<<<<<<<<<<<<< -->
