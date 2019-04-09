@@ -16,22 +16,6 @@
                         {{substr($value->horario_inicio, 0,5)}} - {{substr($value->horario_fim, 0, 5)}}
                     </div>
                     <div class="item py-2 col-12 col-md-9 col-lg-10 text-left text-light" style="background-color: {{$value->cor}}">
-<<<<<<< Updated upstream
-                      <p class="text-center">
-                          <strong>Título: </strong>{{$value->title}}
-                      </p>
-
-                      @if ($value->ministrante)
-                        <p class="text-center">
-                            <b>Palestrante: </b>{{$value->ministrante}}
-                        </p>
-                      @endif
-
-
-                      <p class="text-center">
-                          <b>Local: </b>{{$value->local}}
-                      </p>
-=======
 
                         <p class="text-left mb-0">
                             <strong>Título:</strong> {{$value->title}}
@@ -46,7 +30,6 @@
                             <b>Local:</b> {{$value->local}}
                         </p>
 
->>>>>>> Stashed changes
                     </div>
                 </div>
                 @endif
@@ -68,23 +51,12 @@
                                 @foreach ($element as $value)
                                 @if ($value->type == 'mini-curso')
                                 <div class="item item-secondary py-2 col-12 col-lg-6 text-left text-light" style="background-color: {{$value->cor}}">
-<<<<<<< Updated upstream
-                                    <p class="text-center">
-                                        <strong>Título: </strong>{{$value->title}}
-                                    </p>
-                                    <p class="text-center">
-                                        <b>Por: </b>{{$value->ministrante}}
-                                    </p>
-                                    <p class="text-center">
-                                        <b>Local: </b>{{$value->local}}
-=======
                                     <p class="text-left my-0">
                                         <strong>Título:</strong> {{$value->title}}
                                     </p>
 
                                     <p class="text-left my-0">
                                         <b>Por:</b> {{$value->ministrante}}
->>>>>>> Stashed changes
                                     </p>
                                     <p class="text-left my-0">
                                         <b>Local:</b> {{$value->local}}
