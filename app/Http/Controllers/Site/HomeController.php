@@ -16,7 +16,7 @@ class HomeController extends Controller
         $palestras = Palestra::where(['status' => 1])->get();
         $miniCursos = MiniCurso::where(['status' => 1])->get();
         $gallery = Gallery::where(['status' => 1])->get();
-        $cronograms = Cronogram::where(['status' =>1])->orderBy('dia_mes', 'ASC')->orderBy('horario_inicio', 'ASC')->get();
+        $cronograms = Cronogram::where(['status' =>1])->orderBy('dia_mes', 'ASC')->orderBy('horario_inicio', 'ASC')->orderBy('local', 'ASC')->get();
 
 
 
@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     public function comingSon()
     {
-        $cronograms = Cronogram::where(['status' =>1])->orderBy('dia_mes', 'ASC')->orderBy('horario_inicio', 'ASC')->get();
+        $cronograms = Cronogram::where(['status' =>1])->orderBy('dia_mes', 'ASC')->orderBy('horario_inicio', 'ASC')->orderBy('local', 'ASC')->get();
 
         $newCronogram = [];
         foreach ($cronograms as $key => $value) {
