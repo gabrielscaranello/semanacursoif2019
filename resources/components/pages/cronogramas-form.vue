@@ -123,6 +123,7 @@
                                         <option value="#490161">Roxo</option>
                                         <option value="#28a745">Verde</option>
                                         <option value="#a70000">Vermelho</option>
+                                        <option value="#ff00ed">Rosa</option>
 
                                         <!-- <option value="">Verde</option>
                                       <option value="">Vermelho</option>
