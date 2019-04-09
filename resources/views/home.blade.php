@@ -118,8 +118,8 @@
 
 
 <!-- ***** Feature Area Start ***** -->
-<section class="special_feature_area education-version section_padding_100_70" id="evento">
-    <div class="container wow fadeInUp" data-wow-delay=".5s">
+<section class="special_feature_area education-version section_padding_100_70" id="cronograma">
+    <div class="container wow fadeInUp" data-wow-delay=".4s">
         <div class="row">
             <div class="col-12">
                 <div class="edu_section_heading">
