@@ -13,10 +13,18 @@
     <div id="carouselTop" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselTop" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselTop" data-slide-to="1"></li>
+            <li data-target="#carouselTop" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="{!!asset('assets/site/img/bg-img/semana-de-cursos-ifpr-2019.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
+                <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019-02.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019-03.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselTop" role="button" data-slide="prev">
@@ -30,8 +38,6 @@
     </div>
 </section>
 
-
-@include('layouts.cronograma')
 
 <!-- ***** Feature Area Start ***** -->
 <section class="special_feature_area education-version section_padding_100_70" id="evento">
@@ -106,6 +112,23 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+<!-- ***** Special Feature Area End ***** -->
+
+
+<!-- ***** Feature Area Start ***** -->
+<section class="special_feature_area education-version section_padding_100_70" id="evento">
+    <div class="container wow fadeInUp" data-wow-delay=".5s">
+        <div class="row">
+            <div class="col-12">
+                <div class="edu_section_heading">
+                    <i class="fa fa-clock" aria-hidden="true"></i>
+                    <h3>Cronograma</h3>
+                </div>
+            </div>
+        </div>
+        @include('layouts.cronograma')
     </div>
 </section>
 <!-- ***** Special Feature Area End ***** -->
