@@ -33,7 +33,7 @@
 
 </head>
 
-<body style="overflow-x: hidden !important">
+<body>
     <!-- Preloader Start -->
     <div id="preloader">
         <div class="classy-load"></div>
@@ -85,8 +85,8 @@
                 </div>
             </div>
         </div>
-        <div v-if="cronogram == true" class="special_feature_area education-version section_padding_100_70" id="cronograma" style="max-width: 100%">
-            <div class="container w-100 h-100">
+        <section v-if="cronogram == true" class="special_feature_area education-version section_padding_100_70" id="cronograma">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="edu_section_heading" data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-delay="400" data-aos-duration="400">
@@ -98,12 +98,12 @@
                 <div data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-offset="0" data-aos-delay="800" data-aos-duration="500">
                     @include('layouts.cronograma')
                 </div>
-                <div class="col-12 text-center social_share_area m-top-30 subscribe_bar m-xs-top-15 " data-aos="fade-left" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="200" data-aos-duration="400">
+                <div class="text-center social_share_area" data-aos="fade-right" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="200" data-aos-duration="400">
                     <button class="btn btn-primary" style="background: #2c3e50" @click="hideCronogram"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button>
                 </div>
 
             </div>
-        </div>
+        </section>
     </div>
 
     <!-- >>>>>>>>>>>>>>>> All jQuery Plugins <<<<<<<<<<<<<<<< -->
