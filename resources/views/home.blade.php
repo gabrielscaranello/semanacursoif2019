@@ -30,7 +30,7 @@
     </div>
 </section>
 
-<h1>CRONOGRAMA</h1>
+
 @include('layouts.cronograma')
 
 <!-- ***** Feature Area Start ***** -->
