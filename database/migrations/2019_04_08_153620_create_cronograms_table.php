@@ -21,6 +21,7 @@ class CreateCronogramsTable extends Migration
             $table->string('auxiliares')->nullable();
             $table->string('local')->nullable();
             $table->string('ministrante')->nullable();
+            $table->string('turma_minicurso')->nullable();
             $table->string('monitor')->nullable();
             $table->time('horario_inicio');
             $table->time('horario_fim');
