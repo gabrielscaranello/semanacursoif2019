@@ -20,6 +20,75 @@
         <form>
             <div class="row">
                 <div class="col-12">
+                    <h2>Faça seu Cadastro</h2>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Nome Completo</label>
+                        <input v-model="formRegister.nome" type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">RA</label>
+                        <input v-model="formRegister.ra" type="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Cruso</label>
+                        <input v-model="formRegister.curso" type="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Turma</label>
+                        <input v-model="formRegister.turma" type="email" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Email</label>
+                        <input v-model="formRegister.email" type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Senha</label>
+                        <input v-model="formRegister.password" type="password" class="form-control">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="label-control">Confirmação de Senha</label>
+                        <input v-model="formRegister.password" type="password" class="form-control">
+                    </div>
+                </div>
+
+
+                <div class="col-12">
+                    <button type="submit" @click.prevent.stop="login" class="btn btn-block btn-success mb-2">Entrar <i class="fa fa-paper-plane"></i></button>
+                </div>
+
+                <div class="col-12">
+                    Já possui registro?
+                </div>
+                <div class="col-12">
+                    <a class="text-info" href="#" @click.prevent.stop="closeloginmodal()" data-toggle="modal" data-target="#registerModal">
+                    Faça Login
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-12 login-form" v-if="userdata" :class="{active:leftMenuForm == 'login'}">
+        <form>
+            <div class="row">
+                <div class="col-12">
                     <h2>Faça Login</h2>
                 </div>
                 <div class="col-12">
@@ -51,6 +120,7 @@
             </div>
         </form>
     </div>
+
     <div class="col-12 profile" v-if="userdata">
         <div class="row">
             <div class="col-12">
