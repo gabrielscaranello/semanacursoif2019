@@ -113,6 +113,16 @@
 
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Cor: </label>
+                                    <select v-model="formData.turma" id="monitor" class="form-control">
+                                        <option value="IIN">Integrado</option>
+                                        <option value="TADS">TADS</option>
+
+                                    </select>
+                                </div>
+                            </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">

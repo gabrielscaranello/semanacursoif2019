@@ -26,6 +26,7 @@ class CreateCronogramsTable extends Migration
             $table->time('horario_fim');
             $table->date('dia_mes');
             $table->string('dia_semana');
+            $table->char('curso', 4)->nullable();
             $table->string('cor')->nullable();
             $table->integer('status')->default(1);
             $table->timestamps();

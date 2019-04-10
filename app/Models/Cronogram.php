@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cronogram extends Model
 {
-protected $fillable = [
+    protected $fillable = [
 'type',
 'title',
 'instituicao',
@@ -18,6 +18,7 @@ protected $fillable = [
 'horario_fim',
 'dia_mes',
 'dia_semana',
+'turma',
 'cor',
 'status'
 ];

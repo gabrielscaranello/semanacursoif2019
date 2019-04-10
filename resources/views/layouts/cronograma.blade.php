@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 px-1">
-            @foreach ($cronograms as $element)
+            @foreach ($cronogramTADS as $element)
             <div class="col-12 mb-3 day">
                 <div class="row text-light bg-dark py-2 font-weight-bold">
                     <div class="col-12 col-md-6 text-left">
