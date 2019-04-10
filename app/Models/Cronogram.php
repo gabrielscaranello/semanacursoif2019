@@ -13,6 +13,7 @@ class Cronogram extends Model
 'auxiliares',
 'local',
 'ministrante',
+'turma_minicurso',
 'monitor',
 'horario_inicio',
 'horario_fim',

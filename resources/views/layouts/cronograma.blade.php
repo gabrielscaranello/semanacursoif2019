@@ -58,6 +58,12 @@
                                     <p class="text-left my-0">
                                         <b>Por:</b> {{$value->ministrante}}
                                     </p>
+
+                                    @if ($value->turma_minicurso)
+                                    <p class="text-left my-0">
+                                        <b>Turma:</b> {{$value->turma_minicurso}}
+                                    </p>
+                                    @endif
                                     <p class="text-left my-0">
                                         <b>Local:</b> {{$value->local}}
                                     </p>
