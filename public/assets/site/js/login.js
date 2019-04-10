@@ -2,10 +2,12 @@ new Vue({
     el: '#app',
     data: {
         formLogin: {},
+        formRegister: {},
         userdata: {},
         images: [],
         index: null,
-        leftMenu: 'closed'
+        leftMenu: 'closed',
+        leftMenuForm: 'login'
     },
     mounted: function() {
         this.loadLoginInfo();
@@ -13,20 +15,19 @@ new Vue({
     },
     methods: {
         getGalleryImages: function() {
-          let url = '/api/gallery/list'
-          let vue = this;
-          axios.get(url).then(function(response) {
-            for (var i = 0; i < response.data.data.length; i++) {
-            vue.images.push(response.data.data[i].image);
-            }
-          })
+            let url = '/api/gallery/list'
+            let vue = this;
+            axios.get(url).then(function(response) {
+                for (var i = 0; i < response.data.data.length; i++) {
+                    vue.images.push(response.data.data[i].image);
+                }
+            })
         },
-        alterLeft: function() {
-            if (this.leftMenu == 'open') {
-                this.leftMenu = 'closed';
-            } else {
-                this.leftMenu = 'open';
-            }
+        openLeft: function() {
+            this.leftMenu = 'open';
+        },
+        closeLeft: function() {
+            this.leftMenu = 'closed';
         },
         login: function() {
             swal({
@@ -49,6 +50,41 @@ new Vue({
                     });
                 } else {
                     swal('Usuário ou senha invalidos.', {
+                        icon: "error",
+                        buttons: false,
+                        timer: 2000,
+                    });
+                }
+            }).catch(function() {
+                swal('Ocorreu um erro, tente novamente mais tarde.', {
+                    icon: "error",
+                    buttons: false,
+                    timer: 2000,
+                });
+            });
+        },
+        register: function() {
+            swal({
+                icon: 'info',
+                title: 'Aguarde',
+                text: "Realizando cadastro...",
+                buttons: false
+            });
+            const url = '/api/users/register';
+            let vue = this;
+            axios.post(url, vue.formLogin).then(function(response) {
+                if (response.data.status == 'success') {
+                    // localStorage.user = JSON.stringify(response.data.user);
+                    // vue.userdata = response.data.user;
+                    $('#registerModal').modal('hide')
+                    let msg = 'Bem vindo, ' + response.data.user.name + '. Cadastro realizado com sucesso, iremos fazer seu login...';
+                    swal(msg, {
+                        icon: "success",
+                        buttons: false,
+                        timer: 2000,
+                    });
+                } else {
+                    swal('Desculpe, ocorreu um erro, tente novamente mais tarde.', {
                         icon: "error",
                         buttons: false,
                         timer: 2000,

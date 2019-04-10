@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{!!asset('assets/site/css/core-style.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/style.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/buttontop.css')!!}">
+    <link rel="stylesheet" href="{!!asset('assets/site/css/left-bar.css')!!}">
 
     <!-- Responsive css -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/responsive/responsive.css')!!}">
@@ -30,5 +31,7 @@
     <link href="{!!asset('assets/site/css/fonts/opensans.css')!!}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     @yield('onlypagestyle')
 </head>

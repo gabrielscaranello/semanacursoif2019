@@ -1,6 +1,5 @@
 <?php
 
-Auth::routes();
 
 
 
@@ -9,5 +8,6 @@ Route::get('admin', array('as' => 'admin', function () {
 }));
 
 Route::get('/revisao-ortografica', 'Site\HomeController@index');
-Route::get('/algomaisfacil', 'Site\HomeController@index');
+Route::get('/sacidetresperna', 'Site\HomeController@index');
 Route::get('/', 'Site\HomeController@comingSon');
+Route::get('/register', 'Site\HomeController@register');

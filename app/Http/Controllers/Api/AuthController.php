@@ -22,6 +22,10 @@ class AuthController extends Controller
              'id' => auth()->user()->id,
              'name' => auth()->user()->name,
              'avatar' => auth()->user()->avatar,
+             'estudante' =>auth()->user()->estudante,
+             'curso' =>auth()->user()->curso,
+             'ano' =>auth()->user()->ano,
+             'ra' =>auth()->user()->ra,
            ];
             User::where('id', $user['id'])->update(['token' => $token]);
             $user['token'] = $token;

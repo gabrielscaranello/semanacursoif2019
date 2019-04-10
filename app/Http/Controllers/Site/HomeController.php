@@ -55,4 +55,8 @@ class HomeController extends Controller
         $cronograms = $newCronogram;
         return view('coming-soon', compact('cronograms'));
     }
+    public function register()
+    {
+        return view('register');
+    }
 }

@@ -267,7 +267,7 @@ img {
 
 #scrollUp {
     background-color: #151515;
-    border-radius: 100px;
+    border-radius: 50%;
     bottom: 30px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
     color: #fff;
@@ -278,6 +278,7 @@ img {
     right: 30px;
     text-align: center;
     width: 40px;
+    z-index: 999 !important;
 }
 
 #scrollUp:hover {
