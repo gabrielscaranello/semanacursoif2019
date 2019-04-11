@@ -262,7 +262,7 @@ img {
 }
 
 #btn-1 {
-    margin-right: 15px
+    margin-left: 15px
 }
 
 #scrollUp {
@@ -275,7 +275,7 @@ img {
     height: 40px;
     line-height: 40px;
     outline: medium none;
-    right: 30px;
+    left: 30px;
     text-align: center;
     width: 40px;
     z-index: 999 !important;
