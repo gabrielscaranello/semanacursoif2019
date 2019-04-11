@@ -12,7 +12,7 @@
                     </div>
                     <div class="profile-image" :style="'background: url('+formRegister.avatar+')'">
                       <label id="banner_input_label" for="banner_input"></label>
-                      <input id="banner_input" type="file" @change="createAvatar">
+                      <input id="banner_input" type="file" @change="uploadImage">
                     </div>
                     <div class="col-12">
                         <div class="form-group">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="profile-image" :style="'background: url('+userdata.avatar+')'">
                   <label id="banner_input_label" for="banner_input"></label>
-                  <input id="banner_input" type="file" @change="updateAvatar">
+                  <input id="banner_input" type="file" @change="uploadImage">
                 </div>
                 <div class="col-12">
                     <p class="text-dark">

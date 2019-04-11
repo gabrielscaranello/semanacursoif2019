@@ -185,50 +185,28 @@ new Vue({
             }
 
         },
-        updateAvatar: function(e) {
+        uploadImage: function(e) {
             var files = e.target.files || e.dataTransfer.files;
             if (!files.length) return;
-            vue.this;
-            this.createImageUp(files[0], vue);
+
+            this.createImage(files[0]);
         },
-        createImageUp: function(file) {
+        createImage(file) {
             var reader = new FileReader();
-            var vue = this;
 
             reader.onload = (e) => {
                 let url = '/api/users/uploadAvatar';
                 let data = {
                     'avatar': e.target.result,
-                    'id': vue.userdata.id
                 };
                 let vue = this;
                 axios.post(url, data).then(function(response) {
-                    vue.userdata.avatar = response.data.avatar;
-                    localStorage.userdata = JSON.stringify(vue.userdata);
-                });
-            };
-            reader.readAsDataURL(file);
-        },
-        createAvatar: function(e) {
-            var files = e.target.files || e.dataTransfer.files;
-            if (!files.length) return;
-
-            this.createImageCreate(files[0]);
-        },
-        createImageCreate: function(file) {
-            var reader = new FileReader();
-            var vue = this;
-
-            reader.onload = (e) => {
-                let url = '/api/users/uploadAvatar';
-
-                let data = {
-                    'avatar': e.target.result,
-                };
-                data.push({'id':this.userdata.id})
-                let vue = this;
-                axios.post(url, data).then(function(response) {
-                    vue.formRegister.avatar = response.data.avatar;
+                    if (vue.userdata) {
+                        vue.userdata.avatar = response.data.avatar;
+                        // vue.updateUser();
+                    } if (!vue.userdata) {
+                      vue.formRegister.avatar = response.data.avatar
+                    }
                 });
             };
             reader.readAsDataURL(file);
