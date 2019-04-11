@@ -37,6 +37,8 @@ class UserController extends Controller
         return ['status' => 'error'];
     }
 
+
+
     public function update(Request $request)
     {
         $data = $request->all();
@@ -62,15 +64,20 @@ class UserController extends Controller
 
 
     // upload de imagem
-    public function uploadBanner(Request $request)
+    public function uploadAvatar(Request $request)
     {
         $data =  $request->all();
-        if (isset($data['image'])) {
+        if (isset($data['avatar'])) {
             $size = 992;
             $height = null;
-            $data['image'] = $this->resizeImage($this->base64_to_jpeg($data['image'], 'G'), $size, $height);
-            if ($data['image']) {
-                return ['status'=> 'success', 'image' =>$data['image']];
+            $init = 'A';
+            if (isset($data['id'])) {
+              $user = User::where('id', $data['id'])->first();
+              $init = $user->id;
+            }
+            $data['avatar'] = $this->resizeImage($this->base64_to_jpeg($data['avatar'], $init), $size, $height);
+            if ($data['avatar']) {
+                return ['status'=> 'success', 'avatar' =>$data['avatar']];
             }
             return ['status'=> 'error'];
         }
@@ -79,10 +86,10 @@ class UserController extends Controller
 
     public function resizeImage($image_name, $width, $height = null)
     {
-        $image = Image::make(sprintf('uploads/image/%s', $image_name))->resize($width, $height, function ($constraint) {
+        $image = Image::make(sprintf('uploads/avatar/%s', $image_name))->resize($width, $height, function ($constraint) {
             $constraint->aspectRatio();
         })->save();
-        return '/uploads/image/'.$image_name;
+        return '/uploads/avatar/'.$image_name;
     }
 
     public function base64_to_jpeg($base64_string, $user_id)
@@ -96,7 +103,7 @@ class UserController extends Controller
         $base64_string = substr($base64_string, 1 + strrpos($base64_string, ','));
 
         // ACESSANDO O DISCO
-        $diskimagem = Storage::disk('image');
+        $diskimagem = Storage::disk('avatar');
         $diskimagem->put($output_file, base64_decode($base64_string));
 
         return $output_file;

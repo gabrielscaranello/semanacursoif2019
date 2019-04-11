@@ -30,8 +30,8 @@ class HomeController extends Controller
     }
     public function index()
     {
-        $palestras = Palestra::where(['status' => 1])->get();
-        $miniCursos = MiniCurso::where(['status' => 1])->get();
+        $palestras = Palestra::where(['status' => 1])->orderBy('name', 'ASC')->get();
+        $miniCursos = MiniCurso::where(['status' => 1])->orderBy('name', 'ASC')->get();
         $gallery = Gallery::where(['status' => 1])->get();
         $cronogramTADS = $this->getCronogram('TADS');
         $cronogramIIN =[];
@@ -46,8 +46,6 @@ class HomeController extends Controller
         $cronogramTADS = $this->getCronogram('TADS');
         $cronogramIIN = [];
         $cronogramIIN = $this->getCronogram('IIN');
-
-
         return view('coming-soon', compact('cronogramTADS', 'cronogramIIN'));
     }
 }

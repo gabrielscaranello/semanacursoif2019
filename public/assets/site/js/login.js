@@ -67,40 +67,78 @@ new Vue({
                 });
             });
         },
-        register: function() {
-            swal({
-                icon: 'info',
-                title: 'Aguarde',
-                text: "Realizando cadastro...",
-                buttons: false
-            });
-            const url = '/api/users/register';
+        store: function() {
             let vue = this;
-            axios.post(url, vue.formLogin).then(function(response) {
-                if (response.data.status == 'success') {
-                    // localStorage.user = JSON.stringify(response.data.user);
-                    // vue.userdata = response.data.user;
-                    $('#registerModal').modal('hide')
-                    let msg = 'Bem vindo, ' + response.data.user.name + '. Cadastro realizado com sucesso, iremos fazer seu login...';
-                    swal(msg, {
-                        icon: "success",
-                        buttons: false,
-                        timer: 2000,
-                    });
+            let error_input = false;
+            if (
+                !this.formRegister.email || this.formRegister.email == '' ||
+                !this.formRegister.password || this.formRegister.password == '' ||
+                !this.formRegister.password || this.formRegister.password_confirm == '' ||
+                !this.formRegister.name || this.formRegister.name == ''
+            ) {
+                error_input = true;
+            } else {
+                if (this.formRegister.aluno == 1) {
+                    if (
+                        !this.formRegister.ra || this.formRegister.ra == '' ||
+                        !this.formRegister.turma || this.formRegister.turma == '' ||
+                        !this.formRegister.curso || this.formRegister.curso == ''
+                    ) {
+                        error_input = true;
+                    }
+                }
+            }
+            if (error_input == true) {
+                swal('Atenção, é necessário preencher todos os campos.', {
+                    icon: "error",
+                    buttons: true,
+                });
+            } else {
+                if (this.formRegister.password == this.formRegister.password_confirm) {
+                    sendRegister();
                 } else {
-                    swal('Desculpe, ocorreu um erro, tente novamente mais tarde.', {
+                    swal('Atenção, as senhas digitadas não conferem.', {
+                        icon: "error",
+                        buttons: true,
+                    });
+                }
+            }
+
+            function sendRegister() {
+                swal({
+                    icon: 'info',
+                    title: 'Aguarde',
+                    text: "Realizando cadastro...",
+                    buttons: false
+                });
+                const url = '/api/auth/register';
+
+                axios.post(url, vue.formRegister).then(function(response) {
+                    if (response.data.status == 'success') {
+                        let msg = 'Bem vindo, ' + vue.formRegister.name + '. Cadastro realizado com sucesso, já pode fazer login...';
+                        swal(msg, {
+                            icon: "success",
+                            buttons: false,
+                            timer: 3000,
+                        });
+                        vue.formLogin.email = vue.formRegister.email;
+                        vue.formRegister = {};
+                        vue.register = false;
+                    } else {
+                        swal('Desculpe, ocorreu um erro, tente novamente mais tarde.', {
+                            icon: "error",
+                            buttons: false,
+                            timer: 2000,
+                        });
+                    }
+                }).catch(function() {
+                    swal('Ocorreu um erro, tente novamente mais tarde.', {
                         icon: "error",
                         buttons: false,
                         timer: 2000,
                     });
-                }
-            }).catch(function() {
-                swal('Ocorreu um erro, tente novamente mais tarde.', {
-                    icon: "error",
-                    buttons: false,
-                    timer: 2000,
                 });
-            });
+            }
         },
 
         loadUserData: function() {
@@ -147,6 +185,52 @@ new Vue({
             }
 
         },
+        updateAvatar: function(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+            vue.this;
+            this.createImageUp(files[0], vue);
+        },
+        createImageUp: function(file) {
+            var reader = new FileReader();
+            var vue = this;
+
+            reader.onload = (e) => {
+                let url = '/api/users/uploadAvatar';
+                let data = {
+                    'avatar': e.target.result,
+                    'id': vue.userdata.id;
+                };
+                let vue = this;
+                axios.post(url, data).then(function(response) {
+                    vue.userdata.avatar = response.data.avatar;
+                    localStorage.userdata = JSON.stringify(vue.userdata);
+                });
+            };
+            reader.readAsDataURL(file);
+        },
+        createAvatar: function(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+
+            this.createImageCreate(files[0]);
+        },
+        createImageCreate: function(file) {
+            var reader = new FileReader();
+            var vue = this;
+
+            reader.onload = (e) => {
+                let url = '/api/users/uploadAvatar';
+                let data = {
+                    'avatar': e.target.result,
+                };
+                let vue = this;
+                axios.post(url, data).then(function(response) {
+                    vue.formRegister.avatar = response.data.avatar;
+                });
+            };
+            reader.readAsDataURL(file);
+        }
     },
     components: {
         VueGallerySlideshow

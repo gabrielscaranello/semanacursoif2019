@@ -220,7 +220,7 @@
                         <a class="news-catagory bg-primary">{{$value->category}}</a>
                     </div>
                     <div class="single_latest_news_text_area p-15">
-                        <a class="news-headline" href="#">{{$value->title}}</a>
+                        <a class="news-headline" href="#">{{$value->name}}</a>
                         <div class="post-meta">
                             <div class="col-12 p-0">
                                 <a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{$value->autors}}</a>

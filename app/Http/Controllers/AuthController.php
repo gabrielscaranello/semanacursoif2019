@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Models\User;
+use Hash;
 
 class AuthController extends Controller
 {
@@ -21,7 +22,7 @@ class AuthController extends Controller
             if (! $token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
-           $user = [
+            $user = [
              'id' => auth()->user()->id,
              'name' => auth()->user()->name,
              'avatar' => auth()->user()->avatar,
@@ -68,5 +69,17 @@ class AuthController extends Controller
             return 'sim';
         }
         return 'nao';
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+        $data['role'] = 'usuario';
+        $data['password'] = Hash::make($request->password);
+
+        if (User::create($data)) {
+            return ['status' => 'success'];
+        }
+        return ['status' => 'error'];
     }
 }

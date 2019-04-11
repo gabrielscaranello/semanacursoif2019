@@ -9,7 +9,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'auth'], function () {
     Route::post('login', 'AuthController@authenticate');
-    Route::post('register', 'AuthController@authenticate');
+    Route::post('register', 'AuthController@store');
     Route::get('logout', 'AuthController@logout');
     Route::get('check', 'AuthController@check');
     Route::post('/verificaToken', 'AuthController@verificaToken');
@@ -20,6 +20,7 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('register', 'Api\AuthController@authenticate');
     Route::post('logout', 'Api\AuthController@logout');
     Route::get('check', 'Api\AuthController@check');
+    Route::post('/uploadAvatar', 'Api\UserController@uploadAvatar');
     Route::post('/verificaToken', 'Api\AuthController@verificaToken');
 });
 
