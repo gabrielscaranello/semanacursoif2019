@@ -199,7 +199,7 @@ new Vue({
                 let url = '/api/users/uploadAvatar';
                 let data = {
                     'avatar': e.target.result,
-                    'id': vue.userdata.id;
+                    'id': vue.userdata.id
                 };
                 let vue = this;
                 axios.post(url, data).then(function(response) {
@@ -221,9 +221,11 @@ new Vue({
 
             reader.onload = (e) => {
                 let url = '/api/users/uploadAvatar';
+
                 let data = {
                     'avatar': e.target.result,
                 };
+                data.push({'id':this.userdata.id})
                 let vue = this;
                 axios.post(url, data).then(function(response) {
                     vue.formRegister.avatar = response.data.avatar;
