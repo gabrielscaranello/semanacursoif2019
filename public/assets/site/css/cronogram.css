@@ -57,3 +57,33 @@
         border-right: .25rem solid;
     }
 }
+
+.cronograma-select {
+    display: flex;
+    justify-content: right;
+}
+
+.cronograma-select div {
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s;
+    padding: .25rem 1rem;
+    border: 3px solid #343a40;
+    color: #f6f6f6;
+    background: #343a40;
+    min-width: 4rem;
+    text-align: center;
+}
+
+.cronograma-select div:nth-child(1) {
+    border-radius: .5rem 0 0 .5rem;
+}
+
+.cronograma-select div:nth-child(2) {
+    border-radius: 0 .5rem .5rem 0;
+}
+
+.cronograma-select div.active {
+    background: #28a745;
+    color: #fff;
+}

@@ -48,21 +48,21 @@
                             <div class="col-md-12">
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Data: </label>
-                                    <input type="text" v-model="formData.day" id="title" class="form-control">
+                                    <input type="date" v-model="formData.day" id="title" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Hora: </label>
-                                    <input type="text" v-model="formData.hour" id="title" class="form-control">
+                                    <input type="time" v-model="formData.hour" id="title" class="form-control">
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
                                     <label for="title" class="label-control">Duração: </label>
-                                    <input type="text" v-model="formData.hours" id="title" class="form-control">
+                                    <input type="time" v-model="formData.hours" id="title" class="form-control">
                                 </div>
                             </div>
 

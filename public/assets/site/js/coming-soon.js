@@ -9,6 +9,7 @@ new Vue({
             seconds: null
         },
         cronogram: false,
+        cronograma: 'TADS'
     },
     beforeMount: function() {
         this.currentCount()
@@ -41,6 +42,16 @@ new Vue({
             setTimeout(function() {
                 vue.cronogram = false;
             }, 0);
+        },
+        alterCronogram: function() {
+
+            let vue = this;
+            if (vue.cronograma == 'TADS') {
+                vue.cronograma = 'IIN'
+            } else {
+                vue.cronograma = 'TADS'
+            }
+
         },
 
     },

@@ -2,12 +2,16 @@ new Vue({
     el: '#app',
     data: {
         formLogin: {},
-        formRegister: {},
+        formRegister: {
+            aluno: -1
+        },
         userdata: {},
         images: [],
         index: null,
         leftMenu: 'closed',
-        leftMenuForm: 'login'
+        leftMenuForm: 'login',
+        register: false,
+        cronograma: 'TADS'
     },
     mounted: function() {
         this.loadLoginInfo();
@@ -129,12 +133,20 @@ new Vue({
             axios.post(url);
         },
 
-        closeloginmodal: function() {
-            $('#loginModal').modal('hide');
-            setTimeout(function() {
-                $('#registerModal').modal('show');
-            }, 250);
-        }
+        alterRegisterForm: function() {
+            this.register = !this.register
+        },
+
+        alterCronogram: function() {
+
+            let vue = this;
+            if (vue.cronograma == 'TADS') {
+                vue.cronograma = 'IIN'
+            } else {
+                vue.cronograma = 'TADS'
+            }
+
+        },
     },
     components: {
         VueGallerySlideshow

@@ -16,7 +16,7 @@
     <i @click="closeLeft" class="fas fa-times"></i>
 </div>
 <div class="container-fluid internal">
-    <div class="col-12 login-form" v-if="!userdata" :class="{active:leftMenuForm == 'login'}">
+    <div class="col-12 login-form" v-if="!userdata && register" :class="{active:leftMenuForm == 'login'}">
         <form>
             <div class="row">
                 <div class="col-12">
@@ -25,27 +25,45 @@
                 <div class="col-12">
                     <div class="form-group">
                         <label class="label-control">Nome Completo</label>
-                        <input v-model="formRegister.nome" type="email" class="form-control">
+                        <input v-model="formRegister.nome" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="form-group">
-                        <label class="label-control">RA</label>
-                        <input v-model="formRegister.ra" type="email" class="form-control">
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="label-control">É aluno(a) do IFPR?</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" v-model="formRegister.aluno" name="aluno" id="aluno-sim" value="1"> <label for="aluno-sim">Sim</label>
+                            </div>
+                            <div class="col-6">
+                                <input type="radio" v-model="formRegister.aluno" name="aluno" id="aluno-nao" value="-1"> <label for="aluno-nao">Não</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" v-if="formRegister.aluno == 1">
+                    <div class="form-group">
+                        <label class="label-control">Registro Acadêmico (RA)</label>
+                        <input v-model="formRegister.ra" type="text" class="form-control">
                     </div>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12" v-if="formRegister.aluno == 1">
                     <div class="form-group">
                         <label class="label-control">Cruso</label>
-                        <input v-model="formRegister.curso" type="email" class="form-control">
+                        <select v-model="formRegister.curso" class="custom-select form-control">
+                          <option value="IIN">IIN</option>
+                          <option value="TADS">TADS</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="col-12">
-                    <div class="form-group">
+                    <div class="form-group" v-if="formRegister.aluno == 1">
                         <label class="label-control">Turma</label>
-                        <input v-model="formRegister.turma" type="email" class="form-control">
+                        <input v-model="formRegister.turma" type="text" class="form-control">
                     </div>
                 </div>
 
@@ -64,7 +82,7 @@
                 <div class="col-12">
                     <div class="form-group">
                         <label class="label-control">Confirmação de Senha</label>
-                        <input v-model="formRegister.password" type="password" class="form-control">
+                        <input v-model="formRegister.password_confirm" type="password" class="form-control">
                     </div>
                 </div>
 
@@ -76,8 +94,8 @@
                 <div class="col-12">
                     Já possui registro?
                 </div>
-                <div class="col-12">
-                    <a class="text-info" href="#" @click.prevent.stop="closeloginmodal()" data-toggle="modal" data-target="#registerModal">
+                <div class="col-12 mb-2">
+                    <a class="text-info" href="#" @click.prevent.stop="alterRegisterForm()" data-toggle="modal" data-target="#registerModal">
                     Faça Login
                     </a>
                 </div>
@@ -85,7 +103,7 @@
         </form>
     </div>
 
-    <div class="col-12 login-form" v-if="userdata" :class="{active:leftMenuForm == 'login'}">
+    <div class="col-12 login-form" v-if="!userdata && !register" :class="{active:leftMenuForm == 'login'}">
         <form>
             <div class="row">
                 <div class="col-12">
@@ -113,7 +131,7 @@
                     Ainda não possui registro?
                 </div>
                 <div class="col-12">
-                    <a class="text-info" href="#" @click.prevent.stop="closeloginmodal()" data-toggle="modal" data-target="#registerModal">
+                    <a class="text-info" href="#" @click.prevent.stop="alterRegisterForm()" data-toggle="modal" data-target="#registerModal">
                     Cadastre-se
                     </a>
                 </div>

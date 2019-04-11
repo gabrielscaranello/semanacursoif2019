@@ -34,16 +34,19 @@ class HomeController extends Controller
         $miniCursos = MiniCurso::where(['status' => 1])->get();
         $gallery = Gallery::where(['status' => 1])->get();
         $cronogramTADS = $this->getCronogram('TADS');
+        $cronogramIIN =[];
         $cronogramIIN = $this->getCronogram('IIN');
 
-        return view('home', compact('palestras', 'miniCursos', 'gallery', 'cronogramTADS', 'cronogramINN'));
+        return view('home', compact('palestras', 'miniCursos', 'gallery', 'cronogramTADS', 'cronogramIIN'));
     }
 
 
     public function comingSon()
     {
         $cronogramTADS = $this->getCronogram('TADS');
+        $cronogramIIN = [];
         $cronogramIIN = $this->getCronogram('IIN');
+
 
         return view('coming-soon', compact('cronogramTADS', 'cronogramIIN'));
     }

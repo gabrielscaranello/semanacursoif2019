@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="subscribe_bar m-xs-top-15">
-                                <p data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2600" data-aos-duration="400">Mas você pode ver o cronocrama parcial do evento clicando no botão abaixo.</p>
+                                <p data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2600" data-aos-duration="400">Mas você pode ver o cronograma parcial do evento clicando no botão abaixo.</p>
                                 <button data-aos="fade-up" data-aos-offset="0" data-aos-easing="ease-in-out" data-aos-offset="500" data-aos-delay="2800" data-aos-duration="400" type="button" class="btn btn-primary" @click="showCronogram"
                                 name="button"><i class="fa fa-clock" aria-hidden="true"></i> Cronograma</button>
                             </div>
