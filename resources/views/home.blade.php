@@ -210,34 +210,40 @@
             </div>
         </div>
         <div class="row">
-
-            @foreach ($miniCursos as $value)
-            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".4s">
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" v-for="value in miniCursos" data-wow-delay=".2s">
                 <div class="single_latest_news_area m-bottom-15">
                     <div class="single_latest_news_img_area">
-                        <div class="image-minicurso" style="background-image: url({!!($value->image)!!})"></div>
+                        <div class="image-minicurso" :style="'background-image: url('+value.image+')'"></div>
                         <!-- Catagory -->
-                        <a class="news-catagory bg-primary">{{$value->category}}</a>
+                        <a class="news-catagory bg-primary">
+                            @{{value.category}}
+                        </a>
                     </div>
                     <div class="single_latest_news_text_area p-15">
-                        <a class="news-headline" href="#">{{$value->name}}</a>
+                        <a class="news-headline" href="#">
+                            @{{value.name}}
+                        </a>
                         <div class="post-meta">
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{$value->autors}}</a>
+                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+                                    @{{value.autors}}
+                                </a>
                             </div>
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{$value->day}}</a>
+                                <a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    @{{value.day}}
+                                </a>
                             </div>
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i> </a>
+                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
                             </div>
                         </div>
-                        <p class="mini-curso-descript">{!!strip_tags(substr($value->descript, 0, 100))!!}</p>
-                        <a class="btn btn-pill btn-success m-top-15" href="#">Increver-se</a>
+                        <p class="mini-curso-descript" v-html="value.descript"></p>
+
+                        <a class="btn btn-pill btn-success m-top-15" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
                     </div>
                 </div>
             </div>
-            @endforeach
 
 
         </div>
@@ -246,4 +252,33 @@
 <!-- ***** Blog Area End ***** -->
 
 
+<!-- Modal -->
+<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Faça login para continuar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-dark">Para cadastrar-se em um mini curso é necessário estar logado.</p>
+                <p class="text-dark">Caso ainda não possua cadastro, cadastre-se agora mesmo.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
+                            <button type="button" @click.prevent.stop="loginMiniCurso('login')" class="btn btn-block btn-pill btn-success">Logar-se</button>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
+                            <button type="button" @click.prevent.stop="loginMiniCurso('register')" class="btn btn-block btn-pill btn-success">Cadastrar-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

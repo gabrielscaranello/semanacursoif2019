@@ -11,8 +11,8 @@
                         <h2>Faça seu Cadastro</h2>
                     </div>
                     <div class="profile-image" :style="'background: url('+formRegister.avatar+')'">
-                      <label id="banner_input_label" for="banner_input"></label>
-                      <input id="banner_input" type="file" @change="uploadImage">
+                        <label id="banner_input_label" for="banner_input"></label>
+                        <input id="banner_input" type="file" @change="uploadImage">
                     </div>
                     <div class="col-12">
                         <div class="form-group">
@@ -131,14 +131,14 @@
             </form>
         </div>
 
-        <div class="col-12 profile" v-if="userdata">
+        <div class="col-12 profile" v-if="userdata && !showRegisterMinicursos">
             <div class="row">
                 <div class="col-12">
                     <h2 class="left-title">Perfil</h2>
                 </div>
                 <div class="profile-image" :style="'background: url('+userdata.avatar+')'">
-                  <label id="banner_input_label" for="banner_input"></label>
-                  <input id="banner_input" type="file" @change="uploadImage">
+                    <label id="banner_input_label" for="banner_input"></label>
+                    <input id="banner_input" type="file" @change="uploadImage">
                 </div>
                 <div class="col-12">
                     <p class="text-dark">
@@ -158,7 +158,7 @@
                 </div>
                 <div class="col-12">
                     <p class="text-dark">
-                        <a href="#" @click.prevent.stop="showRegisterMinicursos">
+                        <a href="#" @click.prevent.stop="alterRegisterMinicursos">
                             Minicursos Incritos
                         </a>
                     </p>
@@ -171,8 +171,30 @@
                 </div>
 
             </div>
-
         </div>
+
+        <div class="col-12 miniCursosHasUser" v-if="showRegisterMinicursos">
+            <div class="row">
+              <div class="col-12">
+                  <h2>Mini Cursos Inscritos</h2>
+              </div>
+                <div class="col-12" v-for="value in miniCursosHasUser">
+                    <p class="text-dark">
+                        @{{value.name}}
+                    </p>
+                </div>
+
+                <div class="col-12">
+                    <div class="col-6 p-0 mt-2">
+                        <button class="btn btn-block btn-pill btn-success" @click.prevent.stop="alterRegisterMinicursos">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 
     <div class="left-button" @click.prevent.stop="openLeft()">

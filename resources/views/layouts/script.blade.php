@@ -35,7 +35,7 @@
     AOS.init();
 </script>
 
-<script type='text/javascript'>
+{{-- <script type='text/javascript'>
     (function() {
         var widget_id = 'sOqUamefM8';
         var d = document;
@@ -59,4 +59,4 @@
             }
         }
     })();
-</script>
+</script> --}}

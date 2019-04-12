@@ -28,6 +28,9 @@ Route::group(['prefix' => 'users'], function () {
 //gerenciamento de minicurso
 Route::group(['prefix' => 'mini-curso'], function () {
     Route::get('/list', 'Api\MiniCursoController@list');
+    Route::get('/show', 'Api\MiniCursoController@show');
+    Route::post('/inscrever', 'Api\MiniCursoController@inscrever');
+    Route::post('/miniCursosHasUser', 'Api\MiniCursoController@miniCursosHasUser');
     Route::post('/getItem', 'Api\MiniCursoController@getItem');
     Route::post('/uploadBanner', 'Api\MiniCursoController@uploadBanner');
     Route::post('/store', 'Api\MiniCursoController@store');
