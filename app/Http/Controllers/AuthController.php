@@ -36,7 +36,7 @@ class AuthController extends Controller
 
         // all good so return the token
         $status = 'success';
-        return response()->json(compact('status', 'user'));
+        return response()->json(compact('status', 'token', 'user'));
     }
 
     public function check()
