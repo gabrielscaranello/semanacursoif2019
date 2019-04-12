@@ -252,33 +252,4 @@
 <!-- ***** Blog Area End ***** -->
 
 
-<!-- Modal -->
-<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Faça login para continuar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="text-dark">Para cadastrar-se em um mini curso é necessário estar logado.</p>
-                <p class="text-dark">Caso ainda não possua cadastro, cadastre-se agora mesmo.</p>
-            </div>
-            <div class="modal-footer">
-                <div class="col-12">
-                    <div class="row d-flex justify-content-end">
-                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
-                            <button type="button" @click.prevent.stop="loginMiniCurso('login')" class="btn btn-block btn-pill btn-success">Logar-se</button>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
-                            <button type="button" @click.prevent.stop="loginMiniCurso('register')" class="btn btn-block btn-pill btn-success">Cadastrar-se</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

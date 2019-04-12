@@ -75,7 +75,14 @@
                         <div class="form-group">
                             <label class="label-control">Confirmação de Senha</label>
                             <input v-model="formRegister.password_confirm" type="password" class="form-control">
+                            <p class="text-danger" v-if="(formRegister.password_confirm != formRegister.password)">
+                                Senhas digitadas não conferem
+                            </p>
                         </div>
+                    </div>
+
+                    <div class="col-12" >
+
                     </div>
 
 
@@ -175,14 +182,23 @@
 
         <div class="col-12 miniCursosHasUser" v-if="showRegisterMinicursos">
             <div class="row">
-              <div class="col-12">
-                  <h2>Mini Cursos Inscritos</h2>
-              </div>
+                <div class="col-12">
+                    <h2>Mini Cursos Inscritos</h2>
+                </div>
                 <div class="col-12" v-for="value in miniCursosHasUser">
                     <p class="text-dark">
                         @{{value.name}}
                     </p>
                 </div>
+                <div class="col-12" v-if="!(miniCursosHasUser.length > 0)">
+                    <div class="alert alert-dark" role="alert">
+                        <p>
+                            Você ainda não se cadastrou em nenhum mini curso.
+                        </p>
+                    </div>
+                </div>
+
+
 
                 <div class="col-12">
                     <div class="col-6 p-0 mt-2">
@@ -200,6 +216,38 @@
     <div class="left-button" @click.prevent.stop="openLeft()">
         <div class="left-content">
             <i class="fas fa-angle-right"></i>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal questão cadastro-->
+<div class="modal fade" id="question" tabindex="-1" role="dialog" aria-labelledby="questionTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Faça login para continuar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="text-dark">Para cadastrar-se em um mini curso é necessário estar logado.</p>
+                <p class="text-dark">Caso ainda não possua cadastro, cadastre-se agora mesmo.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="col-12">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
+                            <button type="button" @click.prevent.stop="loginMiniCurso('login')" class="btn btn-block btn-pill btn-success">Logar-se</button>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mb-2 mb-md-0">
+                            <button type="button" @click.prevent.stop="loginMiniCurso('register')" class="btn btn-block btn-pill btn-success">Cadastrar-se</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -10,7 +10,7 @@
 
     @include('layouts.header')
     <div id="app">
-        @include('layouts.login')
+        @include('layouts.left-menu')
         @yield('content')
         @include('layouts.footer')
     </div>

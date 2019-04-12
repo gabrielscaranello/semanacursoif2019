@@ -16,7 +16,7 @@ const menu_items = [{
         }]
     }, {
         name: 'Cronograma',
-        icon: 'fa fa-info',
+        icon: 'fa fa-clock-o',
         child: [{
             name: 'Gerenciar',
             link: '/cronogramas',
