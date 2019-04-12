@@ -21,6 +21,9 @@ new Vue({
 
                 var now = new Date().getTime();
                 var distance = vue.countDownDate - now;
+                if (distance < 0) {
+                  location.reload();
+                }
                 vue.count.days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 vue.count.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 vue.count.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
