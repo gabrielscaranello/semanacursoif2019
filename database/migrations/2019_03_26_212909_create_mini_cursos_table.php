@@ -16,7 +16,9 @@ class CreateMiniCursosTable extends Migration
         Schema::create('mini_cursos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('turma');
             $table->string('image');
+            $table->integer('vagas');
             $table->string('descript');
             $table->string('category');
             $table->string('autors');

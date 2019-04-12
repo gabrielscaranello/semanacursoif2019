@@ -40,6 +40,24 @@
 
                             <div class="col-md-12">
                                 <div class="form-group col-12">
+                                    <label for="title" class="label-control">Turma: </label>
+                                    <select v-model="formData.turma" id="monitor" class="form-control">
+                                        <option value="IIN">Integrado</option>
+                                        <option value="TADS">TADS</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
+                                    <label for="title" class="label-control">Número de vagas: </label>
+                                    <input type="number" v-model="formData.vagas" id="title" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group col-12">
                                     <label for="title" class="label-control">Responsáveis: </label>
                                     <input type="text" v-model="formData.autors" id="title" class="form-control">
                                 </div>

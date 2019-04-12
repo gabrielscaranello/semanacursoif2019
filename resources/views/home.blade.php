@@ -209,8 +209,16 @@
                 </div>
             </div>
         </div>
+
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp" v-for="value in miniCursos" data-wow-delay=".2s">
+
+          <div class="minicurso-select col-md-12 mb-3">
+              <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'IIN'}">IIN</div>
+              <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'TADS'}">TADS</div>
+          </div>
+
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp"
+            v-for="value in miniCursos" data-wow-delay=".2s" v-if="value.turma == minicursoTurma">
                 <div class="single_latest_news_area m-bottom-15">
                     <div class="single_latest_news_img_area">
                         <div class="image-minicurso" :style="'background-image: url('+value.image+')'"></div>
@@ -235,10 +243,18 @@
                                 </a>
                             </div>
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    @{{value.hour}}
+                                </a>
+                            </div>
+
+                            <div class="col-12 p-0">
+                                <a class="text-lowercase">
+                                  <i class="fa fa-check" aria-hidden="true"></i>
+                                  @{{value.vagas_preenchidas}}/@{{value.vagas}} vagas disponíveis
+                                </a>
                             </div>
                         </div>
-                        <p class="mini-curso-descript" v-html="value.descript"></p>
 
                         <a class="btn btn-pill btn-success m-top-15" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
                     </div>

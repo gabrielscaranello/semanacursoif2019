@@ -8,6 +8,8 @@ class MiniCurso extends Model
 {
     protected $fillable = [
       'name',
+      'turma',
+      'vagas',
       'image',
       'category',
       'descript',

@@ -22,17 +22,25 @@ class MiniCursoController extends Controller
 
     public function inscrever(Request $request)
     {
+      return ['status'=>'error', 'msg'=> 'As inscrições serão abertas em 17/04, quarta-feira.'];
+
         if ($request->id_curso && $request->id_user) {
             $usercurso = MiniCursoHasUser::where(['id_user'=> $request->id_user,'id_curso'=> $request->id_curso])->get();
             if (!(sizeof($usercurso) > 0)) {
                 $data = $request->all();
-                $minicurso = MiniCursoHasUser::create($data);
-                if ($minicurso) {
-                    return ['status' => 'success', 'data'=> $minicurso];
+                $count = MiniCursoHasUser::where('id_curso', $request->id_curso)->count();
+                $vagas = MiniCurso::where('id', $request->id_curso)
+                ->select('mini_cursos.vagas')->first();
+                if ($count < $vagas->vagas) {
+                    $minicurso = MiniCursoHasUser::create($data);
+                    if ($minicurso) {
+                        return ['status' => 'success', 'data'=> $minicurso];
+                    }
+                    return ['status' => 'error', 'msg' => 'Desculpe, ocorreu um erro, tente novamente mais tarde.'];
                 }
-                return ['status' => 'error', 'msg' => 'Desculpe, ocorreu um erro, tente novamente mais tarde.'];
+                return ['status'=>'error', 'msg'=> 'Este minicurso já exedeu o limite de vagas disponíveis.'];
             }
-            return ['status'=>'error', 'msg'=> 'Você já está cadastrado nesse mini curso.'];
+            return ['status'=>'error', 'msg'=> 'Você já está cadastrado nesse minicurso.'];
         }
         return ['status' => 'error', 'msg' => 'Desculpe, ocorreu um erro, tente novamente mais tarde.'];
     }
@@ -53,6 +61,13 @@ class MiniCursoController extends Controller
     {
         $minicurso = MiniCurso::where('status', 1)->orderBy('name', 'ASC')->get();
         if ($minicurso) {
+            foreach ($minicurso as $key => $value) {
+                $data = $value->day;
+                $data = explode('-', $data);
+                $data = $data[2].'/'.$data[1].'/'.$data[0];
+                $minicurso[$key]->day = $data;
+                $minicurso[$key]->vagas_preenchidas = MiniCursoHasUser::where('id_curso', $value->id)->count();
+            }
             return ['status' => 'success', 'data' => $minicurso];
         }
         return ['status' => 'error'];

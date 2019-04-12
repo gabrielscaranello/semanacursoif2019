@@ -16,7 +16,6 @@ new Vue({
         register: false,
         cronograma: 'TADS',
         showRegisterMinicursos: false,
-        minicursoTurma: 'TADS'
     },
     mounted: function() {
         this.loadLoginInfo();
@@ -51,7 +50,8 @@ new Vue({
         login: function() {
             swal({
                 icon: 'info',
-                text: "Por favor, aguarde...",
+                title: 'Aguarde',
+                text: "Realizando login...",
                 buttons: false
             });
             const url = '/api/users/login';
@@ -124,7 +124,8 @@ new Vue({
             function sendRegister() {
                 swal({
                     icon: 'info',
-                    text: "Por favor, aguarde...",
+                    title: 'Aguarde',
+                    text: "Realizando cadastro...",
                     buttons: false
                 });
                 const url = '/api/auth/register';
@@ -263,7 +264,8 @@ new Vue({
         sendMiniCursoRegister: function() {
             swal({
                 icon: 'info',
-                text: "Por favor, aguarde...",
+                title: 'Aguarde',
+                text: "Realizando cadastro...",
                 buttons: false
             });
             let url = '/api/mini-curso/inscrever'
@@ -316,14 +318,6 @@ new Vue({
         },
         alterRegisterMinicursos: function() {
             this.showRegisterMinicursos = !this.showRegisterMinicursos;
-        },
-        alterMiniCurso: function() {
-            let vue = this;
-            if (vue.minicursoTurma == 'TADS') {
-                vue.minicursoTurma = 'IIN'
-            } else {
-                vue.minicursoTurma = 'TADS'
-            }
         }
     },
     components: {
