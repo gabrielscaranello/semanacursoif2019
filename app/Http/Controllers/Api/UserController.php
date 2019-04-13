@@ -51,6 +51,7 @@ class UserController extends Controller
                     return ['status'=>'error', 'msg' => 'Senha atual não confere'];
                 }
                 $data['password'] = Hash::make($request->password);
+                $data['token'] = '';
             }
 
             if ($user->update($data)) {
