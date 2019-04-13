@@ -17,7 +17,7 @@
                         <li><a href="#evento">O Evento</a></li>
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="#palestras">Palestras</a></li>
-                        <li><a href="#mini-cursos">Mini Cursos</a></li>
+                        <li><a href="#mini-cursos">Minicursos</a></li>
                         <li><a href="#cronograma">Cronograma</a></li>
                     </ul>
                 </div>

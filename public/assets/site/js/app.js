@@ -84,7 +84,7 @@ new Vue({
             });
         },
         store: function() {
-            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
             swal(msg, {
                 icon: "info",
                 button: true,
@@ -243,7 +243,7 @@ new Vue({
                 this.sendMiniCursoRegister();
             } else {
                 // $('#question').modal('show');
-                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
                 swal(msg, {
                     icon: "info",
                     button: true,

@@ -21,9 +21,11 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
             </div>
+
             <div class="carousel-item">
                 <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019-02.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
             </div>
+
             <div class="carousel-item">
                 <img class="d-block w-100" src="{!!asset('/assets/site/img/bg-img/semana-de-cursos-ifpr-tads-2019-03.png')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
             </div>
@@ -62,7 +64,7 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5>Minicursos</h5>
-                        <p>Diversos mini cursos voltados para a área de tecnologia.</p>
+                        <p>Diversos minicursos voltados para a área de tecnologia.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -76,7 +78,7 @@
                     </div>
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
-                        <h5>Palestra</h5>
+                        <h5>Palestras</h5>
                         <p>Palestras com profissionais e empresários.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
@@ -92,7 +94,7 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5>Compartilhamento</h5>
-                        <p>Bate papo, troca de informações e expriência entre os participantes.</p>
+                        <p>Bate-papo, troca de informações e expriências entre os participantes.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -107,7 +109,7 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5>Organização</h5>
-                        <p>Evento previamente planejado com cuidado excelência.</p>
+                        <p>Evento planejado com cuidado e qualidade.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
@@ -194,7 +196,7 @@
             <div class="col-12">
                 <div class="edu_section_heading">
                     <i class="fas fa-book-open"></i>
-                    <h3>Mini Cursos</h3>
+                    <h3>Minicursos</h3>
                 </div>
             </div>
         </div>

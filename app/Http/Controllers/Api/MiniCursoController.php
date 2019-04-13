@@ -22,7 +22,7 @@ class MiniCursoController extends Controller
 
     public function inscrever(Request $request)
     {
-        return ['status'=>'error', 'msg'=> 'As inscrições serão abertas somente no dia 17/04, quarta-feira.'];
+        return ['status'=>'error', 'msg'=> 'As inscrições serão abertas somente no dia 15/04, segunda-feira.'];
 
         if ($request->id_curso && $request->id_user) {
             $usercurso = MiniCursoHasUser::where(['id_user'=> $request->id_user,'id_curso'=> $request->id_curso])->get();

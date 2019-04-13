@@ -13,7 +13,7 @@ class AuthController extends Controller
     {
       return [
         'status' => 'error',
-        'msg'=>'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado!'
+        'msg'=>'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado!'
       ];
         // grab credentials from the request
         $credentials = $request->only('email', 'password');

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="footer_bottom">
-                        <p>Desenvolvido por <a href="#">Gabriel Scaranello</a></p>
+                        <p>Desenvolvido por <a href="https://www.facebook.com/dijaygabriel" target="_blank">Gabriel Scaranello</a> e <a target="_blank" href="https://www.facebook.com/mano.schulz.5">Emanuel Schulz</a></p>
                     </div>
                     <!-- Bottom Footer Copywrite Text Area End -->
                 </div>
