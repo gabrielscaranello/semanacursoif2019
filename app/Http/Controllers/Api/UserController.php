@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Storage;
 use Image;
+use Hash;
 
 class UserController extends Controller
 {
@@ -43,10 +44,21 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user = User::where('id', $request->id)->first();
-        if ($user->update($data)) {
-            return ['status' => 'success'];
+
+        if ($user) {
+            if (isset($data['password'])) {
+                if (!Hash::check($request->current_password, $user->password)) {
+                    return ['status'=>'error', 'msg' => 'Senha atual não confere'];
+                }
+                $data['password'] = Hash::make($request->password);
+            }
+
+            if ($user->update($data)) {
+                return ['status' => 'success'];
+            }
+            return ['status'=>'error', 'msg' => 'Ocorreu um erro, tente novamente mais tarde'];
         }
-        return ['status' => 'error'];
+        return ['status'=>'error', 'msg' => 'Ocorreu um erro, tente novamente mais tarde'];
     }
 
     public function delete(Request $request)
@@ -68,7 +80,7 @@ class UserController extends Controller
     {
         $data =  $request->all();
         if (isset($data['avatar'])) {
-            $size = 992;
+            $size = 400;
             $height = null;
             $init = 'A';
             if (isset($data['id'])) {

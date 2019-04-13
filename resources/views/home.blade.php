@@ -139,9 +139,9 @@
     <img class="image gallery-image wow fadeInUp" data-wow-delay=".6s" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
     <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
     <div class="col-12 pb-3" v-if="!(images.length > 0)">
-      <p class="text-center text-dark">
-        Ainda não temos as fotos do evento, teremos em breve.
-      </p>
+        <p class="text-center text-dark">
+            Ainda não temos as fotos do evento, teremos em breve.
+        </p>
     </div>
 
 </section>
@@ -202,65 +202,101 @@
         </div>
 
         <div class="row">
+            {{-- <div class="col-12">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
 
-          <div class="minicurso-select col-md-12 mb-3">
-              <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'IIN'}">IIN</div>
-              <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'TADS'}">TADS</div>
-          </div>
+                    <p>
+                        <strong>Atenção!</strong> Note que extistem minicursos ministrados pelo IIN e outros pelo TADS, atente-se ao escolher qual se cadastrar.
+                    </p>
+                    <p>
+                        As inscrições terão início em 15/04 - segunda-feira. Obrigado!
+                    </p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div> --}}
 
-            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp minicurso-card"
-            v-for="value in miniCursos" data-wow-delay=".2s" v-if="value.turma == minicursoTurma">
-                <div class="single_latest_news_area m-bottom-15 single-item">
-                    <div class="single_latest_news_img_area">
-                        <div class="image-minicurso" :style="'background-image: url('+value.image+')'"></div>
-                        <!-- Catagory -->
-                        <a class="news-catagory bg-primary">
-                            @{{value.category}}
-                        </a>
-                    </div>
-                    <div class="single_latest_news_text_area p-15">
-                        <a class="news-headline" href="#">
-                          @{{value.name}}
-                        </a>
-                        <div class="post-meta">
-                            <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-user  mr-1" aria-hidden="true"></i>
-                                  @{{value.autors}}
-                                </a>
-                            </div>
-                            <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
-                                  @{{value.day}}
-                                </a>
-                            </div>
-                            <div class="col-12 p-0">
-                                <a><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>
-                                  @{{value.hour}}
-                                </a>
-                            </div>
-
-                            <div class="col-12 p-0">
-                                <a class="text-lowercase">
-                                  <i class="fa fa-ticket-alt mr-1" aria-hidden="true"></i>
-                                  <span>@{{value.vagas}} vagas</span>
-                                </a>
-                            </div>
-
-                            <div class="col-12 p-0">
-                                <a class="text-lowercase">
-                                  <i class="fa fa-check mr-1" aria-hidden="true"></i>
-                                  <span>@{{value.vagas_preenchidas}} inscritos</span>
-                                </a>
-                            </div>
+            <div class="col-12">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <div class="row">
+                        <div class="col-10">
+                            <p class="my-0 py-0">
+                                <strong>Atenção!</strong> Note que extistem minicursos ministrados pelo IIN e outros pelo TADS, atente-se ao escolher qual se cadastrar.
+                            </p>
+                            <p class="my-0 py-0">
+                                As inscrições terão início em 15/04 - segunda-feira. Obrigado!
+                            </p>
                         </div>
-
-                        <a class="btn btn-pill btn-success m-top-15" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
+            <div class="minicurso-select col-md-12 mb-3">
+                <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'IIN'}">IIN</div>
+            <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'TADS'}">TADS
         </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 wow fadeInUp minicurso-card" v-for="value in miniCursos" data-wow-delay=".2s" v-if="value.turma == minicursoTurma">
+        <div class="single_latest_news_area m-bottom-15 single-item">
+            <div class="single_latest_news_img_area">
+                <div class="image-minicurso" :style="'background-image: url('+value.image+')'"></div>
+                <!-- Catagory -->
+                <a class="news-catagory bg-primary">
+                    @{{value.category}}
+                </a>
+            </div>
+            <div class="single_latest_news_text_area p-15">
+                <a class="news-headline" href="#">
+                    @{{value.name}}
+                </a>
+                <div class="post-meta">
+                    <div class="col-12 p-0">
+                        <a href="#"><i class="fa fa-user  mr-1" aria-hidden="true"></i>
+                            @{{value.autors}}
+                        </a>
+                    </div>
+                    <div class="col-12 p-0">
+                        <a href="#"><i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
+                            @{{value.day}}
+                        </a>
+                    </div>
+                    <div class="col-12 p-0">
+                        <a><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>
+                            @{{value.hour}}
+                        </a>
+                    </div>
+
+                    <div class="col-12 p-0">
+                        <a class="text-lowercase">
+                            <i class="fa fa-ticket-alt mr-1" aria-hidden="true"></i>
+                            <span>
+                                @{{value.vagas}} vagas</span>
+                        </a>
+                    </div>
+
+                    <div class="col-12 p-0">
+                        <a class="text-lowercase">
+                            <i class="fa fa-check mr-1" aria-hidden="true"></i>
+                            <span>
+                                @{{value.vagas_preenchidas}} inscritos</span>
+                        </a>
+                    </div>
+                </div>
+
+                <a class="btn btn-pill btn-success m-top-15" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
     </div>
 </section>
 <!-- ***** Blog Area End ***** -->

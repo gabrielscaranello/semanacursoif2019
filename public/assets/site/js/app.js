@@ -6,6 +6,7 @@ new Vue({
             aluno: -1,
             avatar: '/uploads/avatar/no-avatar.png'
         },
+        formChangePass: {},
         userdata: {},
         miniCursosHasUser: [],
         images: [],
@@ -16,7 +17,10 @@ new Vue({
         register: false,
         cronograma: 'TADS',
         showRegisterMinicursos: false,
-        minicursoTurma: 'TADS'
+        minicursoTurma: 'TADS',
+        termodeuso: false,
+        loadingAvatar: false,
+        passwordChangeArea: false
     },
     mounted: function() {
         this.loadLoginInfo();
@@ -24,6 +28,14 @@ new Vue({
         this.getMiniCursos();
     },
     methods: {
+        showTermodeUso: function() {
+            this.termodeuso = true;
+            this.register = false;
+        },
+        hideTermoDeUso: function() {
+            this.termodeuso = false;
+            this.register = true;
+        },
         getGalleryImages: function() {
             let url = '/api/gallery/list'
             let vue = this;
@@ -84,7 +96,7 @@ new Vue({
             });
         },
         store: function() {
-            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e se inscrever nos minicursos. Obrigado';
             swal(msg, {
                 icon: "info",
                 button: true,
@@ -162,6 +174,64 @@ new Vue({
             }
         },
 
+        updateUser: function(type, params) {
+            let url = '/api/users/update';
+            let vue = this;
+            let data = {};
+            data.id = vue.userdata.id;
+
+            if (type == 'password') {
+                data.password = params.pass;
+                data.current_password = params.currentPass;
+            }
+            if (type == 'avatar') data.avatar = params;
+
+
+            axios.post(url, data).then(function(res) {
+                if (res.data.status == 'success') {
+                    let msg = '';
+                    if (data.avatar) {
+                        msg = 'Foto de perfil alterada com sucesso';
+                        vue.loadingAvatar = false;
+                        vue.userdata.avatar = data.avatar;
+                        localStorage.user = JSON.stringify(vue.userdata);
+                    }
+
+                    if (data.password) {
+                        msg = 'Senha alterada com sucesso, faça login novamente';
+                        vue.alterPasswordChange;
+                        setTimeout(function() {
+                            vue.logout();
+                            vue.alterPasswordChange();
+                            vue.formChangePass = {}
+                            vue.formLogin = {}
+                        }, 2500);
+                    }
+
+                    swal(msg, {
+                        icon: "success",
+                        buttons: false,
+                        timer: 3000,
+                    });
+                } else {
+                    swal(res.data.msg, {
+                        icon: "error",
+                        buttons: false,
+                        timer: 3000,
+                    });
+                }
+
+            }).catch(function() {
+                let msg = "Desculpe. Ocorreu um erro, tente novamente mais tarde";
+                swal(msg, {
+                    icon: "error",
+                    buttons: false,
+                    timer: 3000,
+                });
+            });
+
+        },
+
         loadUserData: function() {
             if (localStorage.user) {
                 this.userdata = JSON.parse(localStorage.user);
@@ -221,10 +291,11 @@ new Vue({
                     'avatar': e.target.result,
                 };
                 let vue = this;
+                vue.loadingAvatar = true;
                 axios.post(url, data).then(function(response) {
                     if (vue.userdata) {
-                        vue.userdata.avatar = response.data.avatar;
-                        // vue.updateUser();
+                        let avatar = response.data.avatar;
+                        vue.updateUser('avatar', avatar);
                     }
                     if (!vue.userdata) {
                         vue.formRegister.avatar = response.data.avatar
@@ -243,7 +314,7 @@ new Vue({
                 this.sendMiniCursoRegister();
             } else {
                 // $('#question').modal('show');
-                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e se inscrever nos minicursos. Obrigado';
                 swal(msg, {
                     icon: "info",
                     button: true,
@@ -291,14 +362,16 @@ new Vue({
                         timer: 3000,
                     });
                     localStorage.removeItem(minicursoLogin);
-                    vue.miniCursosHasUser.push(res.data.data);
-                    console.log(vue.miniCursosHasUser);
+                    vue.getMiniCursos();
+                    vue.getMiniCursosHasUser();
+
                 } else {
                     swal(res.data.msg, {
                         icon: "error",
                         button: false,
                         timer: 3000,
                     });
+                    vue.getMiniCursos();
                 }
             }).catch(function() {
                 let msg = 'Ocorreu um erro, tente novamente mais tarde.'
@@ -307,6 +380,8 @@ new Vue({
                     buttons: false,
                     timer: 3000,
                 });
+                vue.getMiniCursos();
+
             })
         },
         getMiniCursosHasUser: function() {
@@ -318,13 +393,41 @@ new Vue({
             axios.post(url, data).then(function(res) {
                 if (res.data.status == 'success') {
                     vue.miniCursosHasUser = res.data.data;
-                    console.log(vue.miniCursosHasUser);
                 }
                 return;
             })
         },
         alterRegisterMinicursos: function() {
             this.showRegisterMinicursos = !this.showRegisterMinicursos;
+        },
+        alterPasswordChange: function() {
+            this.passwordChangeArea = !this.passwordChangeArea;
+        },
+        alterPassword: function() {
+            if (this.formChangePass.currentPass != '' && this.formChangePass.currentPass != null && this.formChangePass.pass != '' &&
+                this.formChangePass.pass != null && this.formChangePass.confirmPass != '' && this.formChangePass.confirmPass != null) {
+                if (this.formChangePass.pass == this.formChangePass.confirmPass) {
+                    swal({
+                        icon: 'info',
+                        text: "Por favor, aguarde...",
+                        buttons: false
+                    });
+                    this.updateUser('password', this.formChangePass);
+
+                } else {
+                    let msg = 'Senhas digitadas não são iguais.'
+                    swal(msg, {
+                        icon: "error",
+                        button: true,
+                    });
+                }
+            } else {
+                let msg = 'É necessário preencher todos os campos.'
+                swal(msg, {
+                    icon: "error",
+                    button: true,
+                });
+            }
         },
         alterMiniCurso: function() {
             let vue = this;

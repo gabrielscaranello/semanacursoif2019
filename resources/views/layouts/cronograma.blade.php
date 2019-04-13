@@ -1,4 +1,4 @@
-<div class="cronograma-select col-md-12 p-1">
+<div class="cronograma-select d-flex justify-content-end col-md-12 p-1">
     <div @click="alterCronogram" :class="{'active': cronograma == 'IIN'}">IIN</div>
     <div @click="alterCronogram" :class="{'active': cronograma == 'TADS'}">TADS</div>
 </div>

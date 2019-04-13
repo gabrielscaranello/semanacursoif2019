@@ -20,6 +20,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.left-menu a {
+  text-transform: initial !important;
+}
+
 .left-menu .left-button {
     right: -2rem !important;
     position: absolute !important;
