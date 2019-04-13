@@ -70,10 +70,9 @@ new Vue({
                     vue.getMiniCursosHasUser();
 
                 } else {
-                    swal('Usuário ou senha invalidos.', {
-                        icon: "error",
-                        buttons: false,
-                        timer: 2000,
+                    swal(response.data.msg, {
+                        icon: "info",
+                        button: true,
                     });
                 }
             }).catch(function() {
@@ -85,6 +84,12 @@ new Vue({
             });
         },
         store: function() {
+            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+            swal(msg, {
+                icon: "info",
+                button: true,
+            });
+            return;
             let vue = this;
             let error_input = false;
             if (
@@ -237,8 +242,12 @@ new Vue({
             if (this.userdata) {
                 this.sendMiniCursoRegister();
             } else {
-                $('#question').modal('show');
-
+                // $('#question').modal('show');
+                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado';
+                swal(msg, {
+                    icon: "info",
+                    button: true,
+                });
             }
         },
         loginMiniCurso: function(type) {
@@ -287,7 +296,7 @@ new Vue({
                 } else {
                     swal(res.data.msg, {
                         icon: "error",
-                        buttons: false,
+                        button: false,
                         timer: 3000,
                     });
                 }

@@ -8,7 +8,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: .5rem;
 }
 
 .single_advisor {
@@ -16,7 +15,7 @@
 }
 
 .image-palestra {
-    height: 27rem;
+    height: 28.1rem;
 }
 
 .nav-brand img {
@@ -183,4 +182,33 @@
 .minicurso-select div.active {
     background: #28a745;
     color: #fff;
+}
+
+.minicurso-card .btn {
+    color: #f6f6f6 !important;
+}
+
+.minicurso-card .news-headline {
+    height: 3.5rem;
+    overflow: hidden;
+}
+
+.minicurso-card .single-item {
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .2);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.education-version .advisor_name {
+    height: 115px !important;
+}
+
+.education-version .single_advisor {
+    height: 450px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .25);
 }

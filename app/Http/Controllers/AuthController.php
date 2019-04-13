@@ -74,6 +74,10 @@ class AuthController extends Controller
 
     public function store(Request $request)
     {
+        return [
+          'status' => 'error',
+          'msg'=>'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 17/04. Aguarde e poderá criar seu usuário e inscrever-se nos minicursos. Obrigado!'
+        ];
         $data = $request->all();
         $data['role'] = 'usuario';
         $data['password'] = Hash::make($request->password);

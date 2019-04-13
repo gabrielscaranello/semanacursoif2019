@@ -15,10 +15,10 @@
                     <ul class="nav-menu align-to-right" id="nav">
                         <li class="active"><a href="#inicio">Início</a></li>
                         <li><a href="#evento">O Evento</a></li>
-                        <li><a href="#cronograma">Cronograma</a></li>
                         <li><a href="#galeria">Galeria</a></li>
                         <li><a href="#palestras">Palestras</a></li>
                         <li><a href="#mini-cursos">Mini Cursos</a></li>
+                        <li><a href="#cronograma">Cronograma</a></li>
                     </ul>
                 </div>
             </nav>

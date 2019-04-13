@@ -72,8 +72,8 @@ class UserController extends Controller
             $height = null;
             $init = 'A';
             if (isset($data['id'])) {
-              $user = User::where('id', $data['id'])->first();
-              $init = $user->id;
+                $user = User::where('id', $data['id'])->first();
+                $init = $user->id;
             }
             $data['avatar'] = $this->resizeImage($this->base64_to_jpeg($data['avatar'], $init), $size, $height);
             if ($data['avatar']) {

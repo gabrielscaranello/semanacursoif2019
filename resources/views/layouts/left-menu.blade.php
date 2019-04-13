@@ -87,7 +87,7 @@
 
 
                     <div class="col-12">
-                        <button type="submit" @click.prevent.stop="store" class="btn btn-block btn-success mb-2">Entrar <i class="fa fa-paper-plane"></i></button>
+                        <button type="submit" @click.prevent.stop="store" class="btn btn-block btn-success mb-2">Cadastrar-se <i class="fa fa-paper-plane"></i></button>
                     </div>
 
                     <div class="col-12">

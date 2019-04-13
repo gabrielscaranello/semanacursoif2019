@@ -118,22 +118,6 @@
 <!-- ***** Special Feature Area End ***** -->
 
 
-<!-- ***** Feature Area Start ***** -->
-<section class="special_feature_area education-version section_padding_100_70" id="cronograma">
-    <div class="container wow fadeInUp" data-wow-delay=".4s">
-        <div class="row">
-            <div class="col-12">
-                <div class="edu_section_heading">
-                    <i class="fa fa-clock" aria-hidden="true"></i>
-                    <h3>Cronograma</h3>
-                </div>
-            </div>
-        </div>
-
-        @include('layouts.cronograma')
-    </div>
-</section>
-<!-- ***** Special Feature Area End ***** -->
 
 
 
@@ -152,6 +136,11 @@
     </div>
     <img class="image gallery-image wow fadeInUp" data-wow-delay=".6s" v-for="(image, i) in images" :src="image" :key="i" @click="index = i">
     <vue-gallery-slideshow :images="images" :index="index" @close="index = null"></vue-gallery-slideshow>
+    <div class="col-12 pb-3" v-if="!(images.length > 0)">
+      <p class="text-center text-dark">
+        Ainda não temos as fotos do evento, teremos em breve.
+      </p>
+    </div>
 
 </section>
 <!-- ***** Gallery area end ***** -->
@@ -171,8 +160,8 @@
         <div class="row">
 
             @foreach ($palestras as $value)
-            <div class="col-12 col-sm-6 col-lg-4">
-                <div class="single_advisor item wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+                <div class="single_advisor item wow fadeInUp w-100" data-wow-delay="0.4s">
                     <!-- Single advisor profile thumb -->
                     <div class="advisor_thumb image-palestra" style="background-image: url({!!($value->photo)!!})">
                         {{-- <img src="{!!asset($value->photo)!!}" alt="{{$value->name}}" title="{{$value->name}}">
@@ -217,9 +206,9 @@
               <div @click="alterMiniCurso" :class="{'active': minicursoTurma == 'TADS'}">TADS</div>
           </div>
 
-            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp"
+            <div class="col-12 col-md-6 col-lg-4 wow fadeInUp minicurso-card"
             v-for="value in miniCursos" data-wow-delay=".2s" v-if="value.turma == minicursoTurma">
-                <div class="single_latest_news_area m-bottom-15">
+                <div class="single_latest_news_area m-bottom-15 single-item">
                     <div class="single_latest_news_img_area">
                         <div class="image-minicurso" :style="'background-image: url('+value.image+')'"></div>
                         <!-- Catagory -->
@@ -229,29 +218,36 @@
                     </div>
                     <div class="single_latest_news_text_area p-15">
                         <a class="news-headline" href="#">
-                            @{{value.name}}
+                          @{{value.name}}
                         </a>
                         <div class="post-meta">
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-user" aria-hidden="true"></i>
-                                    @{{value.autors}}
+                                <a href="#"><i class="fa fa-user  mr-1" aria-hidden="true"></i>
+                                  @{{value.autors}}
                                 </a>
                             </div>
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-calendar-o" aria-hidden="true"></i>
-                                    @{{value.day}}
+                                <a href="#"><i class="fa fa-calendar-o mr-1" aria-hidden="true"></i>
+                                  @{{value.day}}
                                 </a>
                             </div>
                             <div class="col-12 p-0">
-                                <a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    @{{value.hour}}
+                                <a><i class="fa fa-clock-o mr-1" aria-hidden="true"></i>
+                                  @{{value.hour}}
                                 </a>
                             </div>
 
                             <div class="col-12 p-0">
                                 <a class="text-lowercase">
-                                  <i class="fa fa-check" aria-hidden="true"></i>
-                                  @{{value.vagas_preenchidas}}/@{{value.vagas}} vagas disponíveis
+                                  <i class="fa fa-ticket-alt mr-1" aria-hidden="true"></i>
+                                  <span>@{{value.vagas}} vagas</span>
+                                </a>
+                            </div>
+
+                            <div class="col-12 p-0">
+                                <a class="text-lowercase">
+                                  <i class="fa fa-check mr-1" aria-hidden="true"></i>
+                                  <span>@{{value.vagas_preenchidas}} inscritos</span>
                                 </a>
                             </div>
                         </div>
@@ -267,5 +263,22 @@
 </section>
 <!-- ***** Blog Area End ***** -->
 
+
+<!-- ***** Feature Area Start ***** -->
+<section class="special_feature_area education-version section_padding_100_70" id="cronograma">
+    <div class="container wow fadeInUp" data-wow-delay=".4s">
+        <div class="row">
+            <div class="col-12">
+                <div class="edu_section_heading">
+                    <i class="fa fa-clock" aria-hidden="true"></i>
+                    <h3>Cronograma</h3>
+                </div>
+            </div>
+        </div>
+
+        @include('layouts.cronograma')
+    </div>
+</section>
+<!-- ***** Special Feature Area End ***** -->
 
 @endsection
