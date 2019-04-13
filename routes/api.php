@@ -31,6 +31,7 @@ Route::group(['prefix' => 'mini-curso'], function () {
     Route::get('/show', 'Api\MiniCursoController@show');
     Route::post('/inscrever', 'Api\MiniCursoController@inscrever');
     Route::post('/miniCursosHasUser', 'Api\MiniCursoController@miniCursosHasUser');
+    Route::post('/miniCursosHasUserDel', 'Api\MiniCursoController@miniCursosHasUserDel');
     Route::post('/getItem', 'Api\MiniCursoController@getItem');
     Route::post('/uploadBanner', 'Api\MiniCursoController@uploadBanner');
     Route::post('/store', 'Api\MiniCursoController@store');

@@ -202,23 +202,8 @@
         </div>
 
         <div class="row">
-            {{-- <div class="col-12">
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-
-                    <p>
-                        <strong>Atenção!</strong> Note que extistem minicursos ministrados pelo IIN e outros pelo TADS, atente-se ao escolher qual se cadastrar.
-                    </p>
-                    <p>
-                        As inscrições terão início em 15/04 - segunda-feira. Obrigado!
-                    </p>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div> --}}
-
             <div class="col-12">
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     <div class="row">
                         <div class="col-10">
                             <p class="my-0 py-0">

@@ -70,6 +70,7 @@ new Vue({
             var vue = this;
             axios.post(url, vue.formLogin).then(function(response) {
                 if (response.data.status == 'success') {
+
                     localStorage.user = JSON.stringify(response.data.user);
                     vue.userdata = response.data.user;
 
@@ -82,17 +83,27 @@ new Vue({
                     vue.getMiniCursosHasUser();
 
                 } else {
+
                     swal(response.data.msg, {
                         icon: "info",
                         button: true,
                     });
                 }
-            }).catch(function() {
-                swal('Ocorreu um erro, tente novamente mais tarde.', {
-                    icon: "error",
-                    buttons: false,
-                    timer: 2000,
-                });
+            }).catch(function(res) {
+                if (res.response.status == 401) {
+                    swal('Usuário ou senha invalidos.', {
+                        icon: "error",
+                        buttons: false,
+                        timer: 2000,
+                    });
+                } else {
+                    swal('Ocorreu um erro, tente novamente mais tarde.', {
+                        icon: "error",
+                        buttons: false,
+                        timer: 2000,
+                    });
+                }
+
             });
         },
         store: function() {
@@ -299,6 +310,7 @@ new Vue({
                     }
                     if (!vue.userdata) {
                         vue.formRegister.avatar = response.data.avatar
+                        vue.loadingAvatar = false;
                     }
                 });
             };
@@ -330,8 +342,10 @@ new Vue({
 
             function id() {
                 if (localStorage.user) {
-                    vue.sendMiniCursoRegister();
-                    vue.leftMenu = 'close';
+                    setTimeout(function() {
+                        vue.sendMiniCursoRegister();
+                        vue.leftMenu = 'closed';
+                    }, 1500);
                 } else run();
             }
 
@@ -383,6 +397,64 @@ new Vue({
                 vue.getMiniCursos();
 
             })
+        },
+        cancelMinicursoRegister: function(id, name) {
+            swal({
+                    title: "Você tem certeza?",
+                    text: 'Ao confirmar o cancelamento esse registro será apagado do seu histórico, e você não poderá se inscrever novamente no minicurso "' + name + '" caso este não possua mais vagas disponíveis',
+                    icon: "warning",
+                    buttons: ["Voltar", "Cancelar Inscrição"],
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        cancelRegister();
+                    }
+                });
+            var vue = this;
+
+            function cancelRegister() {
+                swal({
+                    icon: 'info',
+                    text: "Por favor, aguarde...",
+                    buttons: false
+                });
+
+                let url = '/api/mini-curso/miniCursosHasUserDel';
+                axios.post(url, {
+                    id: id
+                }).then(function(res) {
+                    if (res.data.status == 'success') {
+                        let msg = 'Cancelamento realizado com sucesso.'
+                        swal(msg, {
+                            icon: "success",
+                            buttons: false,
+                            timer: 2000,
+                        });
+                        vue.getMiniCursosHasUser();
+                        vue.getMiniCursos();
+
+                    } else {
+                        vue.getMiniCursos();
+                        let msg = 'Ocorreu um erro, tente novamente mais tarde.'
+                        swal(msg, {
+                            icon: "error",
+                            buttons: false,
+                            timer: 3000,
+                        });
+                    }
+                }).catch(function() {
+                    vue.getMiniCursos();
+
+                    let msg = 'Ocorreu um erro, tente novamente mais tarde.'
+                    swal(msg, {
+                        icon: "error",
+                        buttons: false,
+                        timer: 3000,
+                    });
+                });
+
+            }
         },
         getMiniCursosHasUser: function() {
             let vue = this

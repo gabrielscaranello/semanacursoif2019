@@ -14,8 +14,11 @@
                       <label class="label-control">Foto de perfil</label>
                   </div>
                     <div class="profile-image" :style="'background: url('+formRegister.avatar+')'">
-                        <label id="banner_input_label" for="banner_input"></label>
                         <input id="banner_input" type="file" @change="uploadImage">
+                        <label id="banner_input_label" v-if="!loadingAvatar" for="banner_input"></label>
+                        <div class="loadingAvatar d-flex align-items-center justify-content-center" v-if="loadingAvatar">
+                          <i class="fas fa-circle-notch"></i>
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
@@ -51,6 +54,7 @@
                             <select v-model="formRegister.curso" class="custom-select form-control">
                                 <option value="IIN">IIN</option>
                                 <option value="TADS">TADS</option>
+                                <option value="Outro">Outro</option>
                             </select>
                         </div>
                     </div>
@@ -252,9 +256,16 @@
                     <h2>Mini Cursos Inscritos</h2>
                 </div>
                 <div class="col-12" v-for="value in miniCursosHasUser">
-                    <p class="text-dark">
-                        @{{value.name}}
-                    </p>
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="text-dark">
+                            @{{value.name}}
+                        </p>
+                      </div>
+                      <div class="col-1 d-flex justify-content-center align-items-center">
+                        <i @click="cancelMinicursoRegister(value.id, value.name)" class="fas fa-trash text-danger"></i>
+                      </div>
+                    </div>
                 </div>
                 <div class="col-12" v-if="!(miniCursosHasUser.length > 0)">
                     <div class="alert alert-dark" role="alert">
