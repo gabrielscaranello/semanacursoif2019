@@ -114,6 +114,42 @@
                     <!-- Single Feature Text Area End -->
                 </div>
             </div>
+
+            <div class="col-12 col-md-6">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+
+                    <div class="edu_feature_img">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                        <div class="edu_feature_text">
+                            <h5>Contribuição</h5>
+                            <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
+                                dos nossos minicursos basta se inscrever e no dia traz consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
+                            <p>
+                                <span class="note-donation">Observação: Essa contriução é necessaria apenas uma vez, você contribui e aproveita a semana toda.</span>
+                            </p>
+                        </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+
+                    <div class="edu_feature_img">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                        <div class="edu_feature_text">
+                            <h5>Localização</h5>
+                            <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.378034364908!2d-53.50941838553872!3d-24.402930984271716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3a9c6591382c9%3A0x1455e88df731e652!2sIFPR%2C+Instituto+Federal+do+Paran%C3%A1+campus+Assis+Chateaubriand!5e0!3m2!1spt-BR!2sbr!4v1555271082940!5m2!1spt-BR!2sbr" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
         </div>
     </div>
 </section>
