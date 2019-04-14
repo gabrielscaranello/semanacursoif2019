@@ -10,14 +10,14 @@
                     <div class="col-12">
                         <h2>Faça seu Cadastro</h2>
                     </div>
-                  <div class="col-12">
-                      <label class="label-control">Foto de perfil</label>
-                  </div>
+                    <div class="col-12">
+                        <label class="label-control">Foto de perfil</label>
+                    </div>
                     <div class="profile-image" :style="'background: url('+formRegister.avatar+')'">
                         <input id="banner_input" type="file" @change="uploadImage">
                         <label id="banner_input_label" v-if="!loadingAvatar" for="banner_input"></label>
                         <div class="loadingAvatar d-flex align-items-center justify-content-center" v-if="loadingAvatar">
-                          <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-circle-notch"></i>
                         </div>
                     </div>
                     <div class="col-12">
@@ -54,6 +54,7 @@
                             <select v-model="formRegister.curso" class="custom-select form-control">
                                 <option value="IIN">IIN</option>
                                 <option value="TADS">TADS</option>
+                                <option value="TDS">TDS</option>
                                 <option value="Outro">Outro</option>
                             </select>
                         </div>
@@ -153,7 +154,17 @@
                 </div>
                 <div class="col-12">
                     <p class="text-justify">
-                        Nosso termo de uso em construção, estará disponível em 15/04.
+                        A senha de acesso obtida por meio do cadastro é pessoal e intransferível, sendo o usuário o único responsável por qualquer ato decorrente do uso do site a partir de seu login e senha.
+                    </p>
+                    <p class="text-justify">
+                        A responsabilidade de acesso e inscrições nos minicursos é de total responsabilidade do usuário.
+                    </p>
+                    <p class="text-justify">
+                        Ao fazer o cadastro em nosso sistema o usuário está de acordo com a utilização de seus dados, inseridos no momento do cadastro.
+                    </p>
+                    <p class="text-justify">
+                        O nosso sistema possui uma galeria de fotos, a qual, irá apresentar as fotos do evento e todos os participantes, ao fazer o cadastro em nosso sistema e se inscrever em nossos minicursos o usuário está de acordo com a
+                        utilização de sua imagem e voz.
                     </p>
                 </div>
                 <div class="col-12">
@@ -174,7 +185,7 @@
                 <div class="profile-image" :style="'background: url('+userdata.avatar+')'">
                     <label id="banner_input_label" v-if="!loadingAvatar" for="banner_input"></label>
                     <div class="loadingAvatar d-flex align-items-center justify-content-center" v-if="loadingAvatar">
-                      <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-circle-notch"></i>
                     </div>
                     <input id="banner_input" type="file" @change="uploadImage">
                 </div>
@@ -211,33 +222,33 @@
                 </div>
 
                 <form v-if="passwordChangeArea" class="col-12 px-0 py-2 bg-light">
-                  <div class="col-12">
-                    <h2 class="left-title">Alterar senha</h2>
-                  </div>
-                  <div class="col-12">
-                      <div class="form-group">
-                          <label class="label-control">Digite Sua Senha Atual</label>
-                          <input v-model="formChangePass.currentPass" type="password" class="form-control">
-                      </div>
-                  </div>
-                  <div class="col-12">
-                      <div class="form-group">
-                          <label class="label-control">Digite a Nova Senha</label>
-                          <input v-model="formChangePass.pass" type="password" class="form-control">
-                      </div>
-                  </div>
-                  <div class="col-12">
-                      <div class="form-group">
-                          <label class="label-control">Confirme a Nova Senha</label>
-                          <input v-model="formChangePass.confirmPass" type="password" class="form-control">
-                      </div>
-                  </div>
-                  <div class="col-12">
-                      <button type="submit" @click.prevent.stop="alterPassword" class="btn btn-block btn-success mb-2">Alterar <i class="fa fa-edit"></i></button>
-                  </div>
-                  <div class="col-12">
-                      <button type="reset" @click.prevent.stop="alterPasswordChange" class="btn btn-block btn-danger mb-2">Cancelar <i class="fa fa-ban"></i></button>
-                  </div>
+                    <div class="col-12">
+                        <h2 class="left-title">Alterar senha</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="label-control">Digite Sua Senha Atual</label>
+                            <input v-model="formChangePass.currentPass" type="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="label-control">Digite a Nova Senha</label>
+                            <input v-model="formChangePass.pass" type="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="label-control">Confirme a Nova Senha</label>
+                            <input v-model="formChangePass.confirmPass" type="password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" @click.prevent.stop="alterPassword" class="btn btn-block btn-success mb-2">Alterar <i class="fa fa-edit"></i></button>
+                    </div>
+                    <div class="col-12">
+                        <button type="reset" @click.prevent.stop="alterPasswordChange" class="btn btn-block btn-danger mb-2">Cancelar <i class="fa fa-ban"></i></button>
+                    </div>
                 </form>
 
 
@@ -257,14 +268,14 @@
                 </div>
                 <div class="col-12" v-for="value in miniCursosHasUser">
                     <div class="row">
-                      <div class="col-10">
-                        <p class="text-dark">
-                            @{{value.name}}
-                        </p>
-                      </div>
-                      <div class="col-1 d-flex justify-content-center align-items-center">
-                        <i @click="cancelMinicursoRegister(value.id, value.name)" class="fas fa-trash text-danger"></i>
-                      </div>
+                        <div class="col-10">
+                            <p class="text-dark">
+                                @{{value.name}}
+                            </p>
+                        </div>
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <i @click="cancelMinicursoRegister(value.id, value.name)" class="fas fa-trash text-danger"></i>
+                        </div>
                     </div>
                 </div>
                 <div class="col-12" v-if="!(miniCursosHasUser.length > 0)">
