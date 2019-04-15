@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="{!!asset('assets/site/css/style.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/buttontop.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/left-bar.css')!!}">
+    <link rel="stylesheet" href="{!!asset('assets/site/css/footer.css')!!}">
 
     <!-- Responsive css -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/responsive/responsive.css')!!}">

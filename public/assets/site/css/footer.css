@@ -1,0 +1,11 @@
+.footer-title{
+  color: white;
+  text-align: left;
+  font-size: 1.1rem;
+}
+.footer-paragraph{
+  text-align: left;
+}
+.teams{
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
