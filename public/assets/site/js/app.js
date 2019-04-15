@@ -26,8 +26,37 @@ new Vue({
         this.loadLoginInfo();
         this.getGalleryImages();
         this.getMiniCursos();
+        this.initLoginVerify();
+        this.initMinicursoVerify();
     },
     methods: {
+      initLoginVerify: function() {
+          const vue = this;
+
+          function verify() {
+              vue.loadLoginInfo();
+              run();
+          }
+
+          function run() {
+              setTimeout(verify, 60000)
+          }
+          run();
+      },
+
+      initMinicursoVerify: function() {
+          const vue = this;
+
+          function verify() {
+              vue.getMiniCursos();
+              run();
+          }
+
+          function run() {
+              setTimeout(verify, 5000)
+          }
+          run();
+      },
         showTermodeUso: function() {
             this.termodeuso = true;
             this.register = false;
@@ -107,12 +136,6 @@ new Vue({
             });
         },
         store: function() {
-            let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e se inscrever nos minicursos. Obrigado';
-            swal(msg, {
-                icon: "info",
-                button: true,
-            });
-            return;
             let vue = this;
             let error_input = false;
             if (
@@ -325,12 +348,8 @@ new Vue({
             if (this.userdata) {
                 this.sendMiniCursoRegister();
             } else {
-                // $('#question').modal('show');
-                let msg = 'Nosso termo de uso está em fase de desenvolvimento e estará pronto até dia 15/04. Aguarde e poderá criar seu usuário e se inscrever nos minicursos. Obrigado';
-                swal(msg, {
-                    icon: "info",
-                    button: true,
-                });
+                $('#question').modal('show');
+
             }
         },
         loginMiniCurso: function(type) {
