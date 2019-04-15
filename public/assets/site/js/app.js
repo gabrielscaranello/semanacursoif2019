@@ -30,33 +30,33 @@ new Vue({
         this.initMinicursoVerify();
     },
     methods: {
-      initLoginVerify: function() {
-          const vue = this;
+        initLoginVerify: function() {
+            const vue = this;
 
-          function verify() {
-              vue.loadLoginInfo();
-              run();
-          }
+            function verify() {
+                vue.loadLoginInfo();
+                run();
+            }
 
-          function run() {
-              setTimeout(verify, 60000)
-          }
-          run();
-      },
+            function run() {
+                setTimeout(verify, 60000)
+            }
+            run();
+        },
 
-      initMinicursoVerify: function() {
-          const vue = this;
+        initMinicursoVerify: function() {
+            const vue = this;
 
-          function verify() {
-              vue.getMiniCursos();
-              run();
-          }
+            function verify() {
+                vue.getMiniCursos();
+                run();
+            }
 
-          function run() {
-              setTimeout(verify, 5000)
-          }
-          run();
-      },
+            function run() {
+                setTimeout(verify, 5000)
+            }
+            run();
+        },
         showTermodeUso: function() {
             this.termodeuso = true;
             this.register = false;
@@ -79,6 +79,15 @@ new Vue({
             axios.get('/api/mini-curso/show').then(function(res) {
                 if (res.data.status == 'success') {
                     vue.miniCursos = res.data.data;
+                    if (vue.miniCursosHasUser.length > 0) {
+                        for (var i = 0; i < vue.miniCursos.length; i++) {
+                            for (var j = 0; j < vue.miniCursosHasUser.length; j++) {
+                                if (vue.miniCursos[i].id == vue.miniCursosHasUser[j].id_curso) {
+                                    vue.miniCursos[i].id_inscricao = vue.miniCursosHasUser[j].id_inscricao;
+                                }
+                            }
+                        }
+                    }
                 }
 
             });
@@ -448,7 +457,7 @@ new Vue({
                         swal(msg, {
                             icon: "success",
                             buttons: false,
-                            timer: 2000,
+                            timer: 3000,
                         });
                         vue.getMiniCursosHasUser();
                         vue.getMiniCursos();

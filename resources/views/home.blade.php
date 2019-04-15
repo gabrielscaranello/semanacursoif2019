@@ -123,14 +123,14 @@
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <!-- Single Feature Image Area End -->
-                        <div class="edu_feature_text">
-                            <h5>Contribuição</h5>
-                            <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
-                                dos nossos minicursos basta se inscrever e no dia traz consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
-                            <p>
-                                <span class="note-donation">Observação: Essa contriução é necessaria apenas uma vez, você contribui e aproveita a semana toda.</span>
-                            </p>
-                        </div>
+                    <div class="edu_feature_text">
+                        <h5>Contribuição</h5>
+                        <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
+                            dos nossos minicursos basta se inscrever e no dia traz consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
+                        <p>
+                            <span class="note-donation">Observação: Essa contriução é necessaria apenas uma vez, você contribui e aproveita a semana toda.</span>
+                        </p>
+                    </div>
                     <!-- Single Feature Text Area End -->
                 </div>
             </div>
@@ -140,13 +140,14 @@
                 <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
 
                     <div class="edu_feature_img">
-                      <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <!-- Single Feature Image Area End -->
-                        <div class="edu_feature_text">
-                            <h5>Localização</h5>
-                            <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.378034364908!2d-53.50941838553872!3d-24.402930984271716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3a9c6591382c9%3A0x1455e88df731e652!2sIFPR%2C+Instituto+Federal+do+Paran%C3%A1+campus+Assis+Chateaubriand!5e0!3m2!1spt-BR!2sbr!4v1555271082940!5m2!1spt-BR!2sbr" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
+                    <div class="edu_feature_text">
+                        <h5>Localização</h5>
+                        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.378034364908!2d-53.50941838553872!3d-24.402930984271716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3a9c6591382c9%3A0x1455e88df731e652!2sIFPR%2C+Instituto+Federal+do+Paran%C3%A1+campus+Assis+Chateaubriand!5e0!3m2!1spt-BR!2sbr!4v1555271082940!5m2!1spt-BR!2sbr"
+                          frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
                     <!-- Single Feature Text Area End -->
                 </div>
             </div>
@@ -245,9 +246,6 @@
                             <p class="my-0 py-0">
                                 <strong>Atenção!</strong> Note que extistem minicursos ministrados pelo IIN e outros pelo TADS, atente-se ao escolher qual se cadastrar.
                             </p>
-                            <p class="my-0 py-0">
-                                As inscrições terão início em 15/04 - segunda-feira. Obrigado!
-                            </p>
                         </div>
                         <div class="col-2">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -311,7 +309,8 @@
                     </div>
                 </div>
 
-                <a class="btn btn-pill btn-success m-top-15" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
+                <a class="btn btn-pill btn-success m-top-15" v-show="!value.id_inscricao" @click.prevent.stop="registerMiniCurso(value.id, value.name)">Increver-se</a>
+                <a class="btn btn-pill btn-danger m-top-15" v-show="value.id_inscricao" @click.prevent.stop="cancelMinicursoRegister(value.id_inscricao, value.name)">Cancelar Inscrição</a>
             </div>
         </div>
     </div>

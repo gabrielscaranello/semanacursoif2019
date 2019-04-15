@@ -22,7 +22,6 @@ class MiniCursoController extends Controller
 
     public function inscrever(Request $request)
     {
-
         if ($request->id_curso && $request->id_user) {
             $usercurso = MiniCursoHasUser::where(['id_user'=> $request->id_user,'id_curso'=> $request->id_curso])->get();
             if (!(sizeof($usercurso) > 0)) {
@@ -47,7 +46,7 @@ class MiniCursoController extends Controller
     public function miniCursosHasUser(Request $request)
     {
         $miniCursos = MiniCursoHasUser::where('id_user', $request->user_id)
-      ->select('mini_cursos.*', 'mini_curso_has_users.id')
+      ->select('mini_cursos.*', 'mini_curso_has_users.id as id_inscricao', 'mini_curso_has_users.id_curso')
       ->join('mini_cursos', 'mini_cursos.id', '=', 'mini_curso_has_users.id_curso')
       ->orderBy('name', 'ASC')->get();
 
