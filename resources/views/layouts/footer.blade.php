@@ -4,6 +4,7 @@
     <div class="footer_bottom_area">
         <div class="container">
             <div class="row ">
+              
                 {{-- <div class="col-12 col-md-4">
                     <div class="footer_bottom">
                         <h6 class="footer-title">Saiba Mais Sobre o Projeto</h6>
