@@ -6,7 +6,7 @@
                 <!-- Logo Area -->
                 <div class="nav-header">
                     <a class="nav-brand" href="/">
-                      <img src="{!!asset('assets/site/img/logo/logo-ifpr.jpeg')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
+                      <img src="{!!asset('assets/site/img/logo/logo-ifpr.svg')!!}" alt="Semana de cursos ifpr 2019" title="Semana de cursos ifpr 2019">
                     </a>
                     <div class="nav-toggle"></div>
                 </div>
