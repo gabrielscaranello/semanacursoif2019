@@ -274,7 +274,7 @@
                             </p>
                         </div>
                         <div class="col-1 d-flex justify-content-center align-items-center">
-                            <i @click="cancelMinicursoRegister(value.id, value.name)" class="fas fa-trash text-danger"></i>
+                            <i @click="cancelMinicursoRegister(value.id_inscricao, value.name)" class="fas fa-trash text-danger"></i>
                         </div>
                     </div>
                 </div>
