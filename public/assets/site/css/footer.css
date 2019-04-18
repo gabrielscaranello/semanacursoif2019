@@ -5,7 +5,9 @@
 }
 .footer-paragraph{
   text-align: left;
+  font-size: 0.9rem;
 }
 .teams{
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
 }
