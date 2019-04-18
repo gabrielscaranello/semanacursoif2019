@@ -131,7 +131,7 @@
                             <span class="note-donation">Observação¹: Esta contribuição é necessária apenas uma vez, você contribui e aproveita a semana toda.</span>
                         </p>
                         <p>
-                          <span class="note-donation">Observação²: Estamos arrecadando todo tipo de alimento não perecível, exceto, sal, fubá e farinha de trigo.</span>
+                          <span class="note-donation">Observação²: Estamos arrecadando alimentos não perecíveis, exceto sal e fubá.</span>
                         </p>
                     </div>
                     <!-- Single Feature Text Area End -->
