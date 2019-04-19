@@ -11,3 +11,4 @@ Route::get('admin', array('as' => 'admin', function () {
 // Route::get('/', 'Site\HomeController@comingSon');
 // Route::get('/register', 'Site\HomeController@register');
 Route::get('/', 'Site\HomeController@index');
+Route::get('/equipes', 'Site\HomeController@equipes');

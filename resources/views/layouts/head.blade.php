@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="{!!asset('assets/site/css/buttontop.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/left-bar.css')!!}">
     <link rel="stylesheet" href="{!!asset('assets/site/css/footer.css')!!}">
+    <link rel="stylesheet" href="{!!asset('assets/site/css/teams.css')!!}">
 
     <!-- Responsive css -->
     <link rel="stylesheet" href="{!!asset('assets/site/css/responsive/responsive.css')!!}">

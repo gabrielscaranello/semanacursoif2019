@@ -39,6 +39,10 @@ class HomeController extends Controller
 
         return view('home', compact('palestras', 'miniCursos', 'gallery', 'cronogramTADS', 'cronogramIIN'));
     }
+    public function equipes()
+    {
+        return view('teams');
+    }
 
 
     public function comingSon()

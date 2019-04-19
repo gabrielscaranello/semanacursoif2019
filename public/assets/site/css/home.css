@@ -106,10 +106,6 @@
     transition: .5s;
 }
 
-.footer_area {
-    padding: 20px 0;
-}
-
 .gallery-image {
     max-height: 300px !important;
 }
