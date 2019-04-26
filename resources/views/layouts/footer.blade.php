@@ -21,12 +21,12 @@
                         <div class="row">
                             <div class="col-6">
                                 <div class="text-left">
+                                  <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#organizacao-geral"> Organização Geral</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#cerimonial"> Equipe de Cerimonial</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#certificação"> Equipe de Certificação</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#coffee-break"> Equipe de Coffee Break</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#credenciamento"> Equipe de Credenciamento</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#divulgação"> Equipe de Divulgação</a></p>
-                                    <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#forum"> Equipe de Fórum</a></p>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -36,6 +36,8 @@
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#palestras"> Equipe de Palestras</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#recepcao"> Equipe de Recepção</a></p>
                                     <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#saude-e-seguranca"> Equipe de Saúde e Segurança</a></p>
+                                    <p class="teams"><i class="fa fa-angle-right" aria-hidden="true"></i><a href="/equipes/#forum"> Equipe de Fórum</a></p>
+
                                 </div>
                             </div>
                         </div>

@@ -27,7 +27,7 @@ new Vue({
         this.getGalleryImages();
         this.getMiniCursos();
         this.initLoginVerify();
-        this.initMinicursoVerify();
+        // this.initMinicursoVerify();
     },
     methods: {
         initLoginVerify: function() {

@@ -10,7 +10,7 @@
 
 @section('content')
 <!-- ***** Feature Area Start ***** -->
-<section class="special_feature_area education-version section_padding_100_70" id="evento">
+<section class="special_feature_area education-version section_padding_100_70">
     <div class="container wow fadeInUp" data-wow-delay=".1s">
         <div class="row">
             <div class="col-12">
