@@ -44,7 +44,6 @@
                 <div class="col-12 col-md-3">
                     <div class="footer_bottom">
                         <h6 class="footer-title">Apoiadores da Semana de Cursos</h6>
-                        <img src="{!!asset('assets/site/img/footer/embreve.jpg')!!}" alt="">
                     </div>
                 </div>
             </div>
