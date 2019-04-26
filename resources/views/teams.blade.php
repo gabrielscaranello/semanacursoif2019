@@ -1101,122 +1101,123 @@
                     <!-- Single Feature Text Area End -->
                 </div>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="edu_section_heading">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Equipe de Saúde E Segurança</h3>
-                    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="edu_section_heading">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Equipe de Saúde E Segurança</h3>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <!-- Single Feature Area Start -->
-                    <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-                        <div class="edu_feature_text">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="picture-team" src="{!!asset('assets/site/img//teams/2017/Sirlei-Aparecida-Santos-TADS2017.jpg')!!}" alt="">
-                                </div>
-                                <div class="col-8">
-                                    <!-- Single Feature Image Area End -->
-                                    <h5>Sirlei Aparecida Santos</h5>
-                                    <p>TADS 2017</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Single Feature Text Area End -->
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <!-- Single Feature Area Start -->
-                    <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-                        <div class="edu_feature_text">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="picture-team" src="{!!asset('assets/site/img/teams/2017/Daisa-Silva-TADS2017.jpg')!!}" alt="">
-                                </div>
-                                <div class="col-8">
-                                    <!-- Single Feature Image Area End -->
-                                    <h5>Daisa Silva</h5>
-                                    <p>TADS 2017</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Single Feature Text Area End -->
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <!-- Single Feature Area Start -->
-                    <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-                        <div class="edu_feature_text">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="picture-team" src="{!!asset('assets/site/img/teams/noimg.png')!!}" alt="">
-                                </div>
-                                <div class="col-8">
-                                    <!-- Single Feature Image Area End -->
-                                    <h5>Natanael</h5>
-                                    <p>TADS 2019</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Single Feature Text Area End -->
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <!-- Single Feature Area Start -->
-                    <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-                        <div class="edu_feature_text">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="picture-team" src="{!!asset('assets/site/img/teams/noimg.png')!!}" alt="">
-                                </div>
-                                <div class="col-8">
-                                    <!-- Single Feature Image Area End -->
-                                    <h5>Claudio</h5>
-                                    <p>TADS 2019</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Single Feature Text Area End -->
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <!-- Single Feature Area Start -->
-                    <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-                        <div class="edu_feature_text">
-                            <div class="row">
-                                <div class="col-4">
-                                    <img class="picture-team" src="{!!asset('assets/site/img/teams/2019/SaudeSeguranca-Michael-Sicati-Claro-TADS2019.jpg')!!}" alt="">
-                                </div>
-                                <div class="col-8">
-                                    <!-- Single Feature Image Area End -->
-                                    <h5>Michael Sicati Claro</h5>
-                                    <p>TADS 2019</p>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- Single Feature Text Area End -->
-                    </div>
-                </div>
-
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+                    <div class="edu_feature_text">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="picture-team" src="{!!asset('assets/site/img//teams/2017/Sirlei-Aparecida-Santos-TADS2017.jpg')!!}" alt="">
+                            </div>
+                            <div class="col-8">
+                                <!-- Single Feature Image Area End -->
+                                <h5>Sirlei Aparecida Santos</h5>
+                                <p>TADS 2017</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+                    <div class="edu_feature_text">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="picture-team" src="{!!asset('assets/site/img/teams/2017/Daisa-Silva-TADS2017.jpg')!!}" alt="">
+                            </div>
+                            <div class="col-8">
+                                <!-- Single Feature Image Area End -->
+                                <h5>Daisa Silva</h5>
+                                <p>TADS 2017</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+                    <div class="edu_feature_text">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="picture-team" src="{!!asset('assets/site/img/teams/noimg.png')!!}" alt="">
+                            </div>
+                            <div class="col-8">
+                                <!-- Single Feature Image Area End -->
+                                <h5>Natanael</h5>
+                                <p>TADS 2019</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+                    <div class="edu_feature_text">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="picture-team" src="{!!asset('assets/site/img/teams/noimg.png')!!}" alt="">
+                            </div>
+                            <div class="col-8">
+                                <!-- Single Feature Image Area End -->
+                                <h5>Claudio</h5>
+                                <p>TADS 2019</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+                    <div class="edu_feature_text">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="picture-team" src="{!!asset('assets/site/img/teams/2019/SaudeSeguranca-Michael-Sicati-Claro-TADS2019.jpg')!!}" alt="">
+                            </div>
+                            <div class="col-8">
+                                <!-- Single Feature Image Area End -->
+                                <h5>Michael Sicati Claro</h5>
+                                <p>TADS 2019</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
+
+        </div>
+    </div>
 </section>
 @endsection
