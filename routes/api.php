@@ -83,3 +83,8 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('/update', 'Api\UserController@update');
     Route::post('/delete', 'Api\UserController@delete');
 });
+
+//gerenciamento da usuario
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', 'Api\DashboardController@index');
+});

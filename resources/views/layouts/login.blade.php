@@ -16,8 +16,14 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <label class="label-control">Nome Completo</label>
+                            <label class="label-control">Nome</label>
                             <input v-model="formRegister.name" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label class="label-control">Sobrenome</label>
+                            <input v-model="formRegister.subname" type="text" class="form-control">
                         </div>
                     </div>
                     <div class="col-12">
@@ -44,7 +50,7 @@
 
                     <div class="col-12" v-if="formRegister.aluno == 1">
                         <div class="form-group">
-                            <label class="label-control">Cruso</label>
+                            <label class="label-control">Curso</label>
                             <select v-model="formRegister.curso" class="custom-select form-control">
                                 <option value="IIN">IIN</option>
                                 <option value="TADS">TADS</option>

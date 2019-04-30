@@ -151,7 +151,8 @@ new Vue({
                 !this.formRegister.email || this.formRegister.email == '' ||
                 !this.formRegister.password || this.formRegister.password == '' ||
                 !this.formRegister.password || this.formRegister.password_confirm == '' ||
-                !this.formRegister.name || this.formRegister.name == ''
+                !this.formRegister.name || this.formRegister.name == '' ||
+                !this.formRegister.subname || this.formRegister.subname == ''
             ) {
                 error_input = true;
             } else {
@@ -172,6 +173,7 @@ new Vue({
                 });
             } else {
                 if (this.formRegister.password == this.formRegister.password_confirm) {
+                    this.formRegister.name = this.formRegister.name.trim() +' '+ this.formRegister.subname.trim()
                     sendRegister();
                 } else {
                     swal('Atenção, as senhas digitadas não conferem.', {

@@ -55,6 +55,28 @@
         </div>
 
         <div class="row">
+            <div class="col-12">
+                <!-- Single Feature Area Start -->
+                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
+
+                    <div class="edu_feature_img text-center">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <!-- Single Feature Image Area End -->
+                    <div class="edu_feature_text">
+                        <h5 class="text-center mb-2">Contribuição</h5>
+                        <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
+                            dos nossos minicursos basta se inscrever e no dia trazer consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
+                        <p>
+                            <span class="note-donation">Observação¹: Esta contribuição é necessária apenas uma vez, você contribui e aproveita a semana toda.</span>
+                        </p>
+                        <p>
+                            <span class="note-donation">Observação²: Estamos arrecadando alimentos não perecíveis, exceto sal e fubá.</span>
+                        </p>
+                    </div>
+                    <!-- Single Feature Text Area End -->
+                </div>
+            </div>
             <div class="col-12 col-sm-6 col-lg-3">
                 <!-- Single Feature Area Start -->
                 <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
@@ -109,36 +131,13 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5>Organização</h5>
-                        <p>Evento planejado com cuidado e qualidade.</p>
+                        <p>Evento organizado pelos alunos e professores do curso de TADS.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>
             </div>
 
-            <div class="col-12 col-md-6">
-                <!-- Single Feature Area Start -->
-                <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
-
-                    <div class="edu_feature_img">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <!-- Single Feature Image Area End -->
-                    <div class="edu_feature_text">
-                        <h5>Contribuição</h5>
-                        <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
-                            dos nossos minicursos basta se inscrever e no dia traz consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
-                        <p>
-                            <span class="note-donation">Observação¹: Esta contribuição é necessária apenas uma vez, você contribui e aproveita a semana toda.</span>
-                        </p>
-                        <p>
-                          <span class="note-donation">Observação²: Estamos arrecadando alimentos não perecíveis, exceto sal e fubá.</span>
-                        </p>
-                    </div>
-                    <!-- Single Feature Text Area End -->
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6">
+            <div class="col-12">
                 <!-- Single Feature Area Start -->
                 <div class="edu_single_feature wow fadeInUp" data-wow-delay=".2s">
 
