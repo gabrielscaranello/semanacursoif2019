@@ -1,90 +1,90 @@
 <template>
-    <div>
-        <div class="row">
+<div>
+    <div class="row">
         <div class="col-xl-3 col-lg-6 col-sm-6 text-center">
-              <b-card claass="bg-default-card easy_pie_chart1">
-                  <div class="row">
-                      <div class="col-12 mb-3 mt-3">
-                           <div class="row">
-                               <div class="col-4 p-t-10 push-1">
-                                   <div class="top_border1 bg_color1">
-                                   <i class="fa fa-edit circle_round"></i>
-                                   </div>
-                               </div>
-                               <div class="col-8 m-t-10">
-                                   <p class="user_font">Inscritos</p>
-                                   <p class="number_size">{{data.inscritos}}</p>
-                               </div>
-                           </div>
-                      </div>
-                  </div>
-              </b-card>
-            </div>
-            <div class="col-xl-3 col-lg-6  col-sm-6 text-center">
-                <b-card claass="bg-default-card easy_pie_chart1">
-                    <div class="row">
-                        <div class="col-12 mb-3 mt-3">
-                            <div class="row">
-                                <div class="col-4 p-t-10 push-1">
-                                    <div class="top_border4 bg_color4 d-flex align-items-center justify-content-center ml-0">
-                                        <i class="fa fa-eye circle_round1"></i>
-                                    </div>
+            <b-card claass="bg-default-card easy_pie_chart1">
+                <div class="row">
+                    <div class="col-12 mb-3 mt-3">
+                        <div class="row">
+                            <div class="col-4 p-t-10 push-1">
+                                <div class="top_border1 bg_color1">
+                                    <i class="fa fa-edit circle_round"></i>
                                 </div>
-                                <div class="col-8 m-t-10">
-                                    <p class="user_font">Visitantes</p>
-                                    <p class="number_size">{{data.visitantes}}</p>
-                                </div>
+                            </div>
+                            <div class="col-8 m-t-10">
+                                <p class="user_font">Inscritos</p>
+                                <p class="number_size">{{data.inscritos}}</p>
                             </div>
                         </div>
                     </div>
-                </b-card>
-            </div>
-            <div class="col-xl-3 col-lg-6  col-sm-6 text-center">
-                <b-card claass="bg-default-card easy_pie_chart1">
-                    <div class="row">
-                        <div class="col-12 mb-3 mt-3">
-                            <div class="row">
-                                <div class="col-4 p-t-10 push-1">
-                                    <div class="top_border3 bg_color3">
-                                        <i class="fa fa-book circle_round1"></i>
-                                    </div>
+                </div>
+            </b-card>
+        </div>
+        <div class="col-xl-3 col-lg-6  col-sm-6 text-center">
+            <b-card claass="bg-default-card easy_pie_chart1">
+                <div class="row">
+                    <div class="col-12 mb-3 mt-3">
+                        <div class="row">
+                            <div class="col-4 p-t-10 push-1">
+                                <div class="top_border4 bg_color4 d-flex align-items-center justify-content-center ml-0">
+                                    <i class="fa fa-eye circle_round1"></i>
                                 </div>
-                                <div class="col-8 m-t-10">
-                                    <p class="user_font">Mini Cursos</p>
-                                    <p class="number_size">{{data.miniCursos}}</p>
-                                </div>
+                            </div>
+                            <div class="col-8 m-t-10">
+                                <p class="user_font">Visitantes</p>
+                                <p class="number_size">{{data.visitantes}}</p>
                             </div>
                         </div>
                     </div>
-                </b-card>
-            </div>
-            <div class="col-xl-3 col-lg-6 col-sm-6 text-center">
-                <b-card claass="bg-default-card easy_pie_chart1">
-                    <div class="row">
-                        <div class="col-12 mb-3 mt-3">
-                            <div class="row">
-                                <div class="col-4 p-t-10 push-1">
-                                    <div class="top_border4 bg_color4">
-                                        <i class="fa fa-users circle_round"></i>
-                                    </div>
+                </div>
+            </b-card>
+        </div>
+        <div class="col-xl-3 col-lg-6  col-sm-6 text-center">
+            <b-card claass="bg-default-card easy_pie_chart1">
+                <div class="row">
+                    <div class="col-12 mb-3 mt-3">
+                        <div class="row">
+                            <div class="col-4 p-t-10 push-1">
+                                <div class="top_border3 bg_color3">
+                                    <i class="fa fa-book circle_round1"></i>
                                 </div>
-                                <div class="col-8 m-t-10">
-                                    <p class="user_font">Palestras</p>
-                                    <p class="number_size">{{data.palestras}}</p>
-                                </div>
+                            </div>
+                            <div class="col-8 m-t-10">
+                                <p class="user_font">Mini Cursos</p>
+                                <p class="number_size">{{data.minicursos}}</p>
                             </div>
                         </div>
                     </div>
-                </b-card>
-            </div>
+                </div>
+            </b-card>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-sm-6 text-center">
+            <b-card claass="bg-default-card easy_pie_chart1">
+                <div class="row">
+                    <div class="col-12 mb-3 mt-3">
+                        <div class="row">
+                            <div class="col-4 p-t-10 push-1">
+                                <div class="top_border4 bg_color4">
+                                    <i class="fa fa-users circle_round"></i>
+                                </div>
+                            </div>
+                            <div class="col-8 m-t-10">
+                                <p class="user_font">Palestras</p>
+                                <p class="number_size">{{data.palestras}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </b-card>
         </div>
     </div>
+</div>
 </template>
 <script>
 import Vue from 'vue';
 import vScroll from "components/plugins/scroll/vScroll.vue";
 import chat_data from "../../js/chat_data";
-
+import axios from 'axios';
 
 
 import easyPieChart from "components/plugins/easypiechart/easyPieChart.vue"
@@ -98,22 +98,20 @@ export default {
     name: "index",
     data() {
         return {
-          data: this.getData(),
+            data: {},
         }
     },
 
     methods: {
-      getData() {
-        return {
-          visitantes: 5,
-          miniCursos: 5,
-          palestras: 5,
-          inscritos: 5,
-        };
-      }
+        getData() {
+          var vue = this;
+            axios.get('/dashboard').then((res) => {
+                vue.data = res.data;
+            })
+        }
     },
     mounted() {
-
+      this.getData();
         unsub = this.$store.subscribe((mutation, state) => {
             if (mutation.type == "left_menu") {
                 this.instances.forEach(function(item, index) {
@@ -129,33 +127,36 @@ export default {
         });
 
     },
-    beforeRouteLeave (to, from, next) {
+    beforeRouteLeave(to, from, next) {
         unsub();
         next();
     },
 }
 </script>
 
-<style scoped src="../../css/index.css"></style>
-<style>
-.index1_swiper .swiper-pagination-bullet-active {
+<style scoped src="../../css/index.css">
+</style><style>.index1_swiper .swiper-pagination-bullet-active {
     background: #fff !important;
 }
-.swiper-widget{
-  padding: 7px;
+
+.swiper-widget {
+    padding: 7px;
 
 }
-.sales-info{
+
+.sales-info {
     color: #636c72;
 }
-.echarts{
+
+.echarts {
     height: 179px !important;
 }
+
 /*socio-tabs*/
 
 .socio-tabs {
     min-height: 370px;
-    background-color:#f5f8fa;
+    background-color: #f5f8fa;
 }
 
 .socio-tabs .tab-content {
@@ -204,7 +205,7 @@ export default {
 
 .tab-pane .card {
     border-color: #FFF;
-    margin:3px 0 0 0;
+    margin: 3px 0 0 0;
 }
 
 .tab-pane .card-block {
@@ -214,16 +215,22 @@ export default {
 .twitter .tweet-img {
     width: 17%;
 }
+
 .twitter .tweet {
     width: 83%;
     padding-left: 3%;
 }
-.swiper-container{
+
+.swiper-container {
     margin-top: 22px;
 }
-.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal>.swiper-pagination-bullets {
     bottom: 26px !important;
 }
+
 a.prfl-link {
     overflow: hidden;
     display: block;
@@ -250,18 +257,22 @@ a.prfl-link {
     width: 83%;
     padding-left: 3%;
 }
-.fb-friends{
+
+.fb-friends {
     overflow: hidden;
 }
+
 .fb-friends img {
     width: 23%;
     margin: 0 0 5px 2px;
     cursor: pointer;
 }
-.fb-friends img:hover{
-    transform: scale(1.1,1.1);
+
+.fb-friends img:hover {
+    transform: scale(1.1, 1.1);
     transition: 300ms
 }
+
 .insta-pins .insta-img {
     width: 49%;
     margin: 0 1px;
@@ -284,11 +295,11 @@ a.prfl-link {
 }
 
 .task1 {
-    padding-bottom: 20px!important;
+    padding-bottom: 20px !important;
 }
 
 .task1 .btn {
-    margin-right: 15px!important;
+    margin-right: 15px !important;
 }
 
 
@@ -318,6 +329,7 @@ a.prfl-link {
     #annual-sales {
         height: 200px;
     }
+
     #annual-sales .ct-label.ct-horizontal.ct-end {
         transform: rotate(-45deg);
     }
@@ -375,77 +387,90 @@ a.prfl-link {
     font-size: 25px;
 }
 
-.circle_round{
+.circle_round {
     font-size: 20px;
 }
-.circle_round1{
+
+.circle_round1 {
     font-size: 22px;
 }
-.top_border1{
-    width:60px;
-    height:60px;
+
+.top_border1 {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     line-height: 4.1;
     font-size: 15px;
     color: #fff;
-    box-shadow:1px 1px 20px rgba(75, 156, 228, 0.88);
+    box-shadow: 1px 1px 20px rgba(75, 156, 228, 0.88);
 }
-.top_border2{
-    width:60px;
-    height:60px;
+
+.top_border2 {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     line-height: 4.1;
     font-size: 15px;
     color: #fff;
     box-shadow: 1px 1px 20px rgba(82, 162, 185, 0.86);
 }
-.top_border3{
-    width:60px;
-    height:60px;
+
+.top_border3 {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     line-height: 4.1;
     font-size: 15px;
     color: #fff;
     box-shadow: 1px 1px 22px rgb(19, 191, 210);
 }
-.top_border4{
-    width:60px;
-    height:60px;
+
+.top_border4 {
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     line-height: 4.1;
     font-size: 15px;
     color: #fff;
-    box-shadow:1px 1px 20px rgba(23, 96, 160, 0.89);
+    box-shadow: 1px 1px 20px rgba(23, 96, 160, 0.89);
 }
-.bg_color1{
+
+.bg_color1 {
     background-color: #4b9ce4;
 }
-.bg_color2{
+
+.bg_color2 {
     background-color: #328ba7;
 }
-.bg_color3{
+
+.bg_color3 {
     background-color: #13bfd2;
 }
-.bg_color4{
+
+.bg_color4 {
     background-color: #1760a0;
 }
-.number_size{
+
+.number_size {
     font-size: 20px;
     color: #646567;
     margin-bottom: 0 !important;
 }
-.user_font{
+
+.user_font {
     font-size: 13px;
     color: #646567;
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
 }
-.m-t-10{
+
+.m-t-10 {
     margin-top: 8px;
 }
+
 /*======chartist=========*/
 </style>
 <style scoped lang="scss">
-    /*========================easy pie chart========================*/
+/*========================easy pie chart========================*/
 
 .easychart {
     & .chart {
