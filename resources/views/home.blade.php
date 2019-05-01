@@ -65,13 +65,13 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5 class="text-center mb-2">Contribuição</h5>
-                        <p>Este ano a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand está arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
-                            dos nossos minicursos basta se inscrever e no dia trazer consigo alimentos não perecíveis em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
+                        <p>Este ano, a Semana de cursos do Eixo de Informação e Comunicação do IFPR — Campus Assis Chateaubriand, estara arrecadando alimentos para serem doados a instituições que atendem pessoas carentes no município. Para participar
+                            dos nossos minicursos, basta se inscrever e no dia trazer consigo alimentos não perecíveis ou longa vida em um valor equivalente a 10 reais, contamos com a sua ajuda e esperamos a sua participação.</p>
                         <p>
                             <span class="note-donation">Observação¹: Esta contribuição é necessária apenas uma vez, você contribui e aproveita a semana toda.</span>
                         </p>
                         <p>
-                            <span class="note-donation">Observação²: Estamos arrecadando alimentos não perecíveis, exceto sal e fubá.</span>
+                            <span class="note-donation">Observação²: Estamos arrecadando alimentos não perecíveis e longa vida, exceto sal e fubá.</span>
                         </p>
                     </div>
                     <!-- Single Feature Text Area End -->
@@ -116,7 +116,7 @@
                     <!-- Single Feature Image Area End -->
                     <div class="edu_feature_text">
                         <h5>Compartilhamento</h5>
-                        <p>Bate-papo, troca de informações e expriências entre os participantes.</p>
+                        <p>Bate-papo, troca de informações e experiências entre os participantes.</p>
                     </div>
                     <!-- Single Feature Text Area End -->
                 </div>

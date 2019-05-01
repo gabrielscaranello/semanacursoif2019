@@ -78,7 +78,7 @@
             <div class="col-12">
                 <div class="edu_section_heading">
                     <i class="fas fa-users"></i>
-                    <h3>Equipe de Cereimonial</h3>
+                    <h3>Equipe de Cerimonial</h3>
                 </div>
             </div>
         </div>
