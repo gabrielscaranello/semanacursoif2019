@@ -15,6 +15,9 @@ class MiniCursoController extends Controller
     {
         $minicurso = MiniCurso::where('status', 1)->get();
         if ($minicurso) {
+          foreach ($minicurso as $key => $value) {
+            $minicurso[$key]->namepainel = $value->name . ' - '. $value->turma;
+          }
             return ['status' => 'success', 'data' => $minicurso];
         }
         return ['status' => 'error'];
@@ -115,6 +118,20 @@ class MiniCursoController extends Controller
             return ['status' => 'success'];
         }
         return ['status' => 'error'];
+    }
+
+    public function matricula(Request $request)
+    {
+        $matriculas = MiniCursoHasUser::where('mini_curso_has_users.id_curso', $request->id)
+        ->select('users.*', 'mini_curso_has_users.created_at as inscricao')
+        ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')->get();
+
+        foreach ($matriculas as $key => $value) {
+            $data = explode('-', explode(' ', $value->inscricao)[0]);
+            $data = $data[2].'/'.$data[1].'/'.$data[0];
+            $matriculas[$key]['inscricao'] = $data;
+        }
+        return ['data' => $matriculas];
     }
 
     // upload de imagem

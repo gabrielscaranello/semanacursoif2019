@@ -9,6 +9,7 @@ class MiniCursoHasUser extends Model
   protected $fillable = [
     'id_user',
     'id_curso',
-    'status'
+    'status',
+    'presenca'
   ];
 }

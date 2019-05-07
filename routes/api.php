@@ -37,6 +37,7 @@ Route::group(['prefix' => 'mini-curso'], function () {
     Route::post('/store', 'Api\MiniCursoController@store');
     Route::post('/update', 'Api\MiniCursoController@update');
     Route::post('/delete', 'Api\MiniCursoController@delete');
+    Route::post('/matricula', 'Api\MiniCursoController@matricula');
 });
 
 

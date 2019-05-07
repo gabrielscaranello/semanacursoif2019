@@ -1,0 +1,15 @@
+.transparent-bg {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+.transparent-bg .v-content {
+  background: rgba(0,0,0,0.6);
+}
+
+.transparent-bg .copyright,
+.transparent-bg .copyright a,
+.transparent-bg .copyright a:hover {
+  color: #fff;
+}

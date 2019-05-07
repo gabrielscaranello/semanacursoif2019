@@ -52,4 +52,8 @@ class HomeController extends Controller
         $cronogramIIN = $this->getCronogram('IIN');
         return view('coming-soon', compact('cronogramTADS', 'cronogramIIN'));
     }
+
+    public function moderator() {
+      return view('moderator');
+    }
 }
