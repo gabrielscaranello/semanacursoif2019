@@ -45,6 +45,12 @@ const layout = [{
             title: "Mini Cursos",
         }
     }, {
+        path: '/mini-curso-por-usuario',
+        component: resolve => require(['pages/users-has-minicursos'], resolve),
+        meta: {
+            title: "Mini Cursos Por Usuario",
+        }
+    }, {
         path: '/palestras',
         component: resolve => require(['pages/palestras-list'], resolve),
         meta: {

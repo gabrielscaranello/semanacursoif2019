@@ -15,9 +15,9 @@ class MiniCursoController extends Controller
     {
         $minicurso = MiniCurso::where('status', 1)->get();
         if ($minicurso) {
-          foreach ($minicurso as $key => $value) {
-            $minicurso[$key]->namepainel = $value->name . ' - '. $value->turma;
-          }
+            foreach ($minicurso as $key => $value) {
+                $minicurso[$key]->namepainel = $value->name . ' - '. $value->turma;
+            }
             return ['status' => 'success', 'data' => $minicurso];
         }
         return ['status' => 'error'];
@@ -130,6 +130,12 @@ class MiniCursoController extends Controller
             $data = explode('-', explode(' ', $value->inscricao)[0]);
             $data = $data[2].'/'.$data[1].'/'.$data[0];
             $matriculas[$key]['inscricao'] = $data;
+            $matriculas[$key]['loading'] = false;
+            if ($matriculas[$key]['presenca'] !== 1) {
+                $matriculas[$key]['presenca'] = false;
+            } else {
+                $matriculas[$key]['presenca'] = true;
+            }
         }
         return ['data' => $matriculas];
     }
