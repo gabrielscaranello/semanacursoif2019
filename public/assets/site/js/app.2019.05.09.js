@@ -159,7 +159,7 @@ new Vue({
                 if (this.formRegister.aluno == 1) {
                     if (
                         !this.formRegister.ra || this.formRegister.ra == '' ||
-                        !this.formRegister.turma || this.formRegister.turma == '' ||
+                        !this.formRegister.ano || this.formRegister.ano == '' ||
                         !this.formRegister.curso || this.formRegister.curso == ''
                     ) {
                         error_input = true;

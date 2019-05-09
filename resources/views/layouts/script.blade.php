@@ -27,7 +27,7 @@
 <script src="https://unpkg.com/vue-gallery-slideshow"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{!!asset('assets/site/js/app.js')!!}"></script>
+<script src="{!!asset('assets/site/js/app.2019.05.09.js')!!}"></script>
 
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -35,7 +35,7 @@
     AOS.init();
 </script>
 
-{{-- <script type='text/javascript'>
+<script type='text/javascript'>
     (function() {
         var widget_id = 'sOqUamefM8';
         var d = document;
@@ -59,4 +59,4 @@
             }
         }
     })();
-</script> --}}
+</script>
