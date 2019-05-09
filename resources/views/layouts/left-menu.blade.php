@@ -69,7 +69,7 @@
                     <div class="col-12">
                         <div class="form-group" v-if="formRegister.aluno == 1">
                             <label class="label-control">Turma</label>
-                            <input v-model="formRegister.turma" type="text" class="form-control">
+                            <input v-model="formRegister.ano" type="text" class="form-control">
                         </div>
                     </div>
 

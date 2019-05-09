@@ -78,6 +78,7 @@ Route::group(['prefix' => 'gallery'], function () {
 //gerenciamento da usuario
 Route::group(['prefix' => 'users'], function () {
     Route::get('/list', 'Api\UserController@list');
+    Route::get('/print', 'Api\UserController@print');
     Route::post('/getItem', 'Api\UserController@getItem');
     Route::post('/avatar', 'Api\UserController@avatar');
     Route::post('/store', 'Api\UserController@store');

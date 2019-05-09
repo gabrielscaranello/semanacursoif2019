@@ -2,24 +2,28 @@
 <v-container fill-height fluid grid-list-xl>
     <v-layout justify-center wrap>
         <v-flex xs12 md12>
-            <material-card color="green" title="Minicursos" text="">
-
+            <material-card color="green" title="Minicursos">
                 <v-card-title>
-                    <v-flex sm6 style="margin-top: 10px">
+                    <v-flex sm6 v-if="minicusoslist.length > 0" style="margin-top: 10px">
                         <v-combobox v-model="selected" :items="minicusoslist" @change="getMinicursos" item-text="namepainel" item-value="id" label="Minicurso"></v-combobox>
                     </v-flex>
-                    <v-flex sm6 v-if="!loading">
+                    <v-flex sm6 v-if="!loading && minicursos.length > 0">
                         <v-text-field v-model="search" append-icon="search" label="Pesquisa" color="green" single-line hide-details></v-text-field>
                     </v-flex>
 
                 </v-card-title>
-                <v-data-table v-if="!loading && minicursos" rows-per-page-text="Quantidade por página:" :headers="headers" :items="minicursos" :search="search" :rows-per-page-items='[35, {"text":"Todos", "value":-1}]'>
+                <v-data-table v-if="!loading && minicursos.length > 0" rows-per-page-text="Quantidade por página:" :headers="headers" :items="minicursos" :search="search" :rows-per-page-items='[35, {"text":"Todos", "value":-1}]'>
                     <template v-slot:items="props">
                         <td style="text-transform: capitalize">{{ props.item.name.toLowerCase() }}</td>
                         <td>{{ props.item.curso }}</td>
 
                         <td>
-                            <v-switch color="green" v-model="props.item.presenca"></v-switch>
+                            <!-- <v-switch color="green" v-model="props.item.presenca"></v-switch> -->
+                            <v-switch v-model="props.item.presenca">
+                                <template v-slot:label>
+                                    <v-progress-circular color="green" indeterminate :value="props.item.presenca" size="24" class="ml-2"></v-progress-circular>
+                                </template>
+                            </v-switch>
                         </td>
                     </template>
                     <template v-slot:no-results>
@@ -78,15 +82,16 @@ export default {
     },
     methods: {
         async getMinicursos() {
-            if (this.selected && this.selected != []) {
-                this.loading = true;
+            if (this.selected && this.selected !== []) {
+                this.loading = true
 
                 const url = '/api/mini-curso/matricula'
                 const data = {
                     id: this.selected.id
-                };
+                }
+
                 this.minicursos = (await axios.post(url, data)).data.data
-                this.loading = false;
+                this.loading = false
             } else {
                 this.minicursos = []
             }
@@ -94,6 +99,7 @@ export default {
         async getMinicursosList() {
             const url = '/api/mini-curso/list'
             this.minicusoslist = (await axios.get(url)).data.data
+            this.loading = false
         }
     },
     mounted() {

@@ -20,6 +20,20 @@ class UserController extends Controller
         return ['status' => 'error'];
     }
 
+    public function print()
+    {
+        $user = User::where('status', 1)->orderBy('name', 'ASC')->get();
+        if ($user) {
+            foreach ($user as $key => $value) {
+                $user[$key]->turma = $value->turma == null ? "": $value->turma;
+                $user[$key]->ano = $value->ano == null ? "": $value->ano;
+                $user[$key]->assinatura = "";
+            }
+            return ['status' => 'success', 'data' => $user];
+        }
+        return ['status' => 'error'];
+    }
+
     public function getItem(Request $request)
     {
         $user = User::where(['status' => 1, 'id' => $request->id])->first();

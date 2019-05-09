@@ -6,7 +6,7 @@ module.exports = {
 module.exports = {
     // proxy API requests to Valet during development
     devServer: {
-        proxy: 'http://scif.test:8000',
+        proxy: 'http://localhost:8000',
         disableHostCheck: true
     },
 
