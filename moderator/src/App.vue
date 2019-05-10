@@ -1,12 +1,12 @@
 <template>
 <v-app>
-  <!-- <core-filter /> -->
+    <!-- <core-filter /> -->
 
-  <core-toolbar v-if="logedin" />
+    <core-toolbar v-if="logedin" />
 
-  <core-drawer v-if="logedin" />
+    <core-drawer v-if="logedin" />
 
-  <core-view />
+    <core-view />
 </v-app>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     name: 'app',
     computed: {
         logedin() {
-            return true
+            return false
         },
         background() {
             if (this.$route.path === '/cadastro') return 'background: url("https://images.pexels.com/photos/1193942/pexels-photo-1193942.jpeg")'

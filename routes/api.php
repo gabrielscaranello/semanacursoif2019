@@ -9,9 +9,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'auth'], function () {
     Route::post('login', 'AuthController@authenticate');
+    Route::post('login/mederator', 'AuthController@authenticatemoderator');
     Route::post('register', 'AuthController@store');
     Route::get('logout', 'AuthController@logout');
-    Route::get('check', 'AuthController@check');
+    Route::post('check', 'AuthController@check');
     Route::post('/verificaToken', 'AuthController@verificaToken');
 });
 
@@ -38,6 +39,7 @@ Route::group(['prefix' => 'mini-curso'], function () {
     Route::post('/update', 'Api\MiniCursoController@update');
     Route::post('/delete', 'Api\MiniCursoController@delete');
     Route::post('/matricula', 'Api\MiniCursoController@matricula');
+    Route::post('/presenca', 'Api\MiniCursoController@presenca');
 });
 
 
@@ -86,7 +88,7 @@ Route::group(['prefix' => 'users'], function () {
     Route::post('/delete', 'Api\UserController@delete');
 });
 
-//gerenciamento da usuario
+//gerenciamento do dashboard
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', 'Api\DashboardController@index');
 });

@@ -122,9 +122,26 @@ class MiniCursoController extends Controller
 
     public function matricula(Request $request)
     {
-        $matriculas = MiniCursoHasUser::where('mini_curso_has_users.id_curso', $request->id)
-        ->select('users.*', 'mini_curso_has_users.created_at as inscricao')
-        ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')->get();
+        if (isset($request->id)) {
+            $matriculas = MiniCursoHasUser::where('mini_curso_has_users.id_curso', $request->id)
+            ->select('users.name', 'users.curso', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao')
+            ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')
+            ->orderBy('users.name', 'ASC')->get();
+        } else {
+            $matriculas = MiniCursoHasUser::select('users.name', 'users.curso', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao', 'users.id as user_id')->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')->orderBy('users.name', 'ASC')->get();
+            $mat = [];
+            foreach ($matriculas as $key => $value) {
+                if (sizeof($mat) > 0) {
+                    foreach ($mat as $mkey => $mvalue) {
+                        if ($value->user_id != $mvalue->id_user) {
+                            $mat[] = $value;
+                        }
+                    }
+                } else {
+                    $mat[] = $value;
+                }
+            }
+        }
 
         foreach ($matriculas as $key => $value) {
             $data = explode('-', explode(' ', $value->inscricao)[0]);
@@ -138,6 +155,17 @@ class MiniCursoController extends Controller
             }
         }
         return ['data' => $matriculas];
+    }
+
+
+    // função da chamada
+    public function presenca(Request $request)
+    {
+        $data = $request->all();
+        $minicurso = MiniCursoHasUser::where('id', $request->id)->first();
+        if ($minicurso->update($data)) {
+            return response()->json($minicurso->presenca);
+        }
     }
 
     // upload de imagem

@@ -3,6 +3,10 @@
     <v-layout justify-center wrap>
         <v-flex xs12 md12>
             <material-card color="green" title="Minicursos">
+                <v-flex sm12 v-if="!loading && minicursos.length > 0" class="align-right py-0">
+                    <v-btn color="success" @click.prevent.stop="print(1)">Imprimir Este Minicurso </v-btn>
+                    <v-btn color="success" @click.prevent.stop="print(2)">Imprimir Todos Minicursos </v-btn>
+                </v-flex>
                 <v-card-title>
                     <v-flex sm6 v-if="minicusoslist.length > 0" style="margin-top: 10px">
                         <v-combobox v-model="selected" :items="minicusoslist" @change="getMinicursos" item-text="namepainel" item-value="id" label="Minicurso"></v-combobox>
@@ -52,6 +56,7 @@
 
 <script>
 import axios from 'axios'
+import print from 'print-js'
 
 export default {
     data() {
@@ -101,22 +106,93 @@ export default {
             this.loading = false
         },
         async presenca(id) {
-            const vue = this;
-            let index = 0;
+            const vue = this
+            let index = 0
             for (var i = 0; i < this.minicursos.length; i++) {
-                if (id == this.minicursos[i].id) {
-                    vue.minicursos[i].loading = true;
-                    index = i;
+                if (id === this.minicursos[i].id) {
+                    vue.minicursos[i].loading = true
+                    index = i
                 }
             }
-            setTimeout(function() {
-                vue.minicursos[index].loading = false;
-            }, 1000);
+            const atual = vue.minicursos[index].presenca
+            try {
+                const data = {
+                    id: vue.minicursos[index].id,
+                    presenca: vue.minicursos[index].presenca ? 1 : 0
+                }
+                const url = '/api/mini-curso/presenca'
+                const confirm = (await axios.post(url, data)).data
+
+                vue.minicursos[index].loading = false
+
+                if (confirm === 1) {
+                    vue.minicursos[index].presenca = true
+                } else {
+                    vue.minicursos[index].presenca = false
+                }
+            } catch (e) {
+                vue.minicursos[index].loading = false
+                vue.minicursos[index].presenca = atual
+            }
+        },
+        loginfo() {
+            if (!localStorage.token) {
+                this.$router.push('/login')
+                return true
+            }
+            if (localStorage.token) {
+                this.getMinicursosList()
+                return false
+            }
+        },
+        print(cond) {
+            const vue = this
+            if (cond === 1) this.execPrint(this.minicursos)
+            if (cond === 2) {
+                const url = '/api/mini-curso/matricula'
+                axios.post(url).then((res) => {
+                    vue.execPrint(res.data.data)
+                })
+            }
+        },
+        execPrint(json) {
+            const vue = this
+            var data = []
+            for (var i = 0; i < json.length; i++) {
+                let item = {}
+                item.nome = json[i].name.toUpperCase()
+                item.curso = json[i].curso ? json[i].curso.toUpperCase() : ''
+                item.assinatura = ''
+                item.alimento = ''
+                data.push(item)
+            }
+
+            printJS({
+                printable: data,
+                properties: ['nome', 'curso', 'alimento', 'assinatura'],
+                type: 'json',
+                gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
+                gridStyle: 'border: 2px solid #000;',
+                header: vue.selected.name,
+                headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
+                documentTitle: 'Semana de Cursos IFPR 2019',
+                style: 'tr td:nth-child(2) {width: 8% !important; text-align: center} tr td:nth-child(3) {width: 5% !important} tr td:first-child {width: 40% !important;}'
+            })
         }
     },
     mounted() {
-        // this.getMinicursos()
-        this.getMinicursosList()
+        this.loginfo()
     }
 }
 </script>
+
+<style media="screen">
+.align-right {
+    text-align: right;
+}
+
+.py-0 {
+    padding-top: 0;
+    padding-left: 0;
+}
+</style>

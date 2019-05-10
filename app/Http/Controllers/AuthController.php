@@ -23,11 +23,42 @@ class AuthController extends Controller
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
             $user = [
-             'id' => auth()->user()->id,
-             'name' => auth()->user()->name,
-             'avatar' => auth()->user()->avatar,
-             'role' => auth()->user()->role
-           ];
+           'id' => auth()->user()->id,
+           'name' => auth()->user()->name,
+           'avatar' => auth()->user()->avatar,
+           'role' => auth()->user()->role
+         ];
+            User::where('id', $user['id'])->update(['token' => $token]);
+        } catch (JWTException $e) {
+            // something went wrong whilst attempting to encode the token
+            return response()->json(['error' => 'could_not_create_token'], 500);
+        }
+
+        // all good so return the token
+        $status = 'success';
+        return response()->json(compact('status', 'token', 'user'));
+    }
+
+
+    public function authenticatemoderator(Request $request)
+    {
+        // grab credentials from the request
+        $user = new User();
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->role = 'moderador';
+        $credentials = $user->only('email', 'password', 'role');
+        try {
+            // attempt to verify the credentials and create a token for the user
+            if (! $token = JWTAuth::attempt($credentials)) {
+                return $this->authenticate($request);
+            }
+            $user = [
+           'id' => auth()->user()->id,
+           'name' => auth()->user()->name,
+           'avatar' => auth()->user()->avatar,
+           'role' => auth()->user()->role
+         ];
             User::where('id', $user['id'])->update(['token' => $token]);
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token

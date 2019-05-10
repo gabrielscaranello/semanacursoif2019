@@ -11,6 +11,7 @@ import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
+import as from './as'
 
 // Routes
 import paths from './paths'
@@ -20,8 +21,8 @@ function route(path, view, name) {
         name: name || view,
         path,
         component: resolve => import(
-      `@/views/${view}.vue`
-    ).then(resolve)
+            `@/views/${view}.vue`
+        ).then(resolve)
     }
 }
 
@@ -31,7 +32,7 @@ Vue.use(Router)
 const router = new Router({
     routes: paths.map(path => route(path.path, path.view, path.name)).concat([{
         path: '*',
-        redirect: '/dashboard'
+        redirect: '/login'
     }]),
     scrollBehavior(to, from, savedPosition) {
         if (savedPosition) {
@@ -63,5 +64,17 @@ if (process.env.GOOGLE_ANALYTICS) {
         }
     })
 }
+
+router.beforeEach((to, from, next) => {
+    as.check().then((auth) => {
+        if (!auth) {
+            if (to.path === '/login') {
+                return next()
+            }
+            return next('/login')
+        }
+        return next()
+    })
+})
 
 export default router
