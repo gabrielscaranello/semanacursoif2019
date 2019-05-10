@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MiniCurso;
+use App\Models\User;
 use App\Models\MiniCursoHasUser;
 use Storage;
 use Image;
@@ -124,23 +125,11 @@ class MiniCursoController extends Controller
     {
         if (isset($request->id)) {
             $matriculas = MiniCursoHasUser::where('mini_curso_has_users.id_curso', $request->id)
-            ->select('users.name', 'users.curso', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao')
+            ->select('users.name', 'users.curso', 'users.ano', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao')
             ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')
             ->orderBy('users.name', 'ASC')->get();
         } else {
-            $matriculas = MiniCursoHasUser::select('users.name', 'users.curso', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao', 'users.id as user_id')->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')->orderBy('users.name', 'ASC')->get();
-        }
-
-        foreach ($matriculas as $key => $value) {
-            $data = explode('-', explode(' ', $value->inscricao)[0]);
-            $data = $data[2].'/'.$data[1].'/'.$data[0];
-            $matriculas[$key]['inscricao'] = $data;
-            $matriculas[$key]['loading'] = false;
-            if ($matriculas[$key]['presenca'] !== 1) {
-                $matriculas[$key]['presenca'] = false;
-            } else {
-                $matriculas[$key]['presenca'] = true;
-            }
+            $matriculas = User::select('users.*')->orderBy('name', 'ASC')->get();
         }
         return ['data' => $matriculas];
     }

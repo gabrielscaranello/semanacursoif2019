@@ -3,8 +3,8 @@
     <v-layout justify-center wrap>
         <v-flex xs12 md12>
             <material-card color="green" title="Minicursos">
-                <v-flex sm12 v-if="!loading && minicursos.length > 0" class="align-right py-0">
-                    <v-btn color="success" @click.prevent.stop="print(1)">Imprimir Este Minicurso </v-btn>
+                <v-flex sm12 v-if="!loading && user.role === 'admin'" class="align-right py-0">
+                    <v-btn v-if="minicursos.length > 0" color="success" @click.prevent.stop="print(1)">Imprimir Este Minicurso </v-btn>
                     <v-btn color="success" @click.prevent.stop="print(2)">Imprimir Todos Minicursos </v-btn>
                 </v-flex>
                 <v-card-title>
@@ -23,7 +23,7 @@
                         <td>
                             <v-switch color="green" @change="presenca(props.item.id)" v-model="props.item.presenca">
                                 <template v-slot:label>
-                                    <v-progress-circular color="green" :indeterminate="props.item.loading" :value="props.item.presenca ? 100:0" size="24" class="ml-2"></v-progress-circular>
+                                    <v-progress-circular color="green" :indeterminate="props.item.loading === true" :value="props.item.presenca ? 100:0" size="24" class="ml-2"></v-progress-circular>
                                 </template>
                             </v-switch>
                             <!-- {{props.item.presenca +'  '+ props.item.loading}} -->
@@ -81,7 +81,8 @@ export default {
                 sortable: false,
                 value: 'presenca'
             }],
-            minicursos: []
+            minicursos: [],
+            user: {}
         }
     },
     methods: {
@@ -105,35 +106,34 @@ export default {
             this.minicusoslist = (await axios.get(url)).data.data
             this.loading = false
         },
-        async presenca(id) {
+        presenca(id) {
             const vue = this
             let index = 0
             for (var i = 0; i < this.minicursos.length; i++) {
                 if (id === this.minicursos[i].id) {
-                    vue.minicursos[i].loading = true
                     index = i
+                    vue.minicursos[index].loading = !vue.minicursos[index].loading
                 }
             }
-            const atual = vue.minicursos[index].presenca
-            try {
-                const data = {
-                    id: vue.minicursos[index].id,
-                    presenca: vue.minicursos[index].presenca ? 1 : 0
-                }
-                const url = '/api/mini-curso/presenca'
-                const confirm = (await axios.post(url, data)).data
 
-                vue.minicursos[index].loading = false
+            const data = {
+                id: vue.minicursos[index].id,
+                presenca: vue.minicursos[index].presenca ? 1 : 0
+            }
+            const url = '/api/mini-curso/presenca'
+            axios.post(url, data).then((res) => {
 
-                if (confirm === 1) {
+                if (res.data === 1) {
                     vue.minicursos[index].presenca = true
                 } else {
                     vue.minicursos[index].presenca = false
                 }
-            } catch (e) {
                 vue.minicursos[index].loading = false
-                vue.minicursos[index].presenca = atual
-            }
+            }).catch((err) => {
+              vue.minicursos[index].presenca = !vue.minicursos[index].presenca
+              vue.minicursos[index].loading = !vue.minicursos[index].loading
+
+            })
         },
         loginfo() {
             if (!localStorage.token) {
@@ -142,42 +142,80 @@ export default {
             }
             if (localStorage.token) {
                 this.getMinicursosList()
+                this.user = JSON.parse(localStorage.user)
                 return false
             }
         },
         print(cond) {
             const vue = this
-            if (cond === 1) this.execPrint(this.minicursos)
+            if (cond === 1) {
+                const json = this.minicursos
+                var data = []
+                for (var i = 0; i < json.length; i++) {
+                    let item = {}
+                    item.nome = json[i].name.toUpperCase()
+                    if (json[i].curso) {
+                        if (json[i].ano) {
+                            item.curso = json[i].curso.toUpperCase() + json[i].ano
+                        } else {
+                            item.curso = json[i].curso.toUpperCase()
+                        }
+                    } else {
+                        item.curso = ''
+                    }
+                    item.assinatura = ''
+                    // item.alimento = ''
+                    data.push(item)
+                }
+
+                printJS({
+                    printable: data,
+                    properties: ['nome', 'curso', 'assinatura'],
+                    type: 'json',
+                    gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
+                    gridStyle: 'border: 2px solid #000; padding: 3px 2px;',
+                    header: vue.selected.name,
+                    headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
+                    documentTitle: 'Semana de Cursos IFPR 2019',
+                    style: 'tr td:nth-child(2) {width: 8% !important; text-align: center}  tr td:first-child {width: 40% !important;}'
+                })
+            }
             if (cond === 2) {
                 const url = '/api/mini-curso/matricula'
                 axios.post(url).then((res) => {
-                    vue.execPrint(res.data.data)
+                    const json = res.data.data
+                    var data = []
+                    for (var i = 0; i < json.length; i++) {
+                        let item = {}
+                        item.nome = json[i].name.toUpperCase()
+
+                        if (json[i].curso) {
+                            if (json[i].ano) {
+                                item.curso = json[i].curso.toUpperCase() + json[i].ano
+                            } else {
+                                item.curso = json[i].curso.toUpperCase()
+                            }
+                        } else {
+                            item.curso = ''
+                        }
+                        item.assinatura = ''
+                        item.alimento = ''
+                        data.push(item)
+                    }
+
+                    printJS({
+                        printable: data,
+                        properties: ['nome', 'curso', 'alimento', 'assinatura'],
+                        type: 'json',
+                        gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
+                        gridStyle: 'border: 2px solid #000; padding: 3px 2px;',
+                        header: 'Alunos Cadastrados no Sistema',
+                        headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
+                        documentTitle: 'Semana de Cursos IFPR 2019',
+                        style: 'tr td:nth-child(2) {width: 8% !important; text-align: center} tr td:nth-child(3) {width: 10% !important;}  tr td:first-child {width: 40% !important;}'
+                    })
                 })
             }
-        },
-        execPrint(json) {
-            const vue = this
-            var data = []
-            for (var i = 0; i < json.length; i++) {
-                let item = {}
-                item.nome = json[i].name.toUpperCase()
-                item.curso = json[i].curso ? json[i].curso.toUpperCase() : ''
-                item.assinatura = ''
-                item.alimento = ''
-                data.push(item)
-            }
-
-            printJS({
-                printable: data,
-                properties: ['nome', 'curso', 'alimento', 'assinatura'],
-                type: 'json',
-                gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
-                gridStyle: 'border: 2px solid #000;',
-                header: vue.selected.name,
-                headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
-                documentTitle: 'Semana de Cursos IFPR 2019',
-                style: 'tr td:nth-child(2) {width: 8% !important; text-align: center} tr td:nth-child(3) {width: 5% !important} tr td:first-child {width: 40% !important;}'
-            })
         }
     },
     mounted() {
