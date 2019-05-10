@@ -129,18 +129,6 @@ class MiniCursoController extends Controller
             ->orderBy('users.name', 'ASC')->get();
         } else {
             $matriculas = MiniCursoHasUser::select('users.name', 'users.curso', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao', 'users.id as user_id')->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')->orderBy('users.name', 'ASC')->get();
-            $mat = [];
-            foreach ($matriculas as $key => $value) {
-                if (sizeof($mat) > 0) {
-                    foreach ($mat as $mkey => $mvalue) {
-                        if ($value->user_id != $mvalue->id_user) {
-                            $mat[] = $value;
-                        }
-                    }
-                } else {
-                    $mat[] = $value;
-                }
-            }
         }
 
         foreach ($matriculas as $key => $value) {
