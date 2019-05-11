@@ -19,14 +19,17 @@
                 <v-data-table v-if="!loading && minicursos.length > 0" rows-per-page-text="Quantidade por página:" :headers="headers" :items="minicursos" :search="search" :rows-per-page-items='[35, {"text":"Todos", "value":-1}]'>
                     <template v-slot:items="props">
                         <td style="text-transform: capitalize">{{ props.item.name.toLowerCase() }}</td>
-                        <td>{{ props.item.curso ? props.item.curso : 'Nenhum'}}</td>
+                        <td>
+                            {{ props.item.curso ? props.item.curso : 'Nenhum'}}
+                            {{ props.item.ano ?  props.item.ano : '' }}
+                        </td>
                         <td>
                             <v-switch color="green" @change="presenca(props.item.id)" v-model="props.item.presenca">
                                 <template v-slot:label>
                                     <v-progress-circular color="green" :indeterminate="props.item.loading === true" :value="props.item.presenca ? 100:0" size="24" class="ml-2"></v-progress-circular>
                                 </template>
                             </v-switch>
-                            <!-- {{props.item.presenca +'  '+ props.item.loading}} -->
+
                         </td>
                     </template>
                     <template v-slot:no-results>
@@ -130,8 +133,8 @@ export default {
                 }
                 vue.minicursos[index].loading = false
             }).catch((err) => {
-              vue.minicursos[index].presenca = !vue.minicursos[index].presenca
-              vue.minicursos[index].loading = !vue.minicursos[index].loading
+                vue.minicursos[index].presenca = !vue.minicursos[index].presenca
+                vue.minicursos[index].loading = !vue.minicursos[index].loading
 
             })
         },
@@ -174,7 +177,7 @@ export default {
                     type: 'json',
                     gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
                     gridStyle: 'border: 2px solid #000; padding: 3px 2px;',
-                    header: vue.selected.name,
+                    header: vue.selected.name + ' - ' + vue.selected.turma,
                     headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
                     documentTitle: 'Semana de Cursos IFPR 2019',
                     style: 'tr td:nth-child(2) {width: 8% !important; text-align: center}  tr td:first-child {width: 40% !important;}'

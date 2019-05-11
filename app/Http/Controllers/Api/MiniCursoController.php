@@ -125,9 +125,22 @@ class MiniCursoController extends Controller
     {
         if (isset($request->id)) {
             $matriculas = MiniCursoHasUser::where('mini_curso_has_users.id_curso', $request->id)
-            ->select('users.name', 'users.curso', 'users.ano', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao')
-            ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')
-            ->orderBy('users.name', 'ASC')->get();
+          ->select('users.name', 'users.curso', 'users.ano', 'mini_curso_has_users.*', 'mini_curso_has_users.created_at as inscricao')
+          ->join('users', 'mini_curso_has_users.id_user', '=', 'users.id')
+          ->orderBy('users.name', 'ASC')->get();
+
+
+            foreach ($matriculas as $key => $value) {
+                $data = explode('-', explode(' ', $value->inscricao)[0]);
+                $data = $data[2].'/'.$data[1].'/'.$data[0];
+                $matriculas[$key]['inscricao'] = $data;
+                $matriculas[$key]['loading'] = false;
+                if ($matriculas[$key]['presenca'] !== 1) {
+                    $matriculas[$key]['presenca'] = false;
+                } else {
+                    $matriculas[$key]['presenca'] = true;
+                }
+            }
         } else {
             $matriculas = User::select('users.*')->orderBy('name', 'ASC')->get();
         }
