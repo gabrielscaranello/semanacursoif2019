@@ -3,7 +3,7 @@
     <v-layout justify-center wrap>
         <v-flex xs12 md12>
             <material-card color="green" title="Minicursos">
-                <v-flex sm12 v-if="!loading && user.role === 'admin'" class="align-right py-0">
+                <v-flex sm12 v-if="!loading" class="align-right py-0">
                     <v-btn v-if="minicursos.length > 0" color="success" @click.prevent.stop="print(1)">Imprimir Este Minicurso </v-btn>
                     <v-btn color="success" @click.prevent.stop="print(2)">Imprimir Todos Minicursos </v-btn>
                 </v-flex>
@@ -24,12 +24,7 @@
                             {{ props.item.ano ?  props.item.ano : '' }}
                         </td>
                         <td>
-                            <v-switch color="green" @change="presenca(props.item.id)" v-model="props.item.presenca">
-                                <template v-slot:label>
-                                    <v-progress-circular color="green" :indeterminate="props.item.loading === true" :value="props.item.presenca ? 100:0" size="24" class="ml-2"></v-progress-circular>
-                                </template>
-                            </v-switch>
-
+                            <v-progress-circular color="green" :value="props.item.presenca ? 100:0" size="24" class="ml-2"></v-progress-circular>
                         </td>
                     </template>
                     <template v-slot:no-results>
@@ -166,21 +161,33 @@ export default {
                     } else {
                         item.curso = ''
                     }
-                    item.assinatura = ''
-                    // item.alimento = ''
+                    item.presenca = json[i].presenca ? 'C' : 'F'
+                    item.ra = json[i].ra ? json[i].ra : '';
+                    item.dia = json[i].day ? json[i].day : '';
+                    item.hora = json[i].hour ? json[i].hour : '';
                     data.push(item)
                 }
+                data.sort(function(a, b) {
+                    if (a.curso > b.curso) {
+                        return 1;
+                    }
+                    if (a.curso < b.curso) {
+                        return -1;
+                    }
+                    // a must be equal to b
+                    return 0;
+                });
 
                 printJS({
                     printable: data,
-                    properties: ['nome', 'curso', 'assinatura'],
+                    properties: ['curso', 'nome', 'ra', 'dia', 'hora', 'presenca'],
                     type: 'json',
                     gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
                     gridStyle: 'border: 2px solid #000; padding: 3px 2px;',
                     header: vue.selected.name + ' - ' + vue.selected.turma,
                     headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
                     documentTitle: 'Semana de Cursos IFPR 2019',
-                    style: 'tr td:nth-child(2) {width: 8% !important; text-align: center}  tr td:first-child {width: 40% !important;}'
+                    style: 'tr td {text-align: center} tr td:nth-child(2) {width: 60% !important;  text-align: left}  tr td:first-child {width: 10% !important;}'
                 })
             }
             if (cond === 2) {
