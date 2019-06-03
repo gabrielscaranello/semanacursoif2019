@@ -208,21 +208,31 @@ export default {
                         } else {
                             item.curso = ''
                         }
-                        item.assinatura = ''
-                        item.alimento = ''
+                        item.conceito = ''
+                        item.email = json[i].email
                         data.push(item)
                     }
+                    data.sort(function(a, b) {
+                        if (a.curso > b.curso) {
+                            return 1;
+                        }
+                        if (a.curso < b.curso) {
+                            return -1;
+                        }
+                        // a must be equal to b
+                        return 0;
+                    });
 
                     printJS({
                         printable: data,
-                        properties: ['nome', 'curso', 'alimento', 'assinatura'],
+                        properties: ['curso', 'nome', 'email', 'conceito'],
                         type: 'json',
                         gridHeaderStyle: 'color: #4ca750;  border: 2px solid #000; width:10%',
                         gridStyle: 'border: 2px solid #000; padding: 3px 2px;',
                         header: 'Alunos Cadastrados no Sistema',
                         headerStyle: 'font-size: 11pt; font-weigth: 400; text-transform: uppercase;',
                         documentTitle: 'Semana de Cursos IFPR 2019',
-                        style: 'tr td:nth-child(2) {width: 8% !important; text-align: center} tr td:nth-child(3) {width: 10% !important;}  tr td:first-child {width: 40% !important;}'
+                        style: 'tr  td:first-child  {width: 8% !important; text-align: center} tr td:nth-child(3) {width: 10% !important;}  tr td:nth-child(2) {width: 40% !important;}'
                     })
                 })
             }
