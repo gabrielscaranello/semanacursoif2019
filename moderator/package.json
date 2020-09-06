@@ -11,7 +11,7 @@
   "dependencies": {
     "apexcharts": "^3.6.9",
     "chartist": "^0.11.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "print-js": "^1.0.55",
     "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
